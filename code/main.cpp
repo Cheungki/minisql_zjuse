@@ -1,4 +1,5 @@
 #include <iostream>
+
 #include "Interpreter/Interpreter.h"
 
 
@@ -19,7 +20,7 @@ int main() {
     {
         //在CLion里如果用exit(0);来退出这里会提示是infinite loop
         //所以这里把Execute改成了返回值为bool类型，方便进行退出的判断，只有在输入quit的时候才会退出
-        if(!interpreter.Execute(interpreter.getCMD()))
+        if(!interpreter.execute(interpreter.getCMD()))
         {
             break;
         }
