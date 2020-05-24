@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/Interpreter.cpp
+Interpreter.h
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/Interpreter.h
+
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/Interpreter.h
+iostream
+-
+vector
+-
+string
+-
+../StringProcessor/StringProcessor.h
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/StringProcessor/StringProcessor.h
+
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/StringProcessor/StringProcessor.h
+iostream
+-
+vector
+-
+string
+-
+
