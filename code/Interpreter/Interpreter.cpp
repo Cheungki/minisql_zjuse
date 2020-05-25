@@ -30,6 +30,8 @@ string Interpreter::getCMD()
     return StringProcessor::cmdOptimum(cmd);
 }
 
+//这个函数的返回值其实是表示可以继续下一句SQL指令的读取和执行，不是说语法是否错误
+//这里就算语法错误返回的也是true，因为要执行下一句，只有当需要退出的时候才会返回false，我暂时也想不出更好的设计了
 bool Interpreter::execute(std::string cmd)
 {
     //execute the cmd in a string
@@ -61,13 +63,15 @@ bool Interpreter::execute(std::string cmd)
         exeFile(path);
         return true;
     }
+    //此处可以添加一个能彻底去掉多余空格的处理函数，不过我这里先做最理想的情况就是每个刚好一个空格
     else //下面都是基本的SQL语句的语法分解
     {
-
-        if(!StringProcessor::bracketProcessor(cmd))
+        int checkBracket = StringProcessor::bracketProcessor(cmd);
+        if(!checkBracket)
             cout<<"Syntax Error! Please check your brackets in the SQL!"<<endl;
-        else
+        else if(checkBracket == 1)
         {
+            //对create和insert语句进行初步的语义分割
             cout<<cmd<<endl;
             int start = cmd.find_first_of('(');
             int end = cmd.find_last_of(')');
@@ -76,12 +80,26 @@ bool Interpreter::execute(std::string cmd)
             string operateVal = cmd.substr(start + 1, end - start - 1);
             cout<<operateKind<<endl;
             cout<<operateVal<<endl;
+            //继续进一步的处理
+        }
+        else if(checkBracket == -1)
+        {
+            //对其他类型的语句进行初步语义分割
+            vector<string> operate = StringProcessor::Split(cmd, " ");
+            for(int i=0; i < operate.size(); i++)
+            {
+                //再一次去括号，防止有多余的括号
+                StringProcessor::preTrim(operate[i]);
+            }
+            if(!operate.size())
+            {
+                cout<<"Syntax Error! No executable SQL command!"<<endl;
+                return true; //继续下一句SQL命令
+            }
+            StringProcessor::showOperation(operate);
+            return true;
         }
 
-
-        //此处可以添加一个能彻底去掉多余空格的处理函数，不过我这里先做最理想的情况就是每个刚好一个空格
-        //vector<string> operation = StringProcessor::Split(cmd, " ");
-        //StringProcessor::showOperation(operation);
 
     }
 
@@ -113,7 +131,7 @@ void Interpreter::exeFile(const string &file)
                 cmd = "";
             }
         }
-        if(cmd != "")
+        if(!cmd.empty())
         {
             cout<<"Syntax Error! Please try again!"<<endl;
         }

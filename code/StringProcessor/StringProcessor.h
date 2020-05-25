@@ -75,7 +75,8 @@ public:
     }
 
     //用来删除命令中的括号
-    static bool bracketProcessor(string& cmd)
+    //返回值说明：0表示语法错误，1表示有括号，是create或者insert语句，-1表示没有括号，是其他类型的SQL语句
+    static int bracketProcessor(string& cmd)
     {
         vector<int> left, right;
         for(int i = 0; i < cmd.length(); i++ )
@@ -91,7 +92,9 @@ public:
         }
         //左右括号数量不相同，说明语法错误
         if(left.size() != right.size())
-            return false;
+            return 0;
+        else if(left.empty() && right.empty())
+            return -1;
         else
         {
             int len = left.size(); //共同的个数
