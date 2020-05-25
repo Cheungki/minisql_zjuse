@@ -82,6 +82,7 @@ bool Interpreter::execute(std::string cmd)
             cout<<operateVal<<endl;
             //继续进一步的处理
         }
+        //这里涵盖的指令有drop，delete，insert，select，
         else if(checkBracket == -1)
         {
             //对其他类型的语句进行初步语义分割
@@ -91,13 +92,105 @@ bool Interpreter::execute(std::string cmd)
                 //再一次去括号，防止有多余的括号
                 StringProcessor::preTrim(operate[i]);
             }
-            if(!operate.size())
+            if(operate.empty())
             {
                 cout<<"Syntax Error! No executable SQL command!"<<endl;
                 return true; //继续下一句SQL命令
             }
             StringProcessor::showOperation(operate);
-            return true;
+            if(operate[0] == "drop")
+            {
+                if(operate[1] == "table")
+                {
+                    if(operate.size() != 3)
+                    {
+                        //参数个数错误
+                        cout<<"Syntax Error! Extra parameters in drop table!"<<endl;
+                    }
+                    else
+                    {
+                        //进行drop table的语法分解，并调用API
+                    }
+                }
+                else if(operate[1] == "index")
+                {
+                    if(operate.size() != 3)
+                    {
+                        cout<<"Syntax Error! Extra parameters in drop index!"<<endl;
+                    }
+                    else
+                    {
+                        //进行drop index的语法分解
+                    }
+                }
+                else
+                {
+                    //drop了table和index以外的东西
+                    cout<<"Syntax Error! No such drop operation!"<<endl;
+                }
+            }
+            else if(operate[0] == "delete")
+            {
+                if(operate[1] != "from")
+                {
+                    cout<<"Syntax Error! No such delete operation!"<<endl;
+                }
+                else
+                {
+                    if(operate.size() <= 4)
+                    {
+                        cout<<"Syntax Error! Lack of parameters."<<endl;
+                    }
+                    else if(operate[3] != "where")
+                    {
+                        cout<<"Syntax Error! Key word Error!"<<endl;
+                    }
+                    else
+                    {
+                        //进行进一步的delete类型的语句分解
+                    }
+                }
+            }
+            /*这一部分应该是前面的，明天再继续改
+            else if(operate[0] == "insert")
+            {
+                if(operate[1] != "into")
+                {
+                    //不是into 语法错误
+                    cout<<"Syntax Error! Key Word Error!"<<endl;
+                }
+                else
+                {
+                    if(operate.size() > 4)
+                    {
+                        cout<<"Syntax Error! Extra parameters in insert!"<<endl;
+                    }
+                    else if(operate.size() <= 3)
+                    {
+                        cout<<"Syntax Error! Lack of parameters."<<endl;
+                    }
+                    else
+                    {
+                        //正常执行insert语句
+                    }
+                }
+            }
+             */
+            else if(operate[0] == "select")
+            {
+                if(operate.size() <= 5)
+                {
+                    cout<<"Syntax Error! Lack of parameters."<<endl;
+                }
+                else if(operate[2] != "from" || operate[4] != "where")
+                {
+                    cout<<"Syntax Error! Key Word Error!"<<endl;
+                }
+                else
+                {
+                    //正常执行select语句的分割
+                }
+            }
         }
 
 
@@ -112,7 +205,7 @@ void Interpreter::exeFile(const string &file)
     fin.open(file, ios::in);
     if(fin.fail())
     {
-        cout<<"Can't find the file on the path! Please try again!"<<endl;
+        cout<<"Error! Can't find the file on the path! Please try again!"<<endl;
         return ;
     }
     else
