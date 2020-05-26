@@ -20,14 +20,14 @@ string Interpreter::getCMD()
             cout<<"       ";
         cout<<">";
         getline(cin,temp);
-        StringProcessor::preTrim(temp);
+        stringProcessor::preTrim(temp);
         if(temp.empty())
             continue;
         cmd += temp;
         if(temp[temp.length()-1] == ';')
             break;
     }
-    return StringProcessor::cmdOptimum(cmd);
+    return stringProcessor::cmdOptimum(cmd);
 }
 
 //这个函数的返回值其实是表示可以继续下一句SQL指令的读取和执行，不是说语法是否错误
@@ -55,7 +55,7 @@ bool Interpreter::execute(std::string cmd)
     else if(cmd.find("execfile") == 0)
     {
         string file_name = cmd.substr(8);
-        StringProcessor::preTrim(file_name);
+        stringProcessor::preTrim(file_name);
         // cout<<"file name: "<<file_name<<endl;
         //这里需要转换一下文件的路径，默认这个SQL文件是放在code文件夹下的，输入的时候输入的是文件名，不包含路径
         string path = "..\\" + file_name;
@@ -66,7 +66,7 @@ bool Interpreter::execute(std::string cmd)
     //此处可以添加一个能彻底去掉多余空格的处理函数，不过我这里先做最理想的情况就是每个刚好一个空格
     else //下面都是基本的SQL语句的语法分解
     {
-        int checkBracket = StringProcessor::bracketProcessor(cmd);
+        int checkBracket = stringProcessor::bracketProcessor(cmd);
         if(!checkBracket)
             cout<<"Syntax Error! Please check your brackets in the SQL!"<<endl;
         else if(checkBracket == 1)
@@ -81,25 +81,113 @@ bool Interpreter::execute(std::string cmd)
             cout<<operateKind<<endl;
             cout<<operateVal<<endl;
             //继续进一步的处理
+            vector<string> operate = stringProcessor::Split(operateKind, " ");
+            operate.push_back(operateVal);
+            stringProcessor::showOperation(operate);
+
+            //正确的create table语句格式应该试
+            //create table table_name ( attributions );
+            //attributions 需要在后面进一步的分割
+            //create table语句固定只能有4个参数
+            if(operate[0] == "create")
+            {
+                if(operate[1] == "table")
+                {
+                    if(operate.size() >= 5)
+                    {
+                        cout<<"Syntax Error! Extra parameters in create table"<<endl;
+                    }
+                    else
+                    {
+                        //进行进一步的create table的语法分解
+                        //
+                        //
+                        //
+                        //
+                    }
+                }
+                //create index index_name on table_name ( attribution_name );
+                //operation里固定的只能有6个
+                else if(operate[1] == "index")
+                {
+                    if(operate.size() >= 7)
+                    {
+                        cout<<"Syntax Error! Extra parameters in create index!"<<endl;
+                    }
+                    else if(operate.size() <= 5)
+                    {
+                        cout<<"Syntax Error! Lack of parameters in create index!"<<endl;
+                    }
+                    //接下来一定是有6个operate的create index语句
+                    else if(operate[3] != "on")
+                    {
+                        cout<<"Syntax Error! No such create index operation!"<<endl;
+                    }
+                    else
+                    {
+                        cout<<"1"<<endl;
+                        //进行create index的语法分解
+                        //
+                        //
+                        //
+                        //
+                    }
+                }
+            }
+            //insert语句的格式为：insert into table_name values (xxx,xxx,xxx);
+            //operate中固定为5个，其他都是语法错误
+            else if(operate[0] == "insert")
+            {
+                if(operate[1] != "into")
+                {
+                    //不是into 语法错误
+                    cout<<"Syntax Error! Key Word Error!"<<endl;
+                }
+                else
+                {
+                    if(operate.size() > 5)
+                    {
+                        cout<<"Syntax Error! Extra parameters in insert!"<<endl;
+                    }
+                    else if(operate.size() <= 4)
+                    {
+                        cout<<"Syntax Error! Lack of parameters."<<endl;
+                    }
+                    else if(operate[3] != "values")
+                    {
+                        cout<<"Syntax Error! Key Word Error!"<<endl;
+                    }
+                    else
+                    {
+                        //正常执行insert语句,语法分解
+                        //
+                        //
+                        //
+                        //
+
+                    }
+                }
+            }
         }
-        //这里涵盖的指令有drop，delete，insert，select，
+        //这里涵盖的指令有drop，delete，select，
         else if(checkBracket == -1)
         {
             //对其他类型的语句进行初步语义分割
-            vector<string> operate = StringProcessor::Split(cmd, " ");
+            vector<string> operate = stringProcessor::Split(cmd, " ");
             for(int i=0; i < operate.size(); i++)
             {
                 //再一次去括号，防止有多余的括号
-                StringProcessor::preTrim(operate[i]);
+                stringProcessor::preTrim(operate[i]);
             }
             if(operate.empty())
             {
                 cout<<"Syntax Error! No executable SQL command!"<<endl;
                 return true; //继续下一句SQL命令
             }
-            StringProcessor::showOperation(operate);
+            stringProcessor::showOperation(operate);
             if(operate[0] == "drop")
             {
+                //第一种drop语句：drop table xxx;
                 if(operate[1] == "table")
                 {
                     if(operate.size() != 3)
@@ -110,8 +198,12 @@ bool Interpreter::execute(std::string cmd)
                     else
                     {
                         //进行drop table的语法分解，并调用API
+                        //
+                        //
+                        //
                     }
                 }
+                //第二种drop index xxx;
                 else if(operate[1] == "index")
                 {
                     if(operate.size() != 3)
@@ -121,6 +213,10 @@ bool Interpreter::execute(std::string cmd)
                     else
                     {
                         //进行drop index的语法分解
+                        //
+                        //
+                        //
+                        //
                     }
                 }
                 else
@@ -129,6 +225,7 @@ bool Interpreter::execute(std::string cmd)
                     cout<<"Syntax Error! No such drop operation!"<<endl;
                 }
             }
+            //正常的delete语句应该是delete from table_name where xxx ;
             else if(operate[0] == "delete")
             {
                 if(operate[1] != "from")
@@ -141,6 +238,7 @@ bool Interpreter::execute(std::string cmd)
                     {
                         cout<<"Syntax Error! Lack of parameters."<<endl;
                     }
+
                     else if(operate[3] != "where")
                     {
                         cout<<"Syntax Error! Key word Error!"<<endl;
@@ -148,39 +246,35 @@ bool Interpreter::execute(std::string cmd)
                     else
                     {
                         //进行进一步的delete类型的语句分解
+                        //
+                        //
+                        //
                     }
                 }
             }
-            /*这一部分应该是前面的，明天再继续改
-            else if(operate[0] == "insert")
+
+            //select语句的格式为select * from table_name where xxx;
+            else if(operate[0] == "select")
             {
-                if(operate[1] != "into")
+                if(operate.size() <= 3)
                 {
-                    //不是into 语法错误
-                    cout<<"Syntax Error! Key Word Error!"<<endl;
+                    cout<<"Syntax Error! Lack of parameters."<<endl;
                 }
-                else
+                //没有附加条件的查询
+                else if(operate.size() == 4)
                 {
-                    if(operate.size() > 4)
+                    if(operate[2] != "from")
                     {
-                        cout<<"Syntax Error! Extra parameters in insert!"<<endl;
-                    }
-                    else if(operate.size() <= 3)
-                    {
-                        cout<<"Syntax Error! Lack of parameters."<<endl;
+                        cout<<"Syntax Error! Key Word Error!"<<endl;
                     }
                     else
                     {
-                        //正常执行insert语句
+                        //正常执行，无条件的查询语句
+                        //
+                        //
+                        //
+                        //
                     }
-                }
-            }
-             */
-            else if(operate[0] == "select")
-            {
-                if(operate.size() <= 5)
-                {
-                    cout<<"Syntax Error! Lack of parameters."<<endl;
                 }
                 else if(operate[2] != "from" || operate[4] != "where")
                 {
@@ -188,7 +282,11 @@ bool Interpreter::execute(std::string cmd)
                 }
                 else
                 {
-                    //正常执行select语句的分割
+                    //正常执行select语句的分割，有条件的查询语句
+                    //
+                    //
+                    //
+                    //
                 }
             }
         }
@@ -213,13 +311,13 @@ void Interpreter::exeFile(const string &file)
         string cmd,temp;
         while(getline(fin,temp))
         {
-            StringProcessor::preTrim(temp);
+            stringProcessor::preTrim(temp);
             if(temp.empty())
                 continue;
             cmd += temp;
             if(temp[temp.length() - 1] == ';')
             {
-                cmd = StringProcessor::cmdOptimum(cmd);
+                cmd = stringProcessor::cmdOptimum(cmd);
                 execute(cmd);
                 cmd = "";
             }

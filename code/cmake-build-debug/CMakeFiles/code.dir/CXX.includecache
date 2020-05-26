@@ -24,10 +24,6 @@ algorithm
 ../StringProcessor/StringProcessor.h
 C:/Users/74096/Desktop/DataBase System/miniSQL/code/StringProcessor/StringProcessor.h
 
-C:/Users/74096/Desktop/DataBase System/miniSQL/code/StringProcessor/StringProcessor.cpp
-StringProcessor.h
-C:/Users/74096/Desktop/DataBase System/miniSQL/code/StringProcessor/StringProcessor.h
-
 C:/Users/74096/Desktop/DataBase System/miniSQL/code/StringProcessor/StringProcessor.h
 iostream
 -
@@ -37,10 +33,4 @@ string
 -
 algorithm
 -
-
-C:/Users/74096/Desktop/DataBase System/miniSQL/code/main.cpp
-iostream
--
-Interpreter/Interpreter.h
-C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/Interpreter.h
 

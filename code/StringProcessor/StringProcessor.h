@@ -2,8 +2,8 @@
 // Created by 74096 on 2020/5/24.
 //
 
-#ifndef CODE_STRINGPROCESSOR_H
-#define CODE_STRINGPROCESSOR_H
+#ifndef CODE_stringProcessor_H
+#define CODE_stringProcessor_H
 #include<iostream>
 #include<vector>
 #include<string>
@@ -12,7 +12,7 @@
 using namespace std;
 
 
-class StringProcessor {
+class stringProcessor {
 public:
     //去空格的处理函数，其实应该还需要一个把多个空格替换成一个空格的函数，不过这里先考虑最简单的情况先不写了
     static void preTrim(string &s)
@@ -105,4 +105,4 @@ public:
     }
 };
 
-#endif //CODE_STRINGPROCESSOR_H
+#endif //CODE_stringProcessor_H
