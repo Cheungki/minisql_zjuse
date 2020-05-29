@@ -3,12 +3,16 @@
 
 CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj: ../Interpreter/Interpreter.cpp
 CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj: ../Interpreter/Interpreter.h
+CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj: ../Interpreter/callAPI.h
+CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj: ../Interpreter/showResult.h
 CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj: ../StringProcessor/StringProcessor.h
 
 CMakeFiles/code.dir/StringProcessor/StringProcessor.cpp.obj: ../StringProcessor/StringProcessor.cpp
 CMakeFiles/code.dir/StringProcessor/StringProcessor.cpp.obj: ../StringProcessor/StringProcessor.h
 
 CMakeFiles/code.dir/main.cpp.obj: ../Interpreter/Interpreter.h
+CMakeFiles/code.dir/main.cpp.obj: ../Interpreter/callAPI.h
+CMakeFiles/code.dir/main.cpp.obj: ../Interpreter/showResult.h
 CMakeFiles/code.dir/main.cpp.obj: ../StringProcessor/StringProcessor.h
 CMakeFiles/code.dir/main.cpp.obj: ../main.cpp
 

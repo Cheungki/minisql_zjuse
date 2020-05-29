@@ -4,11 +4,15 @@
 CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/Interpreter.cpp
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/Interpreter.h
+ C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/callAPI.h
+ C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/showResult.h
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/StringProcessor/StringProcessor.h
 CMakeFiles/code.dir/StringProcessor/StringProcessor.cpp.obj
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/StringProcessor/StringProcessor.cpp
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/StringProcessor/StringProcessor.h
 CMakeFiles/code.dir/main.cpp.obj
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/Interpreter.h
+ C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/callAPI.h
+ C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/showResult.h
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/StringProcessor/StringProcessor.h
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/main.cpp

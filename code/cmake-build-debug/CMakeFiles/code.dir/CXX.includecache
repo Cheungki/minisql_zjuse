@@ -23,6 +23,20 @@ algorithm
 -
 ../StringProcessor/StringProcessor.h
 C:/Users/74096/Desktop/DataBase System/miniSQL/code/StringProcessor/StringProcessor.h
+showResult.h
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/showResult.h
+callAPI.h
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/callAPI.h
+
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/callAPI.h
+iostream
+-
+string
+-
+vector
+-
+
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/showResult.h
 
 C:/Users/74096/Desktop/DataBase System/miniSQL/code/StringProcessor/StringProcessor.h
 iostream

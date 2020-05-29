@@ -19,8 +19,7 @@ public:
     {
         if(s.empty())
             return ;
-        else
-        {
+        else{
             s.erase(0, s.find_first_not_of(" "));
             s.erase(s.find_last_not_of(" ") + 1);
             return ;
@@ -38,8 +37,7 @@ public:
         string x = s;
         preTrim(x);
         start = x.find(unit);
-        while(start != -1)
-        {
+        while(start != -1) {
             result.push_back(x.substr(0,start));
             x=x.substr(start+len);
             preTrim(x);
@@ -53,8 +51,7 @@ public:
     // 对cmd命令的优化，包括去首尾空格和全部转换成小写，卸载这个类里提高了代码的复用性
     static string cmdOptimum(string& cmd)
     {
-        for(int i=0; i < cmd.length() ; i++)
-        {
+        for(int i=0; i < cmd.length() ; i++) {
             if(cmd[i] == '\t')
                 cmd[i] = ' ';
             if(cmd[i] >= 'A'&&cmd[i] <= 'Z')
@@ -68,8 +65,7 @@ public:
 
     static void showOperation(vector<string> op)
     {
-        for(int i=0; i < op.size(); i++)
-        {
+        for(int i=0; i < op.size(); i++) {
             cout<<"Position "<<i<<" :"<<op[i]<<endl;
         }
     }
@@ -79,14 +75,11 @@ public:
     static int bracketProcessor(string& cmd)
     {
         vector<int> left, right;
-        for(int i = 0; i < cmd.length(); i++ )
-        {
-            if(cmd[i] == '(')
-            {
+        for(int i = 0; i < cmd.length(); i++ ) {
+            if(cmd[i] == '(') {
                 left.push_back(i);
             }
-            else if(cmd[i] == ')')
-            {
+            else if(cmd[i] == ')') {
                 right.push_back(i);
             }
         }
@@ -95,8 +88,7 @@ public:
             return 0;
         else if(left.empty() && right.empty())
             return -1;
-        else
-        {
+        else {
             int len = left.size(); //共同的个数
             //这种情况下的括号是错位的
             return !(left[len - 1] >= right[len - 1] || right[0] <= left[0]);

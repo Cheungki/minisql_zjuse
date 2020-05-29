@@ -88,6 +88,12 @@
 		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/Interpreter.h">
 			<Option target="code"/>
 		</Unit>
+		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/callAPI.h">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/showResult.h">
+			<Option target="code"/>
+		</Unit>
 		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/StringProcessor/StringProcessor.cpp">
 			<Option target="code"/>
 		</Unit>
