@@ -176,6 +176,33 @@ StringProcessor/StringProcessor.cpp.s:
 	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/StringProcessor/StringProcessor.cpp.s
 .PHONY : StringProcessor/StringProcessor.cpp.s
 
+Table/Table.obj: Table/Table.cpp.obj
+
+.PHONY : Table/Table.obj
+
+# target to build an object file
+Table/Table.cpp.obj:
+	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/Table/Table.cpp.obj
+.PHONY : Table/Table.cpp.obj
+
+Table/Table.i: Table/Table.cpp.i
+
+.PHONY : Table/Table.i
+
+# target to preprocess a source file
+Table/Table.cpp.i:
+	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/Table/Table.cpp.i
+.PHONY : Table/Table.cpp.i
+
+Table/Table.s: Table/Table.cpp.s
+
+.PHONY : Table/Table.s
+
+# target to generate assembly for a file
+Table/Table.cpp.s:
+	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/Table/Table.cpp.s
+.PHONY : Table/Table.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -218,6 +245,9 @@ help:
 	@echo ... StringProcessor/StringProcessor.obj
 	@echo ... StringProcessor/StringProcessor.i
 	@echo ... StringProcessor/StringProcessor.s
+	@echo ... Table/Table.obj
+	@echo ... Table/Table.i
+	@echo ... Table/Table.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

@@ -82,6 +82,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/GlobalVariable/GlobalVariable.h">
+			<Option target="code"/>
+		</Unit>
 		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/Interpreter.cpp">
 			<Option target="code"/>
 		</Unit>
@@ -98,6 +101,12 @@
 			<Option target="code"/>
 		</Unit>
 		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/StringProcessor/StringProcessor.h">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/Table/Table.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/Table/Table.h">
 			<Option target="code"/>
 		</Unit>
 		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/main.cpp">

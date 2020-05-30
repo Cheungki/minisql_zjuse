@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj"
   "CMakeFiles/code.dir/StringProcessor/StringProcessor.cpp.obj"
+  "CMakeFiles/code.dir/Table/Table.cpp.obj"
   "CMakeFiles/code.dir/main.cpp.obj"
   "code.exe"
   "code.exe.manifest"

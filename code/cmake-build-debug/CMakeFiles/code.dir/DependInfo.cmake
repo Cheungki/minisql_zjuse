@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/Interpreter.cpp" "C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj"
   "C:/Users/74096/Desktop/DataBase System/miniSQL/code/StringProcessor/StringProcessor.cpp" "C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/CMakeFiles/code.dir/StringProcessor/StringProcessor.cpp.obj"
+  "C:/Users/74096/Desktop/DataBase System/miniSQL/code/Table/Table.cpp" "C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/CMakeFiles/code.dir/Table/Table.cpp.obj"
   "C:/Users/74096/Desktop/DataBase System/miniSQL/code/main.cpp" "C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/CMakeFiles/code.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
