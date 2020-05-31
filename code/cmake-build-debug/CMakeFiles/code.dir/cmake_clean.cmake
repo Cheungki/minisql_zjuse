@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/code.dir/GlobalVariable/GlobalVariable.cpp.obj"
   "CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj"
   "CMakeFiles/code.dir/StringProcessor/StringProcessor.cpp.obj"
   "CMakeFiles/code.dir/Table/Table.cpp.obj"

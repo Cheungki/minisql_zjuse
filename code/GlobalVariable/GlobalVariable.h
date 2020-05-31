@@ -4,6 +4,10 @@
 
 #ifndef CODE_GLOBALVARIABLE_H
 #define CODE_GLOBALVARIABLE_H
+//#include"../Table/Table.h"
+#include<string>
+
+using namespace std;
 
 //一些重要的全局变量的定义
 
@@ -15,5 +19,31 @@
 //每个block的大小，设置为4KB，也可以改成8KB,反正推荐的是4KB或8KB
 #define blockSize 4096
 
+//用于select里面的大小比较,这几个变量面馆看起来比较丑
+#define EQUAL 0
+#define NOTEQUAL 1
+#define LESS 2
+#define GREATER 3
+#define LESSEQUAL 4
+#define GREATEREQUAL 5
+
+struct tableValue{
+public:
+    int INT;
+    float FLOAT;
+    char* CHAR;
+};
+
+class logicCompare{
+private:
+    string valName;
+    int operation;
+    tableValue immediate;
+    logicCompare(string& name, int op, tableValue imm);
+    bool checkCondition(int result);
+    static int compareInt(int a, int b);
+    static int compareFloat(float a, float b);
+    static int compareChar(const char* a, const char*b, int length);
+};
 
 #endif //CODE_GLOBALVARIABLE_H

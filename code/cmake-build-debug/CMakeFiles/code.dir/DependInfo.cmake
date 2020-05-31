@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/Users/74096/Desktop/DataBase System/miniSQL/code/GlobalVariable/GlobalVariable.cpp" "C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/CMakeFiles/code.dir/GlobalVariable/GlobalVariable.cpp.obj"
   "C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/Interpreter.cpp" "C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj"
   "C:/Users/74096/Desktop/DataBase System/miniSQL/code/StringProcessor/StringProcessor.cpp" "C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/CMakeFiles/code.dir/StringProcessor/StringProcessor.cpp.obj"
   "C:/Users/74096/Desktop/DataBase System/miniSQL/code/Table/Table.cpp" "C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/CMakeFiles/code.dir/Table/Table.cpp.obj"

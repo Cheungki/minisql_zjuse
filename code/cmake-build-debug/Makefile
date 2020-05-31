@@ -122,6 +122,33 @@ code/fast:
 	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/build
 .PHONY : code/fast
 
+GlobalVariable/GlobalVariable.obj: GlobalVariable/GlobalVariable.cpp.obj
+
+.PHONY : GlobalVariable/GlobalVariable.obj
+
+# target to build an object file
+GlobalVariable/GlobalVariable.cpp.obj:
+	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/GlobalVariable/GlobalVariable.cpp.obj
+.PHONY : GlobalVariable/GlobalVariable.cpp.obj
+
+GlobalVariable/GlobalVariable.i: GlobalVariable/GlobalVariable.cpp.i
+
+.PHONY : GlobalVariable/GlobalVariable.i
+
+# target to preprocess a source file
+GlobalVariable/GlobalVariable.cpp.i:
+	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/GlobalVariable/GlobalVariable.cpp.i
+.PHONY : GlobalVariable/GlobalVariable.cpp.i
+
+GlobalVariable/GlobalVariable.s: GlobalVariable/GlobalVariable.cpp.s
+
+.PHONY : GlobalVariable/GlobalVariable.s
+
+# target to generate assembly for a file
+GlobalVariable/GlobalVariable.cpp.s:
+	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/GlobalVariable/GlobalVariable.cpp.s
+.PHONY : GlobalVariable/GlobalVariable.cpp.s
+
 Interpreter/Interpreter.obj: Interpreter/Interpreter.cpp.obj
 
 .PHONY : Interpreter/Interpreter.obj
@@ -239,6 +266,9 @@ help:
 	@echo ... code
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... GlobalVariable/GlobalVariable.obj
+	@echo ... GlobalVariable/GlobalVariable.i
+	@echo ... GlobalVariable/GlobalVariable.s
 	@echo ... Interpreter/Interpreter.obj
 	@echo ... Interpreter/Interpreter.i
 	@echo ... Interpreter/Interpreter.s
