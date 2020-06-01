@@ -18,6 +18,12 @@ using namespace std;
 
 //每个block的大小，设置为4KB，也可以改成8KB,反正推荐的是4KB或8KB
 #define blockSize 4096
+//缓冲区最大的大小，4MB
+#define maxBufferSize 1024
+//对于数据表的一些基本的限制,包括属性最多32种，char类型的值最大长度是255字节，一个表最多有10000行
+#define maxAttributionSize 32
+#define maxCharSize 255
+#define maxRowSize 10000
 
 //用于select里面的大小比较,这几个变量面馆看起来比较丑
 #define EQUAL 0
@@ -44,6 +50,22 @@ private:
     static int compareInt(int a, int b);
     static int compareFloat(float a, float b);
     static int compareChar(const char* a, const char*b, int length);
+};
+
+class singleBlock{
+public:
+    string fileName;
+    int blockID;
+    //pin表示一个block被锁了，不能被删除
+    //is changed代表这个block是否被进行了修改
+    bool pin, isChanged;
+    char data[blockSize];
+    singleBlock(const string& name, const int& id){
+        fileName = name;
+        blockID = id;
+        pin = false;
+        isChanged = false;
+    }
 };
 
 #endif //CODE_GLOBALVARIABLE_H

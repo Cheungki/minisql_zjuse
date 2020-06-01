@@ -4,10 +4,12 @@
 
 #ifndef CODE_SHOWRESULT_H
 #define CODE_SHOWRESULT_H
-
+#include "../Table/Table.h"
+#include"../GlobalVariable/GlobalVariable.h"
 
 class showResult {
 public:
+    // 一些用来显示结果的static成员函数
     static void showDropTable(bool flag, const string& table){
         if(flag){
             cout<<"Drop Table "<<table<<" Successfully!"<<endl;
@@ -56,11 +58,16 @@ public:
             cout<<"Deletion failed! Please try again!"<<endl;
         }
     }
-    static void showSelect(string table){
-        //待完成，这一部分需要和其他地方一起联动，先等等
-        //
-        //
-        //
+    static void showSelect(vector<tableValue*>* result, string table){
+        //待完成，需要展示select到的结果
+        //经过测试，接口已经调通了
+        if(result == nullptr){
+            cout<<endl;
+            cout<<table<<endl;
+        }
+        else{
+            cout<<"error!"<<endl;
+        }
     }
 
 };

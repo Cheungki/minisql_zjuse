@@ -55,22 +55,28 @@ bool logicCompare::checkCondition(int result)
     switch (operation)
     {
         case EQUAL :
-            if (result != EQUAL)return false;
+            if (result != EQUAL)
+                return false;
             return true;
         case NOTEQUAL:
-            if (result == EQUAL)return false;
+            if (result == EQUAL)
+                return false;
             return true;
         case GREATER:
-            if (result != GREATER) return false;
+            if (result != GREATER)
+                return false;
             return true;
         case LESS:
-            if (result != LESS)return false;
+            if (result != LESS)
+                return false;
             return true;
         case GREATEREQUAL:
-            if (result == LESS)return false;
+            if (result == LESS)
+                return false;
             return true;
         case LESSEQUAL:
-            if (result == GREATER)return false;
+            if (result == GREATER)
+                return false;
             return true;
     }
     return false;

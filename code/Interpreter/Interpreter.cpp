@@ -151,9 +151,9 @@ bool Interpreter::execute(std::string cmd)
         else if(checkBracket == -1) {
             //对其他类型的语句进行初步语义分割
             vector<string> operate = stringProcessor::Split(cmd, " ");
-            for(int i=0; i < operate.size(); i++) {
+            for(auto & i : operate) {
                 //再一次去括号，防止有多余的括号
-                stringProcessor::preTrim(operate[i]);
+                stringProcessor::preTrim(i);
             }
             if(operate.empty()) {
                 cout<<"Syntax Error! No executable SQL command!"<<endl;
@@ -201,8 +201,7 @@ bool Interpreter::execute(std::string cmd)
                     cout<<"Syntax Error! No such delete operation!"<<endl;
                     return true;
                 }
-                else
-                {
+                else{
                     if(operate.size() <= 4) {
                         cout<<"Syntax Error! Lack of parameters."<<endl;
                         return true;
@@ -226,31 +225,36 @@ bool Interpreter::execute(std::string cmd)
             else if(operate[0] == "select"){
                 if(operate.size() <= 3) {
                     cout<<"Syntax Error! Lack of parameters."<<endl;
+                    return true;
                 }
                 else if(operate[1] != "*"){
                     cout<<"Syntax Error! No such select operation!"<<endl;
+                    return true;
                 }
                 //没有附加条件的查询
                 else if(operate.size() == 4){
                     if(operate[2] != "from"){
                         cout<<"Syntax Error! Key Word Error!"<<endl;
+                        return true;
                     }
                     else{
                         //正常执行，无条件的查询语句
                         //这一部分比较难写，先空着
-                        //
-                        //
-                        //
+                        string condition = "";
+                        showResult::showSelect(callAPI::callSelectAPI(operate[3], condition), operate[3]);
+                        return true;
                     }
                 }
                 else if(operate[2] != "from" || operate[4] != "where"){
                     cout<<"Syntax Error! Key Word Error!"<<endl;
+                    return true;
                 }
                 else {
                     //正常执行select语句的分割，有条件的查询语句
-                    //
-                    //
-                    //
+                    int where = cmd.find("where");
+                    string condition = cmd.substr(where+5);
+                    showResult::showSelect(callAPI::callSelectAPI(operate[3], condition), operate[3]);
+                    return true;
                 }
             }
         }

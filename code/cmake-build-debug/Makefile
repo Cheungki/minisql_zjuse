@@ -122,6 +122,87 @@ code/fast:
 	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/build
 .PHONY : code/fast
 
+API/API.obj: API/API.cpp.obj
+
+.PHONY : API/API.obj
+
+# target to build an object file
+API/API.cpp.obj:
+	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/API/API.cpp.obj
+.PHONY : API/API.cpp.obj
+
+API/API.i: API/API.cpp.i
+
+.PHONY : API/API.i
+
+# target to preprocess a source file
+API/API.cpp.i:
+	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/API/API.cpp.i
+.PHONY : API/API.cpp.i
+
+API/API.s: API/API.cpp.s
+
+.PHONY : API/API.s
+
+# target to generate assembly for a file
+API/API.cpp.s:
+	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/API/API.cpp.s
+.PHONY : API/API.cpp.s
+
+BufferManager/bufferManager.obj: BufferManager/bufferManager.cpp.obj
+
+.PHONY : BufferManager/bufferManager.obj
+
+# target to build an object file
+BufferManager/bufferManager.cpp.obj:
+	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/BufferManager/bufferManager.cpp.obj
+.PHONY : BufferManager/bufferManager.cpp.obj
+
+BufferManager/bufferManager.i: BufferManager/bufferManager.cpp.i
+
+.PHONY : BufferManager/bufferManager.i
+
+# target to preprocess a source file
+BufferManager/bufferManager.cpp.i:
+	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/BufferManager/bufferManager.cpp.i
+.PHONY : BufferManager/bufferManager.cpp.i
+
+BufferManager/bufferManager.s: BufferManager/bufferManager.cpp.s
+
+.PHONY : BufferManager/bufferManager.s
+
+# target to generate assembly for a file
+BufferManager/bufferManager.cpp.s:
+	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/BufferManager/bufferManager.cpp.s
+.PHONY : BufferManager/bufferManager.cpp.s
+
+CatalogManger/catalogManager.obj: CatalogManger/catalogManager.cpp.obj
+
+.PHONY : CatalogManger/catalogManager.obj
+
+# target to build an object file
+CatalogManger/catalogManager.cpp.obj:
+	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/CatalogManger/catalogManager.cpp.obj
+.PHONY : CatalogManger/catalogManager.cpp.obj
+
+CatalogManger/catalogManager.i: CatalogManger/catalogManager.cpp.i
+
+.PHONY : CatalogManger/catalogManager.i
+
+# target to preprocess a source file
+CatalogManger/catalogManager.cpp.i:
+	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/CatalogManger/catalogManager.cpp.i
+.PHONY : CatalogManger/catalogManager.cpp.i
+
+CatalogManger/catalogManager.s: CatalogManger/catalogManager.cpp.s
+
+.PHONY : CatalogManger/catalogManager.s
+
+# target to generate assembly for a file
+CatalogManger/catalogManager.cpp.s:
+	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/CatalogManger/catalogManager.cpp.s
+.PHONY : CatalogManger/catalogManager.cpp.s
+
 GlobalVariable/GlobalVariable.obj: GlobalVariable/GlobalVariable.cpp.obj
 
 .PHONY : GlobalVariable/GlobalVariable.obj
@@ -149,6 +230,33 @@ GlobalVariable/GlobalVariable.cpp.s:
 	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/GlobalVariable/GlobalVariable.cpp.s
 .PHONY : GlobalVariable/GlobalVariable.cpp.s
 
+IndexManager/indexManager.obj: IndexManager/indexManager.cpp.obj
+
+.PHONY : IndexManager/indexManager.obj
+
+# target to build an object file
+IndexManager/indexManager.cpp.obj:
+	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/IndexManager/indexManager.cpp.obj
+.PHONY : IndexManager/indexManager.cpp.obj
+
+IndexManager/indexManager.i: IndexManager/indexManager.cpp.i
+
+.PHONY : IndexManager/indexManager.i
+
+# target to preprocess a source file
+IndexManager/indexManager.cpp.i:
+	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/IndexManager/indexManager.cpp.i
+.PHONY : IndexManager/indexManager.cpp.i
+
+IndexManager/indexManager.s: IndexManager/indexManager.cpp.s
+
+.PHONY : IndexManager/indexManager.s
+
+# target to generate assembly for a file
+IndexManager/indexManager.cpp.s:
+	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/IndexManager/indexManager.cpp.s
+.PHONY : IndexManager/indexManager.cpp.s
+
 Interpreter/Interpreter.obj: Interpreter/Interpreter.cpp.obj
 
 .PHONY : Interpreter/Interpreter.obj
@@ -175,6 +283,33 @@ Interpreter/Interpreter.s: Interpreter/Interpreter.cpp.s
 Interpreter/Interpreter.cpp.s:
 	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/Interpreter/Interpreter.cpp.s
 .PHONY : Interpreter/Interpreter.cpp.s
+
+RecordManager/recordManager.obj: RecordManager/recordManager.cpp.obj
+
+.PHONY : RecordManager/recordManager.obj
+
+# target to build an object file
+RecordManager/recordManager.cpp.obj:
+	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/RecordManager/recordManager.cpp.obj
+.PHONY : RecordManager/recordManager.cpp.obj
+
+RecordManager/recordManager.i: RecordManager/recordManager.cpp.i
+
+.PHONY : RecordManager/recordManager.i
+
+# target to preprocess a source file
+RecordManager/recordManager.cpp.i:
+	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/RecordManager/recordManager.cpp.i
+.PHONY : RecordManager/recordManager.cpp.i
+
+RecordManager/recordManager.s: RecordManager/recordManager.cpp.s
+
+.PHONY : RecordManager/recordManager.s
+
+# target to generate assembly for a file
+RecordManager/recordManager.cpp.s:
+	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/RecordManager/recordManager.cpp.s
+.PHONY : RecordManager/recordManager.cpp.s
 
 StringProcessor/StringProcessor.obj: StringProcessor/StringProcessor.cpp.obj
 
@@ -266,12 +401,27 @@ help:
 	@echo ... code
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... API/API.obj
+	@echo ... API/API.i
+	@echo ... API/API.s
+	@echo ... BufferManager/bufferManager.obj
+	@echo ... BufferManager/bufferManager.i
+	@echo ... BufferManager/bufferManager.s
+	@echo ... CatalogManger/catalogManager.obj
+	@echo ... CatalogManger/catalogManager.i
+	@echo ... CatalogManger/catalogManager.s
 	@echo ... GlobalVariable/GlobalVariable.obj
 	@echo ... GlobalVariable/GlobalVariable.i
 	@echo ... GlobalVariable/GlobalVariable.s
+	@echo ... IndexManager/indexManager.obj
+	@echo ... IndexManager/indexManager.i
+	@echo ... IndexManager/indexManager.s
 	@echo ... Interpreter/Interpreter.obj
 	@echo ... Interpreter/Interpreter.i
 	@echo ... Interpreter/Interpreter.s
+	@echo ... RecordManager/recordManager.obj
+	@echo ... RecordManager/recordManager.i
+	@echo ... RecordManager/recordManager.s
 	@echo ... StringProcessor/StringProcessor.obj
 	@echo ... StringProcessor/StringProcessor.i
 	@echo ... StringProcessor/StringProcessor.s

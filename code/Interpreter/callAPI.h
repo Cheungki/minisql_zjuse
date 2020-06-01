@@ -5,6 +5,7 @@
 #include<iostream>
 #include<string>
 #include<vector>
+#include"../StringProcessor/StringProcessor.h"
 using namespace std;
 
 class callAPI {
@@ -17,9 +18,6 @@ public:
 
     }
     static bool callDropIndexAPI(const string& index){
-
-    }
-    static bool callSelectAPI(const string& table, const string& condition){
 
     }
     static bool callCreateTableAPI(const string& table, const string& element){
@@ -36,6 +34,14 @@ public:
     }
     static bool callInsertAPI(const string& table, string& value){
 
+    }
+
+    static vector<tableValue*>* callSelectAPI(string& table, string& condition){
+        stringProcessor::preTrim(table);
+        stringProcessor::preTrim(condition);
+        cout<<table<<endl;
+        cout<<condition<<endl;
+        return nullptr;
     }
 
 };

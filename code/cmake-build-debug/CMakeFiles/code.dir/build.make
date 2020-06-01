@@ -121,13 +121,83 @@ CMakeFiles/code.dir/GlobalVariable/GlobalVariable.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/code.dir/GlobalVariable/GlobalVariable.cpp.s"
 	E:\Dev-Cpp\Dev-Cpp\MinGW64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\74096\Desktop\DataBase System\miniSQL\code\GlobalVariable\GlobalVariable.cpp" -o CMakeFiles\code.dir\GlobalVariable\GlobalVariable.cpp.s
 
+CMakeFiles/code.dir/CatalogManger/catalogManager.cpp.obj: CMakeFiles/code.dir/flags.make
+CMakeFiles/code.dir/CatalogManger/catalogManager.cpp.obj: ../CatalogManger/catalogManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\74096\Desktop\DataBase System\miniSQL\code\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/code.dir/CatalogManger/catalogManager.cpp.obj"
+	E:\Dev-Cpp\Dev-Cpp\MinGW64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\code.dir\CatalogManger\catalogManager.cpp.obj -c "C:\Users\74096\Desktop\DataBase System\miniSQL\code\CatalogManger\catalogManager.cpp"
+
+CMakeFiles/code.dir/CatalogManger/catalogManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/code.dir/CatalogManger/catalogManager.cpp.i"
+	E:\Dev-Cpp\Dev-Cpp\MinGW64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\74096\Desktop\DataBase System\miniSQL\code\CatalogManger\catalogManager.cpp" > CMakeFiles\code.dir\CatalogManger\catalogManager.cpp.i
+
+CMakeFiles/code.dir/CatalogManger/catalogManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/code.dir/CatalogManger/catalogManager.cpp.s"
+	E:\Dev-Cpp\Dev-Cpp\MinGW64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\74096\Desktop\DataBase System\miniSQL\code\CatalogManger\catalogManager.cpp" -o CMakeFiles\code.dir\CatalogManger\catalogManager.cpp.s
+
+CMakeFiles/code.dir/BufferManager/bufferManager.cpp.obj: CMakeFiles/code.dir/flags.make
+CMakeFiles/code.dir/BufferManager/bufferManager.cpp.obj: ../BufferManager/bufferManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\74096\Desktop\DataBase System\miniSQL\code\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/code.dir/BufferManager/bufferManager.cpp.obj"
+	E:\Dev-Cpp\Dev-Cpp\MinGW64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\code.dir\BufferManager\bufferManager.cpp.obj -c "C:\Users\74096\Desktop\DataBase System\miniSQL\code\BufferManager\bufferManager.cpp"
+
+CMakeFiles/code.dir/BufferManager/bufferManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/code.dir/BufferManager/bufferManager.cpp.i"
+	E:\Dev-Cpp\Dev-Cpp\MinGW64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\74096\Desktop\DataBase System\miniSQL\code\BufferManager\bufferManager.cpp" > CMakeFiles\code.dir\BufferManager\bufferManager.cpp.i
+
+CMakeFiles/code.dir/BufferManager/bufferManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/code.dir/BufferManager/bufferManager.cpp.s"
+	E:\Dev-Cpp\Dev-Cpp\MinGW64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\74096\Desktop\DataBase System\miniSQL\code\BufferManager\bufferManager.cpp" -o CMakeFiles\code.dir\BufferManager\bufferManager.cpp.s
+
+CMakeFiles/code.dir/IndexManager/indexManager.cpp.obj: CMakeFiles/code.dir/flags.make
+CMakeFiles/code.dir/IndexManager/indexManager.cpp.obj: ../IndexManager/indexManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\74096\Desktop\DataBase System\miniSQL\code\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/code.dir/IndexManager/indexManager.cpp.obj"
+	E:\Dev-Cpp\Dev-Cpp\MinGW64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\code.dir\IndexManager\indexManager.cpp.obj -c "C:\Users\74096\Desktop\DataBase System\miniSQL\code\IndexManager\indexManager.cpp"
+
+CMakeFiles/code.dir/IndexManager/indexManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/code.dir/IndexManager/indexManager.cpp.i"
+	E:\Dev-Cpp\Dev-Cpp\MinGW64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\74096\Desktop\DataBase System\miniSQL\code\IndexManager\indexManager.cpp" > CMakeFiles\code.dir\IndexManager\indexManager.cpp.i
+
+CMakeFiles/code.dir/IndexManager/indexManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/code.dir/IndexManager/indexManager.cpp.s"
+	E:\Dev-Cpp\Dev-Cpp\MinGW64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\74096\Desktop\DataBase System\miniSQL\code\IndexManager\indexManager.cpp" -o CMakeFiles\code.dir\IndexManager\indexManager.cpp.s
+
+CMakeFiles/code.dir/RecordManager/recordManager.cpp.obj: CMakeFiles/code.dir/flags.make
+CMakeFiles/code.dir/RecordManager/recordManager.cpp.obj: ../RecordManager/recordManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\74096\Desktop\DataBase System\miniSQL\code\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/code.dir/RecordManager/recordManager.cpp.obj"
+	E:\Dev-Cpp\Dev-Cpp\MinGW64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\code.dir\RecordManager\recordManager.cpp.obj -c "C:\Users\74096\Desktop\DataBase System\miniSQL\code\RecordManager\recordManager.cpp"
+
+CMakeFiles/code.dir/RecordManager/recordManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/code.dir/RecordManager/recordManager.cpp.i"
+	E:\Dev-Cpp\Dev-Cpp\MinGW64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\74096\Desktop\DataBase System\miniSQL\code\RecordManager\recordManager.cpp" > CMakeFiles\code.dir\RecordManager\recordManager.cpp.i
+
+CMakeFiles/code.dir/RecordManager/recordManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/code.dir/RecordManager/recordManager.cpp.s"
+	E:\Dev-Cpp\Dev-Cpp\MinGW64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\74096\Desktop\DataBase System\miniSQL\code\RecordManager\recordManager.cpp" -o CMakeFiles\code.dir\RecordManager\recordManager.cpp.s
+
+CMakeFiles/code.dir/API/API.cpp.obj: CMakeFiles/code.dir/flags.make
+CMakeFiles/code.dir/API/API.cpp.obj: ../API/API.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\74096\Desktop\DataBase System\miniSQL\code\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/code.dir/API/API.cpp.obj"
+	E:\Dev-Cpp\Dev-Cpp\MinGW64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\code.dir\API\API.cpp.obj -c "C:\Users\74096\Desktop\DataBase System\miniSQL\code\API\API.cpp"
+
+CMakeFiles/code.dir/API/API.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/code.dir/API/API.cpp.i"
+	E:\Dev-Cpp\Dev-Cpp\MinGW64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\74096\Desktop\DataBase System\miniSQL\code\API\API.cpp" > CMakeFiles\code.dir\API\API.cpp.i
+
+CMakeFiles/code.dir/API/API.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/code.dir/API/API.cpp.s"
+	E:\Dev-Cpp\Dev-Cpp\MinGW64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\74096\Desktop\DataBase System\miniSQL\code\API\API.cpp" -o CMakeFiles\code.dir\API\API.cpp.s
+
 # Object files for target code
 code_OBJECTS = \
 "CMakeFiles/code.dir/main.cpp.obj" \
 "CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj" \
 "CMakeFiles/code.dir/StringProcessor/StringProcessor.cpp.obj" \
 "CMakeFiles/code.dir/Table/Table.cpp.obj" \
-"CMakeFiles/code.dir/GlobalVariable/GlobalVariable.cpp.obj"
+"CMakeFiles/code.dir/GlobalVariable/GlobalVariable.cpp.obj" \
+"CMakeFiles/code.dir/CatalogManger/catalogManager.cpp.obj" \
+"CMakeFiles/code.dir/BufferManager/bufferManager.cpp.obj" \
+"CMakeFiles/code.dir/IndexManager/indexManager.cpp.obj" \
+"CMakeFiles/code.dir/RecordManager/recordManager.cpp.obj" \
+"CMakeFiles/code.dir/API/API.cpp.obj"
 
 # External object files for target code
 code_EXTERNAL_OBJECTS =
@@ -137,11 +207,16 @@ code.exe: CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj
 code.exe: CMakeFiles/code.dir/StringProcessor/StringProcessor.cpp.obj
 code.exe: CMakeFiles/code.dir/Table/Table.cpp.obj
 code.exe: CMakeFiles/code.dir/GlobalVariable/GlobalVariable.cpp.obj
+code.exe: CMakeFiles/code.dir/CatalogManger/catalogManager.cpp.obj
+code.exe: CMakeFiles/code.dir/BufferManager/bufferManager.cpp.obj
+code.exe: CMakeFiles/code.dir/IndexManager/indexManager.cpp.obj
+code.exe: CMakeFiles/code.dir/RecordManager/recordManager.cpp.obj
+code.exe: CMakeFiles/code.dir/API/API.cpp.obj
 code.exe: CMakeFiles/code.dir/build.make
 code.exe: CMakeFiles/code.dir/linklibs.rsp
 code.exe: CMakeFiles/code.dir/objects1.rsp
 code.exe: CMakeFiles/code.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\74096\Desktop\DataBase System\miniSQL\code\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable code.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\74096\Desktop\DataBase System\miniSQL\code\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable code.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\code.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

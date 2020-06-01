@@ -82,10 +82,34 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/API/API.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/API/API.h">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/BufferManager/bufferManager.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/BufferManager/bufferManager.h">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/CatalogManger/catalogManager.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/CatalogManger/catalogManager.h">
+			<Option target="code"/>
+		</Unit>
 		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/GlobalVariable/GlobalVariable.cpp">
 			<Option target="code"/>
 		</Unit>
 		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/GlobalVariable/GlobalVariable.h">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/IndexManager/indexManager.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/IndexManager/indexManager.h">
 			<Option target="code"/>
 		</Unit>
 		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/Interpreter.cpp">
@@ -98,6 +122,12 @@
 			<Option target="code"/>
 		</Unit>
 		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/showResult.h">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/RecordManager/recordManager.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/RecordManager/recordManager.h">
 			<Option target="code"/>
 		</Unit>
 		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/StringProcessor/StringProcessor.cpp">

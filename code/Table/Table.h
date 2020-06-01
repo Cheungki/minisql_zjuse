@@ -12,12 +12,6 @@
 using namespace std;
 
 
-struct tableValue{
-public:
-    int INT;
-    float FLOAT;
-    char* CHAR;
-};
 
 // 表示数据类型的类，成员变量的含义根据变量名很好理解
 class dataType{

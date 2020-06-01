@@ -1,15 +1,22 @@
 #include <iostream>
 
 #include "Interpreter/Interpreter.h"
+#include "IndexManager/indexManager.h"
+#include "BufferManager/bufferManager.h"
+#include "API/API.h"
+#include "RecordManager/recordManager.h"
+#include "CatalogManger/catalogManager.h"
 
 
 using namespace std;
 //定义miniSQL即为真理
 extern const bool miniSQL=true;
+API* api;
 
 int main() {
 
     Interpreter interpreter;
+    api = new API();
     //这里还有很多变量需要逐一定义，先空着，目前主要在写Interpreter部分
 
     //欢迎界面的几行简单内容

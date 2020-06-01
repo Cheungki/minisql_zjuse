@@ -6,6 +6,56 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/API/API.cpp
+API.h
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/API/API.h
+
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/API/API.h
+string
+-
+vector
+-
+iostream
+-
+../BufferManager/bufferManager.h
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/BufferManager/bufferManager.h
+../RecordManager/recordManager.h
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/RecordManager/recordManager.h
+../CatalogManger/catalogManager.h
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/CatalogManger/catalogManager.h
+../IndexManager/indexManager.h
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/IndexManager/indexManager.h
+../GlobalVariable/GlobalVariable.h
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/GlobalVariable/GlobalVariable.h
+../Table/Table.h
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/Table/Table.h
+
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/BufferManager/bufferManager.cpp
+bufferManager.h
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/BufferManager/bufferManager.h
+
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/BufferManager/bufferManager.h
+
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/CatalogManger/catalogManager.cpp
+catalogManager.h
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/CatalogManger/catalogManager.h
+
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/CatalogManger/catalogManager.h
+
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/GlobalVariable/GlobalVariable.cpp
+GlobalVariable.h
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/GlobalVariable/GlobalVariable.h
+
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/GlobalVariable/GlobalVariable.h
+string
+-
+
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/IndexManager/indexManager.cpp
+indexManager.h
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/IndexManager/indexManager.h
+
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/IndexManager/indexManager.h
+
 C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/Interpreter.cpp
 Interpreter.h
 C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/Interpreter.h
@@ -35,8 +85,20 @@ string
 -
 vector
 -
+../StringProcessor/StringProcessor.h
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/StringProcessor/StringProcessor.h
 
 C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/showResult.h
+../Table/Table.h
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/Table/Table.h
+../GlobalVariable/GlobalVariable.h
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/GlobalVariable/GlobalVariable.h
+
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/RecordManager/recordManager.cpp
+recordManager.h
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/RecordManager/recordManager.h
+
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/RecordManager/recordManager.h
 
 C:/Users/74096/Desktop/DataBase System/miniSQL/code/StringProcessor/StringProcessor.h
 iostream
@@ -47,4 +109,24 @@ string
 -
 algorithm
 -
+
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/Table/Table.cpp
+Table.h
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/Table/Table.h
+
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/Table/Table.h
+iostream
+-
+string
+-
+vector
+-
+../GlobalVariable/GlobalVariable.h
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/GlobalVariable/GlobalVariable.h
+
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/main.cpp
+iostream
+-
+Interpreter/Interpreter.h
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/Interpreter.h
 
