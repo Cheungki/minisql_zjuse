@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/code.dir/BufferManager/bufferManager.cpp.obj"
   "CMakeFiles/code.dir/CatalogManger/catalogManager.cpp.obj"
   "CMakeFiles/code.dir/GlobalVariable/GlobalVariable.cpp.obj"
+  "CMakeFiles/code.dir/IndexManager/index.cpp.obj"
   "CMakeFiles/code.dir/IndexManager/indexManager.cpp.obj"
   "CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj"
   "CMakeFiles/code.dir/RecordManager/recordManager.cpp.obj"

@@ -59,3 +59,13 @@ vector<vector<tableValue>*>* API::select(const string& tableName, vector<logicCo
 {
 
 }
+
+int API::findRecord(const string &tableName, vector<logicCompare> *conditions, vector<vector<tableValue> *> *results, vector<int> *ids)
+{
+
+}
+
+void API::writeKey(dataType *attribution, char *key, tableValue v)
+{
+
+}

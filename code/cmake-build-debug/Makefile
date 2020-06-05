@@ -230,6 +230,33 @@ GlobalVariable/GlobalVariable.cpp.s:
 	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/GlobalVariable/GlobalVariable.cpp.s
 .PHONY : GlobalVariable/GlobalVariable.cpp.s
 
+IndexManager/index.obj: IndexManager/index.cpp.obj
+
+.PHONY : IndexManager/index.obj
+
+# target to build an object file
+IndexManager/index.cpp.obj:
+	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/IndexManager/index.cpp.obj
+.PHONY : IndexManager/index.cpp.obj
+
+IndexManager/index.i: IndexManager/index.cpp.i
+
+.PHONY : IndexManager/index.i
+
+# target to preprocess a source file
+IndexManager/index.cpp.i:
+	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/IndexManager/index.cpp.i
+.PHONY : IndexManager/index.cpp.i
+
+IndexManager/index.s: IndexManager/index.cpp.s
+
+.PHONY : IndexManager/index.s
+
+# target to generate assembly for a file
+IndexManager/index.cpp.s:
+	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/IndexManager/index.cpp.s
+.PHONY : IndexManager/index.cpp.s
+
 IndexManager/indexManager.obj: IndexManager/indexManager.cpp.obj
 
 .PHONY : IndexManager/indexManager.obj
@@ -413,6 +440,9 @@ help:
 	@echo ... GlobalVariable/GlobalVariable.obj
 	@echo ... GlobalVariable/GlobalVariable.i
 	@echo ... GlobalVariable/GlobalVariable.s
+	@echo ... IndexManager/index.obj
+	@echo ... IndexManager/index.i
+	@echo ... IndexManager/index.s
 	@echo ... IndexManager/indexManager.obj
 	@echo ... IndexManager/indexManager.i
 	@echo ... IndexManager/indexManager.s

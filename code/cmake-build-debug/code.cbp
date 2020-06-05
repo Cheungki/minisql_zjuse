@@ -106,6 +106,12 @@
 		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/GlobalVariable/GlobalVariable.h">
 			<Option target="code"/>
 		</Unit>
+		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/IndexManager/index.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/IndexManager/index.h">
+			<Option target="code"/>
+		</Unit>
 		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/IndexManager/indexManager.cpp">
 			<Option target="code"/>
 		</Unit>
