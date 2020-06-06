@@ -8,6 +8,7 @@
 #include<map>
 #include<set>
 #include<vector>
+#include<string.h>
 
 #include"../GlobalVariable/GlobalVariable.h"
 #include"../Table/Table.h"
@@ -16,13 +17,14 @@
 
 using namespace std;
 
+// 日志管理，各个member function的作用根据函数名就可以推测出来，今天晚上跑去吃鸡翅了所以更新的不是很多
 class catalogManager {
 private:
     static set<string> tableNameList;
     static map<string, index*> indexMap;
 public:
     catalogManager();
-    ~catalogManager();
+    //~catalogManager();
     Table* getTableName(const string& tableName);
     bool catalogCreateTable(const string& tableName, vector<dataType*>* attributions);
     bool catalogDropTable(const string& tableName);

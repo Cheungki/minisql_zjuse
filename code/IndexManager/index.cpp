@@ -3,7 +3,7 @@
 //
 
 #include "index.h"
-index::index(const char* self, const char* table, const char* column)
+index::index(string& self, string& table, string& column)
 {
     name = self;
     tableName = table;

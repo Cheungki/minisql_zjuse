@@ -1,16 +1,44 @@
 //
 // Created by 74096 on 2020/6/1.
 //
-
+#include<fstream>
 #include "catalogManager.h"
+
+set<string> catalogManager::tableNameList;
+map<string, index*> catalogManager::indexMap;
+
 catalogManager::catalogManager()
 {
+    if(tableNameList.empty())
+    {
+        const string catalogPath = "./tableNameList.db";
+        ifstream fin;
+        fin.open(catalogPath, ios::in);
+        if(fin.fail()){
+            cout<<"Run time error! Can't open catalog!"<<endl;
+        }
+        string table;
+        while(fin >> table){
+            tableNameList.insert(table);
+        }
+        fin.close();
+    }
 
-}
-
-catalogManager::~catalogManager()
-{
-
+    if(indexMap.empty()){
+        const string catalogPath = "./indexNameList.db";
+        ifstream fin;
+        fin.open(catalogPath, ios::in);
+        if(!fin.fail()){
+            string indexName, tableName, columnName;
+            while(fin >> indexName >> tableName >> columnName){
+                index* tmp = new index(indexName, tableName, columnName);
+                indexMap[indexName] = tmp;
+            }
+        }
+        else{
+            cout<<"Run time error! Can't open index table!"<<endl;
+        }
+    }
 }
 
 bool catalogManager::catalogCreateTable(const string& tableName, vector<dataType *> *attributions)

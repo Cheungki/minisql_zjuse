@@ -10,7 +10,7 @@ using namespace std;
 
 class index {
 public:
-    index(const char* self, const char* table, const char* column);
+    index(string& self, string& table, string& column);
     const char* getName() const;
     const char* getTableName() const;
     const char* getColumnName() const;
