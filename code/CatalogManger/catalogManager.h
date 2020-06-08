@@ -25,7 +25,7 @@ private:
 public:
     catalogManager();
     //~catalogManager();
-    Table* getTableName(const string& tableName);
+    Table* getTable(const string& tableName);
     bool catalogCreateTable(const string& tableName, vector<dataType*>* attributions);
     bool catalogDropTable(const string& tableName);
     bool catalogUpdateTable(Table* table);

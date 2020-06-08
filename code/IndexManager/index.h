@@ -11,9 +11,9 @@ using namespace std;
 class index {
 public:
     index(string& self, string& table, string& column);
-    const char* getName() const;
-    const char* getTableName() const;
-    const char* getColumnName() const;
+    string getName() const;
+    string getTableName() const;
+    string getColumnName() const;
 
 private:
     string name, tableName, columnName;
