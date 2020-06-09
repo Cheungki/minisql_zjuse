@@ -48,6 +48,8 @@ Table::Table(string name, vector<dataType *> *attribute, vector<string> *index)
             cout<<"Run time error! Wrong variable type!"<<endl;
         }
     }
+    //这里需要空出一格，表示结尾，后面读的时候会把这一格子跳过
+    size += 1;
     if(primaryKey == -1){
         cout<<"Run time error! No primary key!"<<endl;
     }
@@ -102,5 +104,4 @@ void Table::dropIndex(const string &indexName)
         }
     }
     indexAttribution->erase(indexAttribution->begin() + i);
-    return ;
 }

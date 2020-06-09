@@ -116,9 +116,49 @@ bool catalogManager::catalogCreateTable(const string& tableName, vector<dataType
     return true;
 }
 
-bool catalogManager::catalogCreateIndex(const string& indexName, const string& tableName, const string& columnName)
+bool catalogManager::catalogCreateIndex(string& indexName, string& tableName, string& columnName)
 {
+    // 需要对索引进行各种各样的检查：是否已经存在，对应的表和属性是否存在，属性是否为unique和primary，以及是否已经存在同属性的index
+    if(indexMap.count(indexName) >= 1){
+        cout<<"Run time error! Index already exists!"<<endl;
+        return false;
+    }
+    if(!tableNameList.count(tableName)){
+        cout<<"Run time error! Table doesn't exist!"<<endl;
+        return false;
+    }
+    Table* temp = getTable(tableName);
+    dataType* attribution = temp->searchAttribution(columnName);
+    if(attribution == nullptr){
+        cout<<"Run time error! Attribution doesn't exist!"<<endl;
+        return false;
+    }
+    else if(!attribution->isPrimaryKey && !attribution->isUnique){
+        cout<<"Run time error! Attribution is not unique!"<<endl;
+        return false;
+    }
+    index* tempIndex = getIndex(tableName, columnName);
+    if(tempIndex != nullptr){
+        cout<<"Run time error! Redundant index!"<<endl;
+        return false;
+    }
 
+    // 检查完了之后在对应的数据结构中更新一个新的index的相关数据
+    attribution->hasIndex = true;
+    temp->indexAttribution->push_back(indexName);
+    catalogUpdateTable(temp);
+    auto* newIndex = new index(indexName, tableName, columnName);
+    indexMap[indexName] = newIndex;
+    ofstream fout;
+    fout.open("./indexNameList.db", ios::app);
+    if(fout.fail()){
+        cout<<"Run time error! Fail to open the catalog file!"<<endl;
+        return false;
+    }
+    fout<<indexName<<" "<<tableName<<" "<<columnName<<endl;
+    fout.close();
+
+    return true;
 }
 
 

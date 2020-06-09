@@ -100,6 +100,12 @@
 		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/CatalogManger/catalogManager.h">
 			<Option target="code"/>
 		</Unit>
+		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/CatalogManger/fileManager.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/CatalogManger/fileManager.h">
+			<Option target="code"/>
+		</Unit>
 		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/GlobalVariable/GlobalVariable.cpp">
 			<Option target="code"/>
 		</Unit>
@@ -146,6 +152,12 @@
 			<Option target="code"/>
 		</Unit>
 		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/Table/Table.h">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/Table/tableFile.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/Table/tableFile.h">
 			<Option target="code"/>
 		</Unit>
 		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/main.cpp">

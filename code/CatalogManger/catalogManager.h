@@ -31,7 +31,7 @@ public:
     bool catalogUpdateTable(Table* table);
     bool catalogDropIndex(const string& indexName);
     bool catalogDropIndex(const string& tableName, const string& columnName);
-    bool catalogCreateIndex(const string& indexName, const string& tableName, const string& columnName);
+    bool catalogCreateIndex(string& indexName, string& tableName, string& columnName);
     index* getIndex(const string& indexName);
     index* getIndex(const string& tableName, const string& columnName);
     void getIndexbyTable(const string& tableName, vector<index*>* indexVector);
