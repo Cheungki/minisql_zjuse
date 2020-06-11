@@ -7,6 +7,7 @@ CMakeFiles/code.dir/API/API.cpp.obj
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/BufferManager/bufferManager.h
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/CatalogManger/catalogManager.h
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/GlobalVariable/GlobalVariable.h
+ C:/Users/74096/Desktop/DataBase System/miniSQL/code/IndexManager/index.h
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/IndexManager/indexManager.h
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/RecordManager/recordManager.h
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/Table/Table.h
@@ -16,9 +17,20 @@ CMakeFiles/code.dir/BufferManager/bufferManager.cpp.obj
 CMakeFiles/code.dir/CatalogManger/catalogManager.cpp.obj
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/CatalogManger/catalogManager.cpp
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/CatalogManger/catalogManager.h
+ C:/Users/74096/Desktop/DataBase System/miniSQL/code/GlobalVariable/GlobalVariable.h
+ C:/Users/74096/Desktop/DataBase System/miniSQL/code/IndexManager/index.h
+ C:/Users/74096/Desktop/DataBase System/miniSQL/code/Table/Table.h
+CMakeFiles/code.dir/CatalogManger/fileManager.cpp.obj
+ C:/Users/74096/Desktop/DataBase System/miniSQL/code/CatalogManger/fileManager.cpp
+ C:/Users/74096/Desktop/DataBase System/miniSQL/code/CatalogManger/fileManager.h
+ C:/Users/74096/Desktop/DataBase System/miniSQL/code/GlobalVariable/GlobalVariable.h
+ C:/Users/74096/Desktop/DataBase System/miniSQL/code/Table/Table.h
 CMakeFiles/code.dir/GlobalVariable/GlobalVariable.cpp.obj
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/GlobalVariable/GlobalVariable.cpp
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/GlobalVariable/GlobalVariable.h
+CMakeFiles/code.dir/IndexManager/index.cpp.obj
+ C:/Users/74096/Desktop/DataBase System/miniSQL/code/IndexManager/index.cpp
+ C:/Users/74096/Desktop/DataBase System/miniSQL/code/IndexManager/index.h
 CMakeFiles/code.dir/IndexManager/indexManager.cpp.obj
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/IndexManager/indexManager.cpp
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/IndexManager/indexManager.h
@@ -31,8 +43,13 @@ CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/StringProcessor/StringProcessor.h
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/Table/Table.h
 CMakeFiles/code.dir/RecordManager/recordManager.cpp.obj
+ C:/Users/74096/Desktop/DataBase System/miniSQL/code/BufferManager/bufferManager.h
+ C:/Users/74096/Desktop/DataBase System/miniSQL/code/CatalogManger/catalogManager.h
+ C:/Users/74096/Desktop/DataBase System/miniSQL/code/GlobalVariable/GlobalVariable.h
+ C:/Users/74096/Desktop/DataBase System/miniSQL/code/IndexManager/index.h
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/RecordManager/recordManager.cpp
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/RecordManager/recordManager.h
+ C:/Users/74096/Desktop/DataBase System/miniSQL/code/Table/Table.h
 CMakeFiles/code.dir/StringProcessor/StringProcessor.cpp.obj
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/StringProcessor/StringProcessor.cpp
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/StringProcessor/StringProcessor.h
@@ -40,11 +57,20 @@ CMakeFiles/code.dir/Table/Table.cpp.obj
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/GlobalVariable/GlobalVariable.h
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/Table/Table.cpp
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/Table/Table.h
+CMakeFiles/code.dir/Table/tableFile.cpp.obj
+ C:/Users/74096/Desktop/DataBase System/miniSQL/code/Table/tableFile.cpp
+ C:/Users/74096/Desktop/DataBase System/miniSQL/code/Table/tableFile.h
 CMakeFiles/code.dir/main.cpp.obj
+ C:/Users/74096/Desktop/DataBase System/miniSQL/code/API/API.h
+ C:/Users/74096/Desktop/DataBase System/miniSQL/code/BufferManager/bufferManager.h
+ C:/Users/74096/Desktop/DataBase System/miniSQL/code/CatalogManger/catalogManager.h
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/GlobalVariable/GlobalVariable.h
+ C:/Users/74096/Desktop/DataBase System/miniSQL/code/IndexManager/index.h
+ C:/Users/74096/Desktop/DataBase System/miniSQL/code/IndexManager/indexManager.h
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/Interpreter.h
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/callAPI.h
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/showResult.h
+ C:/Users/74096/Desktop/DataBase System/miniSQL/code/RecordManager/recordManager.h
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/StringProcessor/StringProcessor.h
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/Table/Table.h
  C:/Users/74096/Desktop/DataBase System/miniSQL/code/main.cpp

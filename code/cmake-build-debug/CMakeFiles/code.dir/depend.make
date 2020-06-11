@@ -6,6 +6,7 @@ CMakeFiles/code.dir/API/API.cpp.obj: ../API/API.h
 CMakeFiles/code.dir/API/API.cpp.obj: ../BufferManager/bufferManager.h
 CMakeFiles/code.dir/API/API.cpp.obj: ../CatalogManger/catalogManager.h
 CMakeFiles/code.dir/API/API.cpp.obj: ../GlobalVariable/GlobalVariable.h
+CMakeFiles/code.dir/API/API.cpp.obj: ../IndexManager/index.h
 CMakeFiles/code.dir/API/API.cpp.obj: ../IndexManager/indexManager.h
 CMakeFiles/code.dir/API/API.cpp.obj: ../RecordManager/recordManager.h
 CMakeFiles/code.dir/API/API.cpp.obj: ../Table/Table.h
@@ -15,9 +16,20 @@ CMakeFiles/code.dir/BufferManager/bufferManager.cpp.obj: ../BufferManager/buffer
 
 CMakeFiles/code.dir/CatalogManger/catalogManager.cpp.obj: ../CatalogManger/catalogManager.cpp
 CMakeFiles/code.dir/CatalogManger/catalogManager.cpp.obj: ../CatalogManger/catalogManager.h
+CMakeFiles/code.dir/CatalogManger/catalogManager.cpp.obj: ../GlobalVariable/GlobalVariable.h
+CMakeFiles/code.dir/CatalogManger/catalogManager.cpp.obj: ../IndexManager/index.h
+CMakeFiles/code.dir/CatalogManger/catalogManager.cpp.obj: ../Table/Table.h
+
+CMakeFiles/code.dir/CatalogManger/fileManager.cpp.obj: ../CatalogManger/fileManager.cpp
+CMakeFiles/code.dir/CatalogManger/fileManager.cpp.obj: ../CatalogManger/fileManager.h
+CMakeFiles/code.dir/CatalogManger/fileManager.cpp.obj: ../GlobalVariable/GlobalVariable.h
+CMakeFiles/code.dir/CatalogManger/fileManager.cpp.obj: ../Table/Table.h
 
 CMakeFiles/code.dir/GlobalVariable/GlobalVariable.cpp.obj: ../GlobalVariable/GlobalVariable.cpp
 CMakeFiles/code.dir/GlobalVariable/GlobalVariable.cpp.obj: ../GlobalVariable/GlobalVariable.h
+
+CMakeFiles/code.dir/IndexManager/index.cpp.obj: ../IndexManager/index.cpp
+CMakeFiles/code.dir/IndexManager/index.cpp.obj: ../IndexManager/index.h
 
 CMakeFiles/code.dir/IndexManager/indexManager.cpp.obj: ../IndexManager/indexManager.cpp
 CMakeFiles/code.dir/IndexManager/indexManager.cpp.obj: ../IndexManager/indexManager.h
@@ -30,8 +42,13 @@ CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj: ../Interpreter/showResult.h
 CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj: ../StringProcessor/StringProcessor.h
 CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj: ../Table/Table.h
 
+CMakeFiles/code.dir/RecordManager/recordManager.cpp.obj: ../BufferManager/bufferManager.h
+CMakeFiles/code.dir/RecordManager/recordManager.cpp.obj: ../CatalogManger/catalogManager.h
+CMakeFiles/code.dir/RecordManager/recordManager.cpp.obj: ../GlobalVariable/GlobalVariable.h
+CMakeFiles/code.dir/RecordManager/recordManager.cpp.obj: ../IndexManager/index.h
 CMakeFiles/code.dir/RecordManager/recordManager.cpp.obj: ../RecordManager/recordManager.cpp
 CMakeFiles/code.dir/RecordManager/recordManager.cpp.obj: ../RecordManager/recordManager.h
+CMakeFiles/code.dir/RecordManager/recordManager.cpp.obj: ../Table/Table.h
 
 CMakeFiles/code.dir/StringProcessor/StringProcessor.cpp.obj: ../StringProcessor/StringProcessor.cpp
 CMakeFiles/code.dir/StringProcessor/StringProcessor.cpp.obj: ../StringProcessor/StringProcessor.h
@@ -40,10 +57,19 @@ CMakeFiles/code.dir/Table/Table.cpp.obj: ../GlobalVariable/GlobalVariable.h
 CMakeFiles/code.dir/Table/Table.cpp.obj: ../Table/Table.cpp
 CMakeFiles/code.dir/Table/Table.cpp.obj: ../Table/Table.h
 
+CMakeFiles/code.dir/Table/tableFile.cpp.obj: ../Table/tableFile.cpp
+CMakeFiles/code.dir/Table/tableFile.cpp.obj: ../Table/tableFile.h
+
+CMakeFiles/code.dir/main.cpp.obj: ../API/API.h
+CMakeFiles/code.dir/main.cpp.obj: ../BufferManager/bufferManager.h
+CMakeFiles/code.dir/main.cpp.obj: ../CatalogManger/catalogManager.h
 CMakeFiles/code.dir/main.cpp.obj: ../GlobalVariable/GlobalVariable.h
+CMakeFiles/code.dir/main.cpp.obj: ../IndexManager/index.h
+CMakeFiles/code.dir/main.cpp.obj: ../IndexManager/indexManager.h
 CMakeFiles/code.dir/main.cpp.obj: ../Interpreter/Interpreter.h
 CMakeFiles/code.dir/main.cpp.obj: ../Interpreter/callAPI.h
 CMakeFiles/code.dir/main.cpp.obj: ../Interpreter/showResult.h
+CMakeFiles/code.dir/main.cpp.obj: ../RecordManager/recordManager.h
 CMakeFiles/code.dir/main.cpp.obj: ../StringProcessor/StringProcessor.h
 CMakeFiles/code.dir/main.cpp.obj: ../Table/Table.h
 CMakeFiles/code.dir/main.cpp.obj: ../main.cpp

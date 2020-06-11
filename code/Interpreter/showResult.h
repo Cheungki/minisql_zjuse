@@ -50,12 +50,15 @@ public:
             cout<<"Insertion failed! Please try again!"<<endl;
         }
     }
-    static void showDelete(bool flag, const string& table){
-        if(flag){
+    static void showDelete(int flag, const string& table){
+        if(flag == 1){
             cout<<"Delete from table "<<table<<" Successfully!"<<endl;
         }
-        else{
+        else if(!flag){
             cout<<"Deletion failed! Please try again!"<<endl;
+        }
+        else{
+            cout<<"Run time error! Table doesn't exist!"<<endl;
         }
     }
     static void showSelect(vector<tableValue*>* result, string table){

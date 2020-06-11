@@ -8,6 +8,8 @@
 #include<vector>
 #include<string>
 #include<algorithm>
+#include"../GlobalVariable/GlobalVariable.h"
+#include"../Table/Table.h"
 
 using namespace std;
 
@@ -51,11 +53,11 @@ public:
     // 对cmd命令的优化，包括去首尾空格和全部转换成小写，卸载这个类里提高了代码的复用性
     static string cmdOptimum(string& cmd)
     {
-        for(int i=0; i < cmd.length() ; i++) {
-            if(cmd[i] == '\t')
-                cmd[i] = ' ';
-            if(cmd[i] >= 'A'&&cmd[i] <= 'Z')
-                cmd[i] += 32;
+        for(char & i : cmd) {
+            if(i == '\t')
+                i = ' ';
+            if(i >= 'A'&&i <= 'Z')
+                i += 32;
         }
         preTrim(cmd);
         cmd = cmd.substr(0, cmd.length()-1);
@@ -94,6 +96,43 @@ public:
             return !(left[len - 1] >= right[len - 1] || right[0] <= left[0]);
         }
 
+    }
+
+    static int getCompareType(string x)
+    {
+        int count = 0, result = -1;
+        if(x.find('>') != -1){
+            count++;
+            result = GREATER;
+        }
+        if(x.find('<') != -1){
+            count++;
+            result = LESS;
+        }
+        if(x.find("==") != -1){
+            count++;
+            result = EQUAL;
+        }
+        if(x.find(">=") != -1){
+            count++;
+            result = GREATEREQUAL;
+        }
+        if(x.find("<=") != -1){
+            count++;
+            result = LESSEQUAL;
+        }
+        if(x.find("!=") != -1){
+            count++;
+            result = NOTEQUAL;
+        }
+        if(count != 1)
+            return -1;
+        else return result;
+    }
+
+    static logicCompare* getLogic(string x, int compareType, vector<dataType*>* attribution)
+    {
+        return nullptr;
     }
 };
 
