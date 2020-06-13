@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "Interpreter/Interpreter.h"
+#include "StringProcessor/StringProcessor.h"
 #include "IndexManager/indexManager.h"
 #include "BufferManager/bufferManager.h"
 #include "API/API.h"
@@ -13,10 +14,11 @@ using namespace std;
 extern const bool miniSQL=true;
 API* api;
 
+
 int main() {
 
     Interpreter interpreter;
-    api = new API();
+    // api = new API();
     //这里还有很多变量需要逐一定义，先空着，目前主要在写Interpreter部分
 
     //欢迎界面的几行简单内容
@@ -35,3 +37,12 @@ int main() {
     system("pause");
     return 0;
 }
+
+/**
+int main()
+{
+    cout<<stringProcessor::floatCheckAndChange("12.3").second<<endl;
+    string test = "\"1234567890\"";
+    cout << stringProcessor::charCheckAndChange(test) << endl;
+}
+ */

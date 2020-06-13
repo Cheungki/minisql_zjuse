@@ -56,10 +56,6 @@ string
 
 C:/Users/74096/Desktop/DataBase System/miniSQL/code/IndexManager/indexManager.h
 
-C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/Interpreter.cpp
-Interpreter.h
-C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/Interpreter.h
-
 C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/Interpreter.h
 iostream
 -
@@ -89,6 +85,8 @@ vector
 C:/Users/74096/Desktop/DataBase System/miniSQL/code/StringProcessor/StringProcessor.h
 ../GlobalVariable/GlobalVariable.h
 C:/Users/74096/Desktop/DataBase System/miniSQL/code/GlobalVariable/GlobalVariable.h
+../API/API.h
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/API/API.h
 
 C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/showResult.h
 ../Table/Table.h
@@ -119,6 +117,10 @@ string
 -
 algorithm
 -
+../GlobalVariable/GlobalVariable.h
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/GlobalVariable/GlobalVariable.h
+../Table/Table.h
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/Table/Table.h
 
 C:/Users/74096/Desktop/DataBase System/miniSQL/code/Table/Table.h
 iostream
@@ -135,6 +137,8 @@ iostream
 -
 Interpreter/Interpreter.h
 C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/Interpreter.h
+StringProcessor/StringProcessor.h
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/StringProcessor/StringProcessor.h
 IndexManager/indexManager.h
 C:/Users/74096/Desktop/DataBase System/miniSQL/code/IndexManager/indexManager.h
 BufferManager/bufferManager.h

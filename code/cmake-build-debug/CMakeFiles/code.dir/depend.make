@@ -34,13 +34,31 @@ CMakeFiles/code.dir/IndexManager/index.cpp.obj: ../IndexManager/index.h
 CMakeFiles/code.dir/IndexManager/indexManager.cpp.obj: ../IndexManager/indexManager.cpp
 CMakeFiles/code.dir/IndexManager/indexManager.cpp.obj: ../IndexManager/indexManager.h
 
+CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj: ../API/API.h
+CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj: ../BufferManager/bufferManager.h
+CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj: ../CatalogManger/catalogManager.h
 CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj: ../GlobalVariable/GlobalVariable.h
+CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj: ../IndexManager/index.h
+CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj: ../IndexManager/indexManager.h
 CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj: ../Interpreter/Interpreter.cpp
 CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj: ../Interpreter/Interpreter.h
 CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj: ../Interpreter/callAPI.h
 CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj: ../Interpreter/showResult.h
+CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj: ../RecordManager/recordManager.h
 CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj: ../StringProcessor/StringProcessor.h
 CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj: ../Table/Table.h
+
+CMakeFiles/code.dir/Interpreter/callAPI.cpp.obj: ../API/API.h
+CMakeFiles/code.dir/Interpreter/callAPI.cpp.obj: ../BufferManager/bufferManager.h
+CMakeFiles/code.dir/Interpreter/callAPI.cpp.obj: ../CatalogManger/catalogManager.h
+CMakeFiles/code.dir/Interpreter/callAPI.cpp.obj: ../GlobalVariable/GlobalVariable.h
+CMakeFiles/code.dir/Interpreter/callAPI.cpp.obj: ../IndexManager/index.h
+CMakeFiles/code.dir/Interpreter/callAPI.cpp.obj: ../IndexManager/indexManager.h
+CMakeFiles/code.dir/Interpreter/callAPI.cpp.obj: ../Interpreter/callAPI.cpp
+CMakeFiles/code.dir/Interpreter/callAPI.cpp.obj: ../Interpreter/callAPI.h
+CMakeFiles/code.dir/Interpreter/callAPI.cpp.obj: ../RecordManager/recordManager.h
+CMakeFiles/code.dir/Interpreter/callAPI.cpp.obj: ../StringProcessor/StringProcessor.h
+CMakeFiles/code.dir/Interpreter/callAPI.cpp.obj: ../Table/Table.h
 
 CMakeFiles/code.dir/RecordManager/recordManager.cpp.obj: ../BufferManager/bufferManager.h
 CMakeFiles/code.dir/RecordManager/recordManager.cpp.obj: ../CatalogManger/catalogManager.h
@@ -50,8 +68,10 @@ CMakeFiles/code.dir/RecordManager/recordManager.cpp.obj: ../RecordManager/record
 CMakeFiles/code.dir/RecordManager/recordManager.cpp.obj: ../RecordManager/recordManager.h
 CMakeFiles/code.dir/RecordManager/recordManager.cpp.obj: ../Table/Table.h
 
+CMakeFiles/code.dir/StringProcessor/StringProcessor.cpp.obj: ../GlobalVariable/GlobalVariable.h
 CMakeFiles/code.dir/StringProcessor/StringProcessor.cpp.obj: ../StringProcessor/StringProcessor.cpp
 CMakeFiles/code.dir/StringProcessor/StringProcessor.cpp.obj: ../StringProcessor/StringProcessor.h
+CMakeFiles/code.dir/StringProcessor/StringProcessor.cpp.obj: ../Table/Table.h
 
 CMakeFiles/code.dir/Table/Table.cpp.obj: ../GlobalVariable/GlobalVariable.h
 CMakeFiles/code.dir/Table/Table.cpp.obj: ../Table/Table.cpp

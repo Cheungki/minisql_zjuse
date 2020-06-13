@@ -45,11 +45,13 @@ private:
     string valName;
     int operation;
     tableValue immediate;
-    logicCompare(string& name, int op, tableValue imm);
     bool checkCondition(int result);
     static int compareInt(int a, int b);
     static int compareFloat(float a, float b);
     static int compareChar(const char* a, const char*b, int length);
+
+public:
+    logicCompare(string& name, int op, tableValue imm);
 };
 
 class singleBlock{
