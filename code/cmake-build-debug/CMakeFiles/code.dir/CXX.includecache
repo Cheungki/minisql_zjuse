@@ -56,6 +56,10 @@ string
 
 C:/Users/74096/Desktop/DataBase System/miniSQL/code/IndexManager/indexManager.h
 
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/Interpreter.cpp
+Interpreter.h
+C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/Interpreter.h
+
 C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/Interpreter.h
 iostream
 -
@@ -131,22 +135,4 @@ vector
 -
 ../GlobalVariable/GlobalVariable.h
 C:/Users/74096/Desktop/DataBase System/miniSQL/code/GlobalVariable/GlobalVariable.h
-
-C:/Users/74096/Desktop/DataBase System/miniSQL/code/main.cpp
-iostream
--
-Interpreter/Interpreter.h
-C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/Interpreter.h
-StringProcessor/StringProcessor.h
-C:/Users/74096/Desktop/DataBase System/miniSQL/code/StringProcessor/StringProcessor.h
-IndexManager/indexManager.h
-C:/Users/74096/Desktop/DataBase System/miniSQL/code/IndexManager/indexManager.h
-BufferManager/bufferManager.h
-C:/Users/74096/Desktop/DataBase System/miniSQL/code/BufferManager/bufferManager.h
-API/API.h
-C:/Users/74096/Desktop/DataBase System/miniSQL/code/API/API.h
-RecordManager/recordManager.h
-C:/Users/74096/Desktop/DataBase System/miniSQL/code/RecordManager/recordManager.h
-CatalogManger/catalogManager.h
-C:/Users/74096/Desktop/DataBase System/miniSQL/code/CatalogManger/catalogManager.h
 

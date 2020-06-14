@@ -43,3 +43,5 @@
 【zyc】2020.06.09 写完了catalog manager，添加了一个file manager的模块，下属于buffer manager模块
 
 【zyc】2020.06.13 写了一大堆bullshit code完成了一个delete语句的语法二次分解，感觉有点麻烦，语法分解的地方还差最后一个select的语法分解，不过select的地方代码可以复用，预计明天考完证券可以继续搞，问题是好像不容易进行测试，我也不知道有没有bug-free
+
+【zyc】2020.06.14 写了一个create table的语法分割，但是**还没有经过测试**，不知道能不能用

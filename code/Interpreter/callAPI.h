@@ -20,7 +20,7 @@ public:
     static bool callDropIndexAPI(const string& indexName);
     static bool callCreateIndexAPI(const string& index, const string& table, const string& attribute);
     static bool callInsertAPI(const string& table, string& value);
-    static bool callCreateTableAPI(const string& table, const string& element);
+    static bool callCreateTableAPI(const string& table, string& element);
     static vector<tableValue*>* callSelectAPI(string& table, string& condition);
     // 调用delete API的静态成员函数，condition是where后面的全部内容
     // 1表示成功，0表示失败，-1表示异常
