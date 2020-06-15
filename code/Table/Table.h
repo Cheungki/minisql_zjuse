@@ -22,6 +22,8 @@ public:
     dataType(int input_type, int input_n, string input_typeName, bool input_isUnique, bool input_isPrimaryKey, bool input_hasIndex);
     //获取数据长度的方法
     int getDataLength();
+    // 这是一个可以看data type内部情况的成员函数，用于在测试的时候使用
+    void showDataType();
 private:
 };
 

@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/code.dir/IndexManager/indexManager.cpp.obj"
   "CMakeFiles/code.dir/Interpreter/Interpreter.cpp.obj"
   "CMakeFiles/code.dir/Interpreter/callAPI.cpp.obj"
+  "CMakeFiles/code.dir/Interpreter/showResult.cpp.obj"
   "CMakeFiles/code.dir/RecordManager/recordManager.cpp.obj"
   "CMakeFiles/code.dir/StringProcessor/StringProcessor.cpp.obj"
   "CMakeFiles/code.dir/Table/Table.cpp.obj"

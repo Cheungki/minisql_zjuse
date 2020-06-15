@@ -38,7 +38,7 @@ bool callAPI::callCreateTableAPI(const string& table, string& element){
     dataType * tempAttr;
     int tempType, tempN;
     string tempName;
-    bool tempUnique, tempPrimary, tempIndex;
+    bool tempUnique = false, tempPrimary = false, tempIndex = false;
     string primaryKey;
     int primaryKeyCount = 0;
     for(auto & i : temp)
@@ -76,9 +76,9 @@ bool callAPI::callCreateTableAPI(const string& table, string& element){
                 cout<<"Syntax error! Can't create table! Illegal create command!"<<endl;
                 return false;
             }
-            tempUnique = true;
+            else
+                tempUnique = true;
         }
-        tempUnique = false;
 
         // 第三类是普通的属性名+类型
         stringProcessor::preTrim(attr[0]);
@@ -128,17 +128,23 @@ bool callAPI::callCreateTableAPI(const string& table, string& element){
         cout<<"Syntax error! Can't create table! No defined attribution!"<<endl;
         return false;
     }
-    if(primaryKeyCount >= 2 || !primaryKeyCount){
+    if(primaryKeyCount >= 2){
         cout<<"Syntax error! Can't create table! More than 1 primary keys!"<<endl;
         return false;
     }
+    if(primaryKeyCount == 0){
+        cout<<"Syntax error! Can't create table! No primary keys!"<<endl;
+        return false;
+    }
     int i;
+    (*attribution)[0]->showDataType();
     for(i = 0; i < attribution->size(); i++){
         if((*attribution)[i]->typeName == primaryKey){
             (*attribution)[i]->isPrimaryKey = true;
             break;
         }
     }
+    // (*attribution)[0]->showDataType();
     if( i == attribution->size()){
         cout<<"Syntax error! Can't create table! No matching primary key!"<<endl;
         return false;
@@ -148,13 +154,6 @@ bool callAPI::callCreateTableAPI(const string& table, string& element){
     return result;
 }
 
-vector<tableValue*>* callAPI::callSelectAPI(string& table, string& condition){
-    stringProcessor::preTrim(table);
-    stringProcessor::preTrim(condition);
-    cout<<table<<endl;
-    cout<<condition<<endl;
-    return nullptr;
-}
 
 // 调用delete API的静态成员函数，condition是where后面的全部内容
 // 1表示成功，0表示失败，-1表示异常
@@ -194,4 +193,40 @@ int callAPI::callDeleteAPI(string& tableName, string& condition){
     }
 
     return api->deleteValue(tableName, logicCondition);
+}
+
+vector<vector<tableValue>*>* callAPI::callSelectAPI(string& tableName, string& condition){
+    stringProcessor::preTrim(tableName);
+    stringProcessor::preTrim(condition);
+    // cout<<table<<endl;
+    // cout<<condition<<endl;
+    Table* table = api->getTable(tableName);
+    if(table == nullptr){
+        cout<<"Run time error! Don't find such table!"<<endl;
+        return nullptr;
+    }
+    auto* attribution = table->tableAttribution;
+    auto* logicCondition = new vector<logicCompare>;
+    // 如果条件非空则需要进行子句的分割
+    if(!condition.empty())
+    {
+        vector<string> temp = stringProcessor::Split(condition, "and");
+        logicCompare* t;
+        int i;
+        for(i = 0; i < temp.size(); i++){
+            int type = stringProcessor::getCompareType(temp[i]);
+            if(type == -1){
+                cout<<"Syntax error! Illegal data type!"<<endl;
+                return nullptr;
+            }
+            t = stringProcessor::getLogic(temp[i], type, attribution);
+            if(t == nullptr)
+                return nullptr;
+            logicCondition->push_back(*t);
+            delete t;
+        }
+    }
+    vector<vector<tableValue>*>* result = api->select(tableName, logicCondition);
+    delete logicCondition;
+    return result;
 }

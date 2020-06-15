@@ -13,6 +13,17 @@ dataType::dataType(int input_type, int input_n, string input_typeName, bool inpu
     hasIndex = input_hasIndex;
 }
 
+void dataType::showDataType()
+{
+    cout<<"----------show data type-----------"<<endl;
+    cout<<"type: "<<type<<endl;
+    cout<<"n: "<<n<<endl;
+    cout<<"typename: "<<typeName<<endl;
+    cout<<"unique: "<<isUnique<<endl;
+    cout<<"primary: "<<isPrimaryKey<<endl;
+    cout<<"index: "<<hasIndex<<endl;
+}
+
 int dataType::getDataLength()
 {
     if(n == miniSQL_INT || n == miniSQL_FLOAT){

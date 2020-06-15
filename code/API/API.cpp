@@ -27,7 +27,7 @@ Table* API::getTable(const string &tableName)
 
 bool API::createTable(const string& tableName, vector<dataType*>* attribution)
 {
-
+    return true;
 }
 
 bool API::createIndex(const string& indexName, const string& tableName, const string& attribution)

@@ -11,8 +11,10 @@
 #include<algorithm>
 
 #include "../StringProcessor/StringProcessor.h"
+#include "../API/API.h"
 #include "showResult.h"
 #include "callAPI.h"
+
 
 using namespace std;
 
