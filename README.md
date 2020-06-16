@@ -45,3 +45,54 @@
 【zyc】2020.06.13 写了一大堆bullshit code完成了一个delete语句的语法二次分解，感觉有点麻烦，语法分解的地方还差最后一个select的语法分解，不过select的地方代码可以复用，预计明天考完证券可以继续搞，问题是好像不容易进行测试，我也不知道有没有bug-free
 
 【zyc】2020.06.14 写了一个create table的语法分割，但是**还没有经过测试**，不知道能不能用
+
+### 6.16 更新 现在miniSQL的状况简要介绍
+
+- 现在已经能完整运行的部分有interpreter部分，每种语句的语法检查和语义分解已经做的差不多了，**整个系统需要完成的逻辑是**
+  - main函数里调用interpreter类对输入的SQL指令进行初步的处理，然后大致分成create table， create index，select，delete，drop等若干类，
+  - 然后用callAPI类对这些语句进行第二次语法分割(第一次主要是要分割出SQL操作类型，第二次主要是把insert，delete，select等有条件和数值的语句的条件和数值分解出来)，
+  - 然后callAPI把规定格式的数据作为参数调用对应的API，
+  - API里调用各种manager进行一系列操作，然后返回结果true or false，API需要调用的模块有
+    - buffer manager 用来读取数据表
+    - catalog manager 需要记录每张表和index的信息，以及一个表名的合集和一个索引的合集，都用文件存储
+    - index manager 用来在create index等操作调用的API里生成/更新/删除索引，具体要求看老师发的
+    - record manager 主要负责数据表的更新创建等操作
+  - 最后再调用showResult类来展示一系列结果
+- 几个特殊的类，不属于功能模块但是有自己的作用
+  - globalvariable，主要写了一些全局都用得上的数据结构和**宏定义(这一部分可以自己看一下)**，包括用于存储where语句后面的逻辑关系的类logicCompare和数值类型tableValue，具体的定义可以看代码文件
+  - table和tableFile，主要涉及二进制数据**表文件的数据结构**和**读写**操作，table类中包含了一个表所拥有的信息，tableFile用于二进制文件的读写，也就是读取表的数据，**tableFile还没写**
+  - stringProcessor 主要是一些字符串处理的函数，这个主要是在interpreter里面用
+
+- 现在的完成情况是
+
+  - interpreter部分基本完成，已经没有大bug，可以把SQL语句进行初步判断发给callAPI，已经进行了多次测试，基本没啥问题，**这一部分基本可以略去不看了**
+
+  - callAPI里的**二次分割**也没有大问题了，我测试了很多次，只需要再完善API里各个模块的调用即可
+
+  - showResult已经没有问题了，只要API返回成功的结果就可以显示
+
+  - API的具体调用还没写，可以留到几个manager模块基本完成后再写对每个模块进行测试
+
+  - 几个manager的完成情况
+
+    - ### buffer 除了一个类定义什么都没有
+
+    - ### index 除了一个类定义什么都没有
+
+    - catalog **基本写完了**，但是没有经过具体的测试，因为不好测试
+
+    - record manager 本来想写，但是发现需要和buffer进行联动还比较棘手，暂时没想好怎么处理
+
+- 几个特殊类的完成情况
+  - logicCompare 写完了，照抄的，应该没啥问题
+  - tableValue 就是一个有三种值(int, float, char*)的结构，这么写主要是可以用一种类型存储表中出现的任何数据，然后取用数据的时候根据属性里定义的类型来取出结构体中对应的内容就可以了
+  -  dataType 表示表中的一种属性的类型，写完了，应该没有大问题
+  - table 表示一张表的类，有若干dataType的index，以及表中的一些关键信息，写完了
+  - tableFile 数据表文件，还没写，要和record manager进行联动，然后record manager要和buffer进行联动
+  - stringProcessor 字符串处理的一些东西，写完了，主要是在interpreter里调用，没有大问题
+
+- 具体的内容可以看代码文件，我也尽量写了注释，另外就是多看看上面的**参考网址** 
+- 目前剩下的主要问题
+  - 有几个模块没有进行debug，比如catalog，可能需要和别的模块一起进行debug
+  - record + buffer + tableFile的联动
+  - index manager建立B+树索引

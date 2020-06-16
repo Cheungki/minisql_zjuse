@@ -23,6 +23,8 @@ private:
     static set<string> tableNameList;
     static map<string, index*> indexMap;
 public:
+    //每种操作对应的对于数据表和索引信息的文件的更新操作
+    //用两个文件分别存储所有表和索引的名称等信息，用若干个文件每个分别存储一个表中的所有信息和一个索引的信息
     catalogManager();
     //~catalogManager();
     Table* getTable(const string& tableName);
