@@ -96,3 +96,5 @@
   - 有几个模块没有进行debug，比如catalog，可能需要和别的模块一起进行debug
   - record + buffer + tableFile的联动
   - index manager建立B+树索引
+ 
+【zq】2020.06.20 更新了一下recordManager.h，写了几个函数。发现涉及到tableFile.h里的几个函数，但里面还是空的，就对tableFile类进行了声明。顺手改了几个让我不爽的缩进。
