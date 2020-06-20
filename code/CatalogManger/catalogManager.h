@@ -8,12 +8,11 @@
 #include<map>
 #include<set>
 #include<vector>
-#include<string.h>
+#include<string>
 
 #include"../GlobalVariable/GlobalVariable.h"
 #include"../Table/Table.h"
 #include"../IndexManager/index.h"
-
 
 using namespace std;
 

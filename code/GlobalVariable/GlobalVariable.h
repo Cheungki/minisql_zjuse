@@ -54,20 +54,6 @@ public:
     static int compareChar(const char* a, const char*b, int length);
 };
 
-class singleBlock{
-public:
-    string fileName;
-    int blockID;
-    //pin表示一个block被锁了，不能被删除
-    //is changed代表这个block是否被进行了修改
-    bool pin, isChanged;
-    char data[blockSize];
-    singleBlock(const string& name, const int& id){
-        fileName = name;
-        blockID = id;
-        pin = false;
-        isChanged = false;
-    }
-};
+
 
 #endif //CODE_GLOBALVARIABLE_H
