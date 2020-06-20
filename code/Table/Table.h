@@ -14,7 +14,7 @@ using namespace std;
 
 
 // 表示数据类型的类，成员变量的含义根据变量名很好理解
-class dataType{
+class dataType {
 public:
     int type, n;
     string typeName;
