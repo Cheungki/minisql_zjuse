@@ -54,6 +54,8 @@ void showResult::showDelete(int flag, const string& table){
         cout<<"Run time error! Table doesn't exist!"<<endl;
     }
 }
+
+
 void showResult::showSelect(vector<vector<tableValue>*>* result, string tableName){
     //待完成，需要展示select到的结果
     //经过测试，接口已经调通了

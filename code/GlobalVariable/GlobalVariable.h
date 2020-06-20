@@ -46,12 +46,12 @@ private:
     int operation;
     tableValue immediate;
     bool checkCondition(int result);
-    static int compareInt(int a, int b);
-    static int compareFloat(float a, float b);
-    static int compareChar(const char* a, const char*b, int length);
 
 public:
     logicCompare(string& name, int op, tableValue imm);
+    static int compareInt(int a, int b);
+    static int compareFloat(float a, float b);
+    static int compareChar(const char* a, const char*b, int length);
 };
 
 class singleBlock{
