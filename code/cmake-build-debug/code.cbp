@@ -8,168 +8,166 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug"/>
+				<Option working_dir="/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="code">
-				<Option output="C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/code.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"/>
-					<Add directory="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++/backward"/>
-					<Add directory="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/include"/>
-					<Add directory="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/../../../../include"/>
-					<Add directory="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/include-fixed"/>
-					<Add directory="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/../../../../x86_64-w64-mingw32/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 code"/>
-					<CompileFile command="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="code/fast">
-				<Option output="C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/code.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"/>
-					<Add directory="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++/backward"/>
-					<Add directory="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/include"/>
-					<Add directory="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/../../../../include"/>
-					<Add directory="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/include-fixed"/>
-					<Add directory="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/../../../../x86_64-w64-mingw32/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 code/fast"/>
-					<CompileFile command="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug"/>
+				<Option working_dir="/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="E:/Dev-Cpp/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="code">
+				<Option output="/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/code" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 code"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="code/fast">
+				<Option output="/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/code" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 code/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/API/API.cpp">
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/API/API.cpp">
 			<Option target="code"/>
 		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/API/API.h">
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/API/API.h">
 			<Option target="code"/>
 		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/BufferManager/bufferManager.cpp">
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/BufferManager/bufferManager.cpp">
 			<Option target="code"/>
 		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/BufferManager/bufferManager.h">
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/BufferManager/bufferManager.h">
 			<Option target="code"/>
 		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/CatalogManger/catalogManager.cpp">
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/BufferManager/fileManager.cpp">
 			<Option target="code"/>
 		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/CatalogManger/catalogManager.h">
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/BufferManager/fileManager.h">
 			<Option target="code"/>
 		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/CatalogManger/fileManager.cpp">
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/CatalogManager/catalogManager.cpp">
 			<Option target="code"/>
 		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/CatalogManger/fileManager.h">
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/CatalogManager/catalogManager.h">
 			<Option target="code"/>
 		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/GlobalVariable/GlobalVariable.cpp">
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/GlobalVariable/GlobalVariable.cpp">
 			<Option target="code"/>
 		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/GlobalVariable/GlobalVariable.h">
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/GlobalVariable/GlobalVariable.h">
 			<Option target="code"/>
 		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/IndexManager/index.cpp">
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/IndexManager/index.cpp">
 			<Option target="code"/>
 		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/IndexManager/index.h">
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/IndexManager/index.h">
 			<Option target="code"/>
 		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/IndexManager/indexManager.cpp">
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/IndexManager/indexManager.cpp">
 			<Option target="code"/>
 		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/IndexManager/indexManager.h">
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/IndexManager/indexManager.h">
 			<Option target="code"/>
 		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/Interpreter.cpp">
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/Interpreter/Interpreter.cpp">
 			<Option target="code"/>
 		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/Interpreter.h">
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/Interpreter/Interpreter.h">
 			<Option target="code"/>
 		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/callAPI.cpp">
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/Interpreter/callAPI.cpp">
 			<Option target="code"/>
 		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/callAPI.h">
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/Interpreter/callAPI.h">
 			<Option target="code"/>
 		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/showResult.cpp">
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/Interpreter/showResult.cpp">
 			<Option target="code"/>
 		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/Interpreter/showResult.h">
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/Interpreter/showResult.h">
 			<Option target="code"/>
 		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/RecordManager/recordManager.cpp">
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/RecordManager/recordManager.cpp">
 			<Option target="code"/>
 		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/RecordManager/recordManager.h">
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/RecordManager/recordManager.h">
 			<Option target="code"/>
 		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/StringProcessor/StringProcessor.cpp">
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/StringProcessor/StringProcessor.cpp">
 			<Option target="code"/>
 		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/StringProcessor/StringProcessor.h">
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/StringProcessor/StringProcessor.h">
 			<Option target="code"/>
 		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/Table/Table.cpp">
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/Table/Table.cpp">
 			<Option target="code"/>
 		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/Table/Table.h">
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/Table/Table.h">
 			<Option target="code"/>
 		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/Table/tableFile.cpp">
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/Table/tableFile.cpp">
 			<Option target="code"/>
 		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/Table/tableFile.h">
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/Table/tableFile.h">
 			<Option target="code"/>
 		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/main.cpp">
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/main.cpp">
 			<Option target="code"/>
 		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/CMakeLists.txt">
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
