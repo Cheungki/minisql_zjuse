@@ -6,7 +6,7 @@
 #include "BufferManager/bufferManager.h"
 #include "API/API.h"
 #include "RecordManager/recordManager.h"
-#include "CatalogManger/catalogManager.h"
+#include "CatalogManager/catalogManager.h"
 
 
 using namespace std;

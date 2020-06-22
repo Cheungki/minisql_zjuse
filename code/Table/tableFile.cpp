@@ -36,7 +36,7 @@ int tableFile::recordInsert(vector<tableValue>* values)
     int offset = (emptyID % recordNumOfBlock) * sizeOfRecord;
     int originID = emptyID;
     maxID = maxID > emptyID ? maxID : emptyID;
-    singleBlock* block;
+    Block* block;
 
     /* Verify if the size of the blocks is enough. */
     if(blockID < blockNum) block = buffer->getBlock(tableName, blockID);
@@ -64,7 +64,7 @@ bool tableFile::recordDelete(int id, bool commit)
     if(blockID > maxID) ; /* Here, the user is trying to access a non-existent record. */
 
     /* Find the block and the pointer. */
-    singleBlock* block = buffer->getBlock(tableName, blockID);
+    Block* block = buffer->getBlock(tableName, blockID);
     char* pointer = block->data + offset;
     char flag;
 
@@ -95,7 +95,7 @@ vector<tableValue>* tableFile::getRecord(int id, bool isNull)
     if(blockID > maxID) ; /* Here, the user is trying to access a non-existent record. */
     else {
         /* Find the block and the pointer. */
-        singleBlock* block = buffer->getBlock(tableName, blockID);
+        Block* block = buffer->getBlock(tableName, blockID);
         char* pointer = block->data + offset;
         char flag;
 
@@ -113,7 +113,7 @@ vector<tableValue>* tableFile::getRecord(int id, bool isNull)
 
 bool tableFile::updateHeader()
 {
-    singleBlock* headerOfBlock = buffer->getBlock(tableName, 0);
+    Block* headerOfBlock = buffer->getBlock(tableName, 0);
     char* data = headerOfBlock->data;
     fileManager::writeInt(data, emptyID);
     fileManager::writeInt(data + 4, blockNum);

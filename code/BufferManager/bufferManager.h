@@ -13,27 +13,11 @@
 
 using namespace std;
 
-class singleBlock{
-public:
-    string fileName;
-    int blockID;
-    //pin表示一个block被锁了，不能被删除
-    //is changed代表这个block是否被进行了修改
-    bool pin, isChanged;
-    char data[blockSize];
-    singleBlock(const string& name, const int& id){
-        fileName = name;
-        blockID = id;
-        pin = false;
-        isChanged = false;
-    }
-};
-
 // 其实是一个由单个block 组合而成的链表
 struct bufferNode{
-    singleBlock* block;
+   Block* block;
     bufferNode *last, *next;
-    explicit bufferNode(singleBlock* temp){
+    explicit bufferNode(Block* temp){
         block = temp;
         last = next = nullptr;
     }
@@ -54,14 +38,14 @@ private:
     static int blockCount;
     static bufferNode *head, *tail;
     static map<string, bufferNode*> nodeMap;
-    singleBlock* loadBlock(const string& fileName, int id);
+    Block* loadBlock(const string& fileName, int id);
     bool deleteNode(bufferNode *node);
 public:
     static const int maxBlockNumber;
     bufferManager();
-    singleBlock* getBlock(const string& fileName, int id);
+    Block* getBlock(const string& fileName, int id);
     bool writeBlock(const string& fileName, int id);
-    bool writeBlock(singleBlock* block);
+    bool writeBlock(Block* block);
     bool accessNode(bufferNode* node);
     bool appendNode(const string& fileName);
     bool clearBuffer();

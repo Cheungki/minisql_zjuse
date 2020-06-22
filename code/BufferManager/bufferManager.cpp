@@ -24,7 +24,7 @@ bufferManager::bufferManager()
     }
 }
 
-singleBlock * bufferManager::getBlock(const string& fileName, int id)
+Block * bufferManager::getBlock(const string& fileName, int id)
 {
     string blockName = fileName + '_' + to_string(id);
     if(nodeMap.count(blockName) != 0){
@@ -77,7 +77,7 @@ bool bufferManager::clearBuffer()
     return true;
 }
 
-bool bufferManager::writeBlock(singleBlock *block)
+bool bufferManager::writeBlock(Block *block)
 {
     block->isChanged = true;
     string filePath = "dbFile/" + block->fileName + ".db";
@@ -93,7 +93,7 @@ bool bufferManager::writeBlock(singleBlock *block)
 
 bool bufferManager::writeBlock(const string& fileName, int id)
 {
-    singleBlock* temp = getBlock(fileName, id);
+    Block* temp = getBlock(fileName, id);
     return writeBlock(temp);
 }
 
@@ -106,9 +106,9 @@ bool bufferManager::deleteNode(bufferNode *node)
     return true;
 }
 
-singleBlock * bufferManager::loadBlock(const string& fileName, int id)
+Block * bufferManager::loadBlock(const string& fileName, int id)
 {
-    singleBlock* temp = new singleBlock(fileName, id);
+    Block* temp = new Block(fileName, id);
     string filePath = "dbFile/" + temp->fileName + ".db";
     FILE* fp = fopen(filePath.c_str(), "rb");
     if(fp == nullptr){
