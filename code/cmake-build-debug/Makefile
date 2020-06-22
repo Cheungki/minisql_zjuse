@@ -176,6 +176,33 @@ BufferManager/bufferManager.cpp.s:
 	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/BufferManager/bufferManager.cpp.s
 .PHONY : BufferManager/bufferManager.cpp.s
 
+BufferManager/fileManager.obj: BufferManager/fileManager.cpp.obj
+
+.PHONY : BufferManager/fileManager.obj
+
+# target to build an object file
+BufferManager/fileManager.cpp.obj:
+	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/BufferManager/fileManager.cpp.obj
+.PHONY : BufferManager/fileManager.cpp.obj
+
+BufferManager/fileManager.i: BufferManager/fileManager.cpp.i
+
+.PHONY : BufferManager/fileManager.i
+
+# target to preprocess a source file
+BufferManager/fileManager.cpp.i:
+	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/BufferManager/fileManager.cpp.i
+.PHONY : BufferManager/fileManager.cpp.i
+
+BufferManager/fileManager.s: BufferManager/fileManager.cpp.s
+
+.PHONY : BufferManager/fileManager.s
+
+# target to generate assembly for a file
+BufferManager/fileManager.cpp.s:
+	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/BufferManager/fileManager.cpp.s
+.PHONY : BufferManager/fileManager.cpp.s
+
 CatalogManger/catalogManager.obj: CatalogManger/catalogManager.cpp.obj
 
 .PHONY : CatalogManger/catalogManager.obj
@@ -202,33 +229,6 @@ CatalogManger/catalogManager.s: CatalogManger/catalogManager.cpp.s
 CatalogManger/catalogManager.cpp.s:
 	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/CatalogManger/catalogManager.cpp.s
 .PHONY : CatalogManger/catalogManager.cpp.s
-
-CatalogManger/fileManager.obj: CatalogManger/fileManager.cpp.obj
-
-.PHONY : CatalogManger/fileManager.obj
-
-# target to build an object file
-CatalogManger/fileManager.cpp.obj:
-	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/CatalogManger/fileManager.cpp.obj
-.PHONY : CatalogManger/fileManager.cpp.obj
-
-CatalogManger/fileManager.i: CatalogManger/fileManager.cpp.i
-
-.PHONY : CatalogManger/fileManager.i
-
-# target to preprocess a source file
-CatalogManger/fileManager.cpp.i:
-	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/CatalogManger/fileManager.cpp.i
-.PHONY : CatalogManger/fileManager.cpp.i
-
-CatalogManger/fileManager.s: CatalogManger/fileManager.cpp.s
-
-.PHONY : CatalogManger/fileManager.s
-
-# target to generate assembly for a file
-CatalogManger/fileManager.cpp.s:
-	$(MAKE) -f CMakeFiles\code.dir\build.make CMakeFiles/code.dir/CatalogManger/fileManager.cpp.s
-.PHONY : CatalogManger/fileManager.cpp.s
 
 GlobalVariable/GlobalVariable.obj: GlobalVariable/GlobalVariable.cpp.obj
 
@@ -542,12 +542,12 @@ help:
 	@echo ... BufferManager/bufferManager.obj
 	@echo ... BufferManager/bufferManager.i
 	@echo ... BufferManager/bufferManager.s
+	@echo ... BufferManager/fileManager.obj
+	@echo ... BufferManager/fileManager.i
+	@echo ... BufferManager/fileManager.s
 	@echo ... CatalogManger/catalogManager.obj
 	@echo ... CatalogManger/catalogManager.i
 	@echo ... CatalogManger/catalogManager.s
-	@echo ... CatalogManger/fileManager.obj
-	@echo ... CatalogManger/fileManager.i
-	@echo ... CatalogManger/fileManager.s
 	@echo ... GlobalVariable/GlobalVariable.obj
 	@echo ... GlobalVariable/GlobalVariable.i
 	@echo ... GlobalVariable/GlobalVariable.s

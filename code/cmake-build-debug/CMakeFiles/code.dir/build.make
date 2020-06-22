@@ -212,18 +212,18 @@ CMakeFiles/code.dir/Table/tableFile.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/code.dir/Table/tableFile.cpp.s"
 	E:\Dev-Cpp\Dev-Cpp\MinGW64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\74096\Desktop\DataBase System\miniSQL\code\Table\tableFile.cpp" -o CMakeFiles\code.dir\Table\tableFile.cpp.s
 
-CMakeFiles/code.dir/CatalogManger/fileManager.cpp.obj: CMakeFiles/code.dir/flags.make
-CMakeFiles/code.dir/CatalogManger/fileManager.cpp.obj: ../CatalogManger/fileManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\74096\Desktop\DataBase System\miniSQL\code\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/code.dir/CatalogManger/fileManager.cpp.obj"
-	E:\Dev-Cpp\Dev-Cpp\MinGW64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\code.dir\CatalogManger\fileManager.cpp.obj -c "C:\Users\74096\Desktop\DataBase System\miniSQL\code\CatalogManger\fileManager.cpp"
+CMakeFiles/code.dir/BufferManager/fileManager.cpp.obj: CMakeFiles/code.dir/flags.make
+CMakeFiles/code.dir/BufferManager/fileManager.cpp.obj: ../BufferManager/fileManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\74096\Desktop\DataBase System\miniSQL\code\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/code.dir/BufferManager/fileManager.cpp.obj"
+	E:\Dev-Cpp\Dev-Cpp\MinGW64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\code.dir\BufferManager\fileManager.cpp.obj -c "C:\Users\74096\Desktop\DataBase System\miniSQL\code\BufferManager\fileManager.cpp"
 
-CMakeFiles/code.dir/CatalogManger/fileManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/code.dir/CatalogManger/fileManager.cpp.i"
-	E:\Dev-Cpp\Dev-Cpp\MinGW64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\74096\Desktop\DataBase System\miniSQL\code\CatalogManger\fileManager.cpp" > CMakeFiles\code.dir\CatalogManger\fileManager.cpp.i
+CMakeFiles/code.dir/BufferManager/fileManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/code.dir/BufferManager/fileManager.cpp.i"
+	E:\Dev-Cpp\Dev-Cpp\MinGW64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\74096\Desktop\DataBase System\miniSQL\code\BufferManager\fileManager.cpp" > CMakeFiles\code.dir\BufferManager\fileManager.cpp.i
 
-CMakeFiles/code.dir/CatalogManger/fileManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/code.dir/CatalogManger/fileManager.cpp.s"
-	E:\Dev-Cpp\Dev-Cpp\MinGW64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\74096\Desktop\DataBase System\miniSQL\code\CatalogManger\fileManager.cpp" -o CMakeFiles\code.dir\CatalogManger\fileManager.cpp.s
+CMakeFiles/code.dir/BufferManager/fileManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/code.dir/BufferManager/fileManager.cpp.s"
+	E:\Dev-Cpp\Dev-Cpp\MinGW64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\74096\Desktop\DataBase System\miniSQL\code\BufferManager\fileManager.cpp" -o CMakeFiles\code.dir\BufferManager\fileManager.cpp.s
 
 CMakeFiles/code.dir/Interpreter/callAPI.cpp.obj: CMakeFiles/code.dir/flags.make
 CMakeFiles/code.dir/Interpreter/callAPI.cpp.obj: ../Interpreter/callAPI.cpp
@@ -265,7 +265,7 @@ code_OBJECTS = \
 "CMakeFiles/code.dir/API/API.cpp.obj" \
 "CMakeFiles/code.dir/IndexManager/index.cpp.obj" \
 "CMakeFiles/code.dir/Table/tableFile.cpp.obj" \
-"CMakeFiles/code.dir/CatalogManger/fileManager.cpp.obj" \
+"CMakeFiles/code.dir/BufferManager/fileManager.cpp.obj" \
 "CMakeFiles/code.dir/Interpreter/callAPI.cpp.obj" \
 "CMakeFiles/code.dir/Interpreter/showResult.cpp.obj"
 
@@ -284,7 +284,7 @@ code.exe: CMakeFiles/code.dir/RecordManager/recordManager.cpp.obj
 code.exe: CMakeFiles/code.dir/API/API.cpp.obj
 code.exe: CMakeFiles/code.dir/IndexManager/index.cpp.obj
 code.exe: CMakeFiles/code.dir/Table/tableFile.cpp.obj
-code.exe: CMakeFiles/code.dir/CatalogManger/fileManager.cpp.obj
+code.exe: CMakeFiles/code.dir/BufferManager/fileManager.cpp.obj
 code.exe: CMakeFiles/code.dir/Interpreter/callAPI.cpp.obj
 code.exe: CMakeFiles/code.dir/Interpreter/showResult.cpp.obj
 code.exe: CMakeFiles/code.dir/build.make

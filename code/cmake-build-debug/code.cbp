@@ -94,16 +94,16 @@
 		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/BufferManager/bufferManager.h">
 			<Option target="code"/>
 		</Unit>
+		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/BufferManager/fileManager.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/BufferManager/fileManager.h">
+			<Option target="code"/>
+		</Unit>
 		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/CatalogManger/catalogManager.cpp">
 			<Option target="code"/>
 		</Unit>
 		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/CatalogManger/catalogManager.h">
-			<Option target="code"/>
-		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/CatalogManger/fileManager.cpp">
-			<Option target="code"/>
-		</Unit>
-		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/CatalogManger/fileManager.h">
 			<Option target="code"/>
 		</Unit>
 		<Unit filename="C:/Users/74096/Desktop/DataBase System/miniSQL/code/GlobalVariable/GlobalVariable.cpp">

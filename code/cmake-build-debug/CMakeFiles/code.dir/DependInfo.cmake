@@ -6,8 +6,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/74096/Desktop/DataBase System/miniSQL/code/API/API.cpp" "C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/CMakeFiles/code.dir/API/API.cpp.obj"
   "C:/Users/74096/Desktop/DataBase System/miniSQL/code/BufferManager/bufferManager.cpp" "C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/CMakeFiles/code.dir/BufferManager/bufferManager.cpp.obj"
+  "C:/Users/74096/Desktop/DataBase System/miniSQL/code/BufferManager/fileManager.cpp" "C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/CMakeFiles/code.dir/BufferManager/fileManager.cpp.obj"
   "C:/Users/74096/Desktop/DataBase System/miniSQL/code/CatalogManger/catalogManager.cpp" "C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/CMakeFiles/code.dir/CatalogManger/catalogManager.cpp.obj"
-  "C:/Users/74096/Desktop/DataBase System/miniSQL/code/CatalogManger/fileManager.cpp" "C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/CMakeFiles/code.dir/CatalogManger/fileManager.cpp.obj"
   "C:/Users/74096/Desktop/DataBase System/miniSQL/code/GlobalVariable/GlobalVariable.cpp" "C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/CMakeFiles/code.dir/GlobalVariable/GlobalVariable.cpp.obj"
   "C:/Users/74096/Desktop/DataBase System/miniSQL/code/IndexManager/index.cpp" "C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/CMakeFiles/code.dir/IndexManager/index.cpp.obj"
   "C:/Users/74096/Desktop/DataBase System/miniSQL/code/IndexManager/indexManager.cpp" "C:/Users/74096/Desktop/DataBase System/miniSQL/code/cmake-build-debug/CMakeFiles/code.dir/IndexManager/indexManager.cpp.obj"

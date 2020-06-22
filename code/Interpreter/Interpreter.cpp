@@ -123,7 +123,7 @@ bool Interpreter::execute(std::string cmd)
             else if(operate[0] == "insert") {
                 if(operate[1] != "into") {
                     //不是into 语法错误
-                    cout<<"Syntax Error! Key Word Error!"<<endl;
+                    cout<<"Syntax Error! Insert Key Word Error!"<<endl;
                     return true;
                 }
                 else {
@@ -132,7 +132,7 @@ bool Interpreter::execute(std::string cmd)
                         return true;
                     }
                     else if(operate.size() <= 4) {
-                        cout<<"Syntax Error! Lack of parameters."<<endl;
+                        cout<<"Syntax Error! Lack of parameters in insert."<<endl;
                         return true;
                     }
                     else if(operate[3] != "values") {
