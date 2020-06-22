@@ -8,7 +8,7 @@
 #include<vector>
 #include<string>
 #include<set>
-#include"../CatalogManger/catalogManager.h"
+#include"../CatalogManager/catalogManager.h"
 #include"../BufferManager/bufferManager.h"
 
 using namespace std;

@@ -20,8 +20,8 @@ public:
     static bool writeTableValue(char *p, vector<tableValue>* list, Table* table);
     static bool readTableValue(char *p, vector<tableValue>* list, Table *table);
 
-    static bool writeInt(char *p, int *x);
-    static bool writeFloat(char *p, float *x);
+    static bool writeInt(char *p, int x);
+    static bool writeFloat(char *p, float x);
     static bool writeChar(char *p, char *data, int n);
 
     static bool readInt(char *p, int *x);

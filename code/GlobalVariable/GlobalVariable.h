@@ -40,6 +40,22 @@ public:
     char* CHAR;
 };
 
+class Block{
+public:
+    string fileName;
+    int blockID;
+    //pin表示一个block被锁了，不能被删除
+    //is changed代表这个block是否被进行了修改
+    bool pin, isChanged;
+    char data[blockSize];
+    Block(const string& name, const int& id){
+        fileName = name;
+        blockID = id;
+        pin = false;
+        isChanged = false;
+    }
+};
+
 class logicCompare{
 private:
     string valName;

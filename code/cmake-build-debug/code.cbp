@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6"/>
@@ -174,3 +175,179 @@
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="code"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="code">
+				<Option output="/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/code" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 code"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="code/fast">
+				<Option output="/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/code" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 code/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhangqi/Desktop/minisql_zjuse/code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/API/API.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/API/API.h">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/BufferManager/bufferManager.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/BufferManager/bufferManager.h">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/BufferManager/fileManager.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/BufferManager/fileManager.h">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/CatalogManager/catalogManager.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/CatalogManager/catalogManager.h">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/GlobalVariable/GlobalVariable.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/GlobalVariable/GlobalVariable.h">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/IndexManager/index.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/IndexManager/index.h">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/IndexManager/indexManager.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/IndexManager/indexManager.h">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/Interpreter/Interpreter.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/Interpreter/Interpreter.h">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/Interpreter/callAPI.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/Interpreter/callAPI.h">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/Interpreter/showResult.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/Interpreter/showResult.h">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/RecordManager/recordManager.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/RecordManager/recordManager.h">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/StringProcessor/StringProcessor.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/StringProcessor/StringProcessor.h">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/Table/Table.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/Table/Table.h">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/Table/tableFile.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/Table/tableFile.h">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/main.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
+>>>>>>> e2a41fdea2ab1e23f0a20c784e20b4a1e4622088

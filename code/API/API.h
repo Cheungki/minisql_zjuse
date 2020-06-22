@@ -12,7 +12,7 @@ using namespace std;
 
 #include"../BufferManager/bufferManager.h"
 #include"../RecordManager/recordManager.h"
-#include"../CatalogManger/catalogManager.h"
+#include"../CatalogManager/catalogManager.h"
 #include"../IndexManager/indexManager.h"
 #include"../GlobalVariable/GlobalVariable.h"
 #include"../Table/Table.h"

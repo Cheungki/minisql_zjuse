@@ -89,13 +89,13 @@ bool fileManager::writeChar(char *p, char *data, int n)
     return true;
 }
 
-bool fileManager::writeFloat(char *p, float *x)
+bool fileManager::writeFloat(char *p, float x)
 {
     memcpy(&x, p, 4);
     return true;
 }
 
-bool fileManager::writeInt(char *p, int *x)
+bool fileManager::writeInt(char *p, int x)
 {
     memcpy(&x, p, 4);
     return true;
