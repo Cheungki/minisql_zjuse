@@ -16,7 +16,7 @@ tableFile::tableFile(string name) /* 构造函数，初始化catalog和buffer。
     recordNumOfBlock = table->numPerBlock;
 
     /* Read header information from buffer. */
-    singleBlock* headerOfBlock = buffer->getBlock(tableName, 0);
+    Block* headerOfBlock = buffer->getBlock(tableName, 0);
     char* data = headerOfBlock->data;
     fileManager::readInt(data, &emptyID);
     fileManager::readInt(data + 4, &blockNum);
