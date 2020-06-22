@@ -8,6 +8,7 @@
 #include "../BufferManager/bufferManager.h"
 #include "../CatalogManager/catalogManager.h"
 #include "../BufferManager/fileManager.h"
+#include "../Table/Table.h"
 
 
 class tableFile {
@@ -15,7 +16,7 @@ public:
     tableFile(string fileName);
     ~tableFile();
     int recordInsert(vector<tableValue>* values);
-    bool recordDlete(int id, bool commit = true);
+    bool recordDelete(int id, bool commit = true);
     vector<tableValue>* getRecord(int id, bool isNull = true);
     bool updateHeader();
     int getByID(int id);
