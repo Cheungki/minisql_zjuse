@@ -24,7 +24,6 @@ public:
     int getDataLength();
     // 这是一个可以看data type内部情况的成员函数，用于在测试的时候使用
     void showDataType();
-private:
 };
 
 //表示一张表的类

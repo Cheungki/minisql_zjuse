@@ -61,9 +61,10 @@ private:
     string valName;
     int operation;
     tableValue immediate;
-    bool checkCondition(int result);
-
 public:
+    string getValueName();
+    tableValue getImmediate();
+    bool checkCondition(int result);
     logicCompare(string& name, int op, tableValue imm);
     static int compareInt(int a, int b);
     static int compareFloat(float a, float b);

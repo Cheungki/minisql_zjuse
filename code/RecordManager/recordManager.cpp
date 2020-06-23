@@ -4,6 +4,8 @@
 
 
 #include "recordManager.h"
+
+#include <utility>
 #include "../Table/tableFile.h"
 #include "../GlobalVariable/GlobalVariable.h"
 
@@ -20,7 +22,7 @@ recordManager::~recordManager()
     delete buffer;
 }
 
-bool recordManager::recordCreateTable(string tableName)
+bool recordManager::recordCreateTable(const string& tableName)
 {
     string filePath = "data/" + tableName + ".mdb";
     if(!fopen(filePath.c_str(), "rb")) {
@@ -37,38 +39,52 @@ bool recordManager::recordCreateTable(string tableName)
     return true;
 }
 
-bool recordManager::recordDeleteTable(string tableName, vector<int> *list)
+bool recordManager::recordDeleteTable(const string& tableName, vector<int>* list)
 {
-
+    auto* fileName = new tableFile(tableName);
+    if(list->empty()) delete fileName;
+    else {
+        int length, deleteID, shiftID, i;
+        length = int(list->size() - 1);
+        deleteID = (*list)[0];
+        shiftID = (*list)[1];
+        for(i = 0; i < length; i++) {
+            fileName->recordDelete(deleteID, fileName->getByID(deleteID) != fileName->getByID(shiftID));
+            deleteID = (*list)[i + 1];
+            shiftID = (*list)[i + 2];
+        }
+        fileName->recordDelete((*list)[length]);
+        delete fileName;
+    }
+    return true;
 }
 
-bool recordManager::recordDropTable(string tableName)
+bool recordManager::recordDropTable(const string& tableName)
 {
     string filePath = "data/" + tableName + ".mdb";
-//    buffer->clearBuffer();
+    buffer->clearBuffer();
     /* 清除buffer里面的内容。 */
     remove(filePath.c_str());
     return true;
 }
 
-vector<tableValue> * recordManager::recordGetByID(string tableName, int id)
+vector<tableValue>* recordManager::recordGetByID(const string& tableName, int id)
 {
-    /* 需要联动'../Table/tableFile.h'中的函数，目前还不能用。 */
     auto* filename = new tableFile(tableName);
     vector<tableValue>* values = filename->getRecord(id);
     delete filename;
     return values;
 }
 
-int recordManager::recordInsertTable(string tableName, vector<tableValue> *value)
+int recordManager::recordInsertTable(const string& tableName, vector<tableValue> *value)
 {
-    auto* filename = new tableFile(tableName);
+    auto* filename = new tableFile(std::move(tableName));
     int result = filename->recordInsert(value);
     delete filename;
     return result;
 }
 
-vector<int>* recordManager::recordSelectTable(string tableName, vector<logicCompare> *conditions)
+vector<int>* recordManager::recordSelectTable(const string& tableName, vector<logicCompare> *conditions)
 {
     if(!conditions) conditions = new vector<logicCompare>;
     auto* result = new vector<int>;
@@ -87,12 +103,58 @@ vector<int>* recordManager::recordSelectTable(string tableName, vector<logicComp
     return result;
 }
 
-bool recordManager::recordCheck(Table *table, vector<tableValue> *record, vector<logicCompare> *conditions)
+bool recordManager::recordCheck(Table *table, vector<tableValue>* record, vector<logicCompare>* conditions)
 {
-
+    for(auto condition: *conditions) {
+        int position = table->searchPosition(condition.getValueName());
+        dataType* attribution = table->tableAttribution->at(position);
+        if(attribution->type == miniSQL_INT) {
+                int parameterOne = (*record)[position].INT;
+                int parameterTwo = condition.getImmediate().INT;
+                return condition.checkCondition(logicCompare::compareInt(parameterOne, parameterTwo));
+            }
+        else if(attribution->type == miniSQL_FLOAT) {
+            float parameterOne = (*record)[position].FLOAT;
+            float parameterTwo = condition.getImmediate().FLOAT;
+            return condition.checkCondition(logicCompare::compareFloat(parameterOne, parameterTwo));
+        }
+        else {
+            int length = attribution->n;
+            char* parameterOne = (*record)[position].CHAR;
+            char* parameterTwo = condition.getImmediate().CHAR;
+            return condition.checkCondition(logicCompare::compareChar(parameterOne, parameterTwo, length));
+        }
+    }
+    return true;
 }
 
-bool recordManager::recordCheckDuplicate(string tableName, vector<tableValue> *record)
+bool recordManager::recordCheckDuplicate(const string& tableName, vector<tableValue>* record)
 {
-
+    Table* table = catalog->getTable(tableName);
+    auto* fileName = new tableFile(tableName);
+    int maxID, i, j;
+    maxID = fileName->getMaxID();
+    bool noDuplicate = true;
+    for(i = 0; i < maxID; i++) {
+        vector<tableValue>* currentRecord = fileName->getRecord(i, false);
+        if(currentRecord == nullptr) continue;
+        int size = (*(table)->tableAttribution).size();
+        for(j = 0; j < size; j++) {
+            dataType* attribution = table->tableAttribution->at(j);
+            if(!attribution->isPrimaryKey && ! attribution->isUnique) continue;
+            else if(attribution->type == miniSQL_INT)
+                noDuplicate = (*record)[j].INT != (*currentRecord)[j].INT;
+            else if(attribution->type == miniSQL_FLOAT)
+                noDuplicate = (*record)[j].FLOAT != (*currentRecord)[j].FLOAT;
+            else {
+                int length = attribution->getDataLength();
+                noDuplicate = logicCompare::compareChar((*record)[j].CHAR, (*currentRecord)[j].CHAR, length) != EQUAL;
+            }
+            if (!noDuplicate) break;
+        }
+        if (!noDuplicate) break;
+    }
+    delete table;
+    delete fileName;
+    return noDuplicate;
 }

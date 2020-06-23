@@ -4,6 +4,16 @@
 
 #include"GlobalVariable.h"
 
+string logicCompare::getValueName()
+{
+    return valName;
+}
+
+tableValue logicCompare::getImmediate()
+{
+    return immediate;
+}
+
 logicCompare::logicCompare(string &name, int op, tableValue imm)
 {
     valName = name;
