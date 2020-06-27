@@ -24,7 +24,7 @@ struct bufferNode{
     ~bufferNode(){
         remove();
     }
-    void remove(){
+    void remove() const{
         if(next != nullptr)
             last->next = next;
         if(last != nullptr)

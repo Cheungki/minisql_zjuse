@@ -20,11 +20,11 @@ bool fileManager::writeTableValue(char *p, vector<tableValue> *list, Table *tabl
         switch ((*typeList)[i]->type)
         {
             case miniSQL_INT:
-                fileManager::writeInt(p, &(*list)[i].INT);
+                fileManager::writeInt(p, (*list)[i].INT);
                 p += 4;
                 break;
             case miniSQL_FLOAT:
-                fileManager::writeFloat(p, &(*list)[i].FLOAT);
+                fileManager::writeFloat(p, (*list)[i].FLOAT);
                 p += 4;
                 break;
             case miniSQL_CHAR:

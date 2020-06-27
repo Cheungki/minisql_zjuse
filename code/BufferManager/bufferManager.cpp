@@ -108,7 +108,7 @@ bool bufferManager::deleteNode(bufferNode *node)
 
 Block * bufferManager::loadBlock(const string& fileName, int id)
 {
-    Block* temp = new Block(fileName, id);
+    auto* temp = new Block(fileName, id);
     string filePath = "dbFile/" + temp->fileName + ".db";
     FILE* fp = fopen(filePath.c_str(), "rb");
     if(fp == nullptr){
@@ -120,7 +120,7 @@ Block * bufferManager::loadBlock(const string& fileName, int id)
     }
     fread(temp->data, blockSize, 1, fp);
     fclose(fp);
-    bufferNode* t = new bufferNode(temp);
+    auto* t = new bufferNode(temp);
     accessNode(t);
     nodeMap[fileName + "_" + to_string(id)] = t;
     blockCount++;
