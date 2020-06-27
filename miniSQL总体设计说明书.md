@@ -165,5 +165,5 @@ exefile file_name
 
 - 小组内的分工安排**暂定**如下
   - 张溢弛：interpreter层，API层，Catalog Manager层
-  - 聂俊哲：Buffer Manager层，Record Manager层
-  - 张琦：Index Manager层
+  - 张琦：Buffer Manager层，Record Manager层
+  - 聂俊哲：Index Manager层
