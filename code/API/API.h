@@ -14,8 +14,11 @@ using namespace std;
 #include"../RecordManager/recordManager.h"
 #include"../CatalogManager/catalogManager.h"
 #include"../IndexManager/indexManager.h"
+#include"../IndexManager/index.h"
 #include"../GlobalVariable/GlobalVariable.h"
 #include"../Table/Table.h"
+#include"../BufferManager/fileManager.h"
+#include"../StringProcessor/StringProcessor.h"
 
 
 // 系统调用的API类，集成了buffer manager，index manager，catalog manager和record manager的功能
@@ -24,16 +27,19 @@ public:
     API();
     ~API();
     bool createTable(const string& tableName, vector<dataType*>* attribution);
-    bool createIndex(const string& indexName, const string& tableName, const string& attribution);
+    bool createIndex(string indexName, string tableName, string attribution);
     bool dropTable(const string& tableName);
     bool dropIndex(const string& indexName);
-    bool insertValue(const string& tableName, vector<string> valueList);
+
     int deleteValue(const string& tableName, vector<logicCompare>* conditions);
     vector<vector<tableValue>*>* select(const string& tableName, vector<logicCompare>* condtions);
     Table* getTable(const string& tableName);
+    int remove(string tableName, vector<logicCompare>* conditions);
+    bool insertValue(const string& tableName, vector<string> valueList);
+
 private:
     bufferManager* buffer;
-    indexManager* index;
+    indexManager* Index;
     catalogManager* catalog;
     recordManager* record;
 

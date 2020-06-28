@@ -59,7 +59,6 @@ public:
 class logicCompare{
 private:
     string valName;
-    int operation;
     tableValue immediate;
 public:
     string getValueName();
@@ -69,6 +68,8 @@ public:
     static int compareInt(int a, int b);
     static int compareFloat(float a, float b);
     static int compareChar(const char* a, const char*b, int length);
+
+    int operation;
 };
 
 

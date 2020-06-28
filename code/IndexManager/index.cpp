@@ -13,16 +13,16 @@ index::index(string& self, string& table, string& column)
 
 string index::getName() const
 {
-    return name.c_str();
+    return name;
 }
 
 
 string index::getTableName() const
 {
-    return tableName.c_str();
+    return tableName;
 }
 
 string index::getColumnName() const
 {
-    return columnName.c_str();
+    return columnName;
 }

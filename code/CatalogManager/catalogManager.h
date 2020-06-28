@@ -8,7 +8,6 @@
 #include<map>
 #include<set>
 #include<vector>
-#include<string>
 
 #include"../GlobalVariable/GlobalVariable.h"
 #include"../Table/Table.h"
