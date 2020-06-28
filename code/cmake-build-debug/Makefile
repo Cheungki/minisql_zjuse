@@ -258,6 +258,33 @@ GlobalVariable/GlobalVariable.cpp.s:
 	$(MAKE) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/GlobalVariable/GlobalVariable.cpp.s
 .PHONY : GlobalVariable/GlobalVariable.cpp.s
 
+IndexManager/BPTree.o: IndexManager/BPTree.cpp.o
+
+.PHONY : IndexManager/BPTree.o
+
+# target to build an object file
+IndexManager/BPTree.cpp.o:
+	$(MAKE) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/IndexManager/BPTree.cpp.o
+.PHONY : IndexManager/BPTree.cpp.o
+
+IndexManager/BPTree.i: IndexManager/BPTree.cpp.i
+
+.PHONY : IndexManager/BPTree.i
+
+# target to preprocess a source file
+IndexManager/BPTree.cpp.i:
+	$(MAKE) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/IndexManager/BPTree.cpp.i
+.PHONY : IndexManager/BPTree.cpp.i
+
+IndexManager/BPTree.s: IndexManager/BPTree.cpp.s
+
+.PHONY : IndexManager/BPTree.s
+
+# target to generate assembly for a file
+IndexManager/BPTree.cpp.s:
+	$(MAKE) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/IndexManager/BPTree.cpp.s
+.PHONY : IndexManager/BPTree.cpp.s
+
 IndexManager/BPTreeNode.o: IndexManager/BPTreeNode.cpp.o
 
 .PHONY : IndexManager/BPTreeNode.o
@@ -579,6 +606,9 @@ help:
 	@echo "... GlobalVariable/GlobalVariable.o"
 	@echo "... GlobalVariable/GlobalVariable.i"
 	@echo "... GlobalVariable/GlobalVariable.s"
+	@echo "... IndexManager/BPTree.o"
+	@echo "... IndexManager/BPTree.i"
+	@echo "... IndexManager/BPTree.s"
 	@echo "... IndexManager/BPTreeNode.o"
 	@echo "... IndexManager/BPTreeNode.i"
 	@echo "... IndexManager/BPTreeNode.s"

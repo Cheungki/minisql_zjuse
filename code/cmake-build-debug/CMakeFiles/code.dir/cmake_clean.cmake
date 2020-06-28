@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/code.dir/BufferManager/fileManager.cpp.o"
   "CMakeFiles/code.dir/CatalogManager/catalogManager.cpp.o"
   "CMakeFiles/code.dir/GlobalVariable/GlobalVariable.cpp.o"
+  "CMakeFiles/code.dir/IndexManager/BPTree.cpp.o"
   "CMakeFiles/code.dir/IndexManager/BPTreeNode.cpp.o"
   "CMakeFiles/code.dir/IndexManager/index.cpp.o"
   "CMakeFiles/code.dir/IndexManager/indexManager.cpp.o"

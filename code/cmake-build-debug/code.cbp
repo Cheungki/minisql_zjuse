@@ -110,6 +110,12 @@
 		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/GlobalVariable/GlobalVariable.h">
 			<Option target="code"/>
 		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/IndexManager/BPTree.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/IndexManager/BPTree.h">
+			<Option target="code"/>
+		</Unit>
 		<Unit filename="/Users/zhangqi/Desktop/minisql_zjuse/code/IndexManager/BPTreeNode.cpp">
 			<Option target="code"/>
 		</Unit>
