@@ -8,7 +8,9 @@
 #include <fstream>
 #include"../BufferManager/bufferManager.h"
 #include"../IndexManager/index.h"
-
+#include "../Table/Table.h"
+#include "../CatalogManager/catalogManager.h"
+#include "BPTree.h"
 
 class indexManager {
 public:
