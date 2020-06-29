@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fileapi.h>
 
 #include "Interpreter/Interpreter.h"
 #include "StringProcessor/StringProcessor.h"
@@ -17,8 +18,16 @@ API* api;
 
 int main() {
 
+    CreateDirectory("dbFile", NULL);
+    CreateDirectory("dbFile/index", NULL);
+    if (fopen("tableNameList.mdb", "rb") == NULL)
+        fopen("tableNameList.mdb", "ab+");
+    if (fopen("indexNameList.mdb", "rb") == NULL)
+        fopen("indexNameList.mdb", "ab+");
+
     Interpreter interpreter;
-    // api = new API();
+    api = new API();
+
     //这里还有很多变量需要逐一定义，先空着，目前主要在写Interpreter部分
 
     //欢迎界面的几行简单内容
