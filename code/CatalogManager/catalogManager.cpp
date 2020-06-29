@@ -195,7 +195,7 @@ bool catalogManager::catalogDropIndex(const string& indexName)
     return true;
 }
 
-// 两种方式删除对应的索引：根据索引名称和表明+列名，两个函数构成重载关系
+// 两种方式删除对应的索引：根据索引名称和表名+列名，两个函数构成重载关系
 bool catalogManager::catalogDropIndex(const string& tableName, const string& columnName)
 {
     index* temp = getIndex(tableName, columnName);
@@ -247,7 +247,7 @@ bool catalogManager::catalogUpdateTable(Table *table)
     }
     dataType* tmp;
     //要注意文件中写入的table相关的属性的顺序
-    for(int i = 0; i < table->size; i ++){
+    for(int i = 0; i < table->columnCount; i ++){
         tmp = (*(table->tableAttribution))[i];
         fout<<tmp->type<<" "<<tmp->n<<" "<<tmp->typeName<<" "<<tmp->isUnique<<" "<<tmp->isPrimaryKey<<" "<<tmp->hasIndex<<endl;
     }
@@ -259,7 +259,6 @@ bool catalogManager::catalogUpdateTable(Table *table)
 index * catalogManager::getIndex(const string& indexName)
 {
     if(indexMap.find(indexName) == indexMap.end()){
-        cout<<"Run time error! No such index!"<<endl;
         return nullptr;
     }
     return indexMap[indexName];
@@ -274,7 +273,6 @@ index * catalogManager::getIndex(const string& tableName, const string& columnNa
             return m->second;
         }
     }
-    cout<<"Run time error! No such index!"<<endl;
     return nullptr;
 }
 
