@@ -5,7 +5,7 @@
 #ifndef CODE_BPTREENODE_H
 #define CODE_BPTREENODE_H
 
-#include <string>
+#include <cstring>
 #include <vector>
 using namespace std;
 
@@ -45,18 +45,17 @@ private:
     vector<char*> keys;
     vector<int> ptrs;
     int nodecmp(const char* a,const  char* b)
-    int nodecmp(const char* a,const  char* b)
     {
         switch(dataType){
             case miniSQL_INT:
                 int ta, tb;
-                fileManager::readInt(a, &ta);
-                fileManager::readInt(b, &tb);
+                fileManager::readInt(const_cast<char *>(a), &ta);
+                fileManager::readInt(const_cast<char *>(b), &tb);
                 return ta - tb;
             case miniSQL_FLOAT:
                 float fa, fb;
-                fileManager::readFloat(a, &fa);
-                fileManager::readFloat(b, &fb);
+                fileManager::readFloat(const_cast<char *>(a), &fa);
+                fileManager::readFloat(const_cast<char *>(b), &fb);
                 if (fa - fb < 0) return -1;
                 else if (fa - fb > 0) return 1;
                 else return 0;

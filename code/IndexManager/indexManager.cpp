@@ -9,11 +9,13 @@ indexManager::indexManager()
     buffer = new bufferManager();
 }
 
+//根据索引文件路径删除索引文件
 void deleteFile(string filePath)
 {
     remove(filePath.c_str());
 }
 
+//在索引文件中根据key查找对应的value，并将其作为结果返回
 int indexManager::find(const char* indexName, const char* key)
 {
     BPTree* tree = new BPTree(("index/" + string(indexName)).c_str());
@@ -22,6 +24,7 @@ int indexManager::find(const char* indexName, const char* key)
     return ret;
 }
 
+//在索引中插入键值对
 bool indexManager::insert(const char* indexName, const char* key, int value)
 {
     BPTree* tree = new BPTree(("index/" + string(indexName)).c_str());
@@ -31,6 +34,7 @@ bool indexManager::insert(const char* indexName, const char* key, int value)
     return ret;
 }
 
+//在索引中删除key
 bool indexManager::remove(const char* indexName, const char* key)
 {
     BPTree* tree = new BPTree(("index/" + string(indexName)).c_str());
@@ -40,6 +44,7 @@ bool indexManager::remove(const char* indexName, const char* key)
     return ret;
 }
 
+//创建一个新的索引
 bool indexManager::createIndex(const char* indexName)
 {
     catalogManager* manager = new catalogManager();
@@ -49,6 +54,8 @@ bool indexManager::createIndex(const char* indexName)
     Table* table = manager->getTable(string(index->getTableName()));
     if (table == NULL)
         return false;
+
+    //获取数据长度和数据类型
     dataType* temp = table->searchAttribution(index->getColumnName());
     int keyLength = temp->getDataLength();
     int dataType = temp->n;
@@ -56,9 +63,10 @@ bool indexManager::createIndex(const char* indexName)
     return true;
 }
 
+//删除索引
 bool indexManager::dropIndex(const char* indexName)
 {
-    string filePath = string("data/") + string("index/") + string(indexName) + string(".mdb");
+    string filePath = string("dbFile/") + string("index/") + string(indexName) + string(".db");
     deleteFile(filePath);
     buffer->clearBuffer();
     return true;

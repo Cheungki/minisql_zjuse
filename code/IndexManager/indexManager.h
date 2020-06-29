@@ -12,6 +12,7 @@
 #include "../CatalogManager/catalogManager.h"
 #include "BPTree.h"
 
+//索引管理，包括基本的查找、插入、删除、创建等操作
 class indexManager {
 public:
     indexManager();

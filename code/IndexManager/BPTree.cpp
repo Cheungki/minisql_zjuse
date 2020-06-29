@@ -5,22 +5,23 @@
 #include "BPTree.h"
 #include <cstdio>
 #include <cstring>
-#include <iostream>
 #include <string>
 
 
 using namespace std;
 
+//创建新的索引文件，文件头为扇出，数据长度，数据类型等
 void BPTree::createFile(const char* _filename, int _keyLength, int _dataType, int _fan_out)
 {
     if (_fan_out == -1)
         _fan_out = (blockSize - 8) / (_keyLength + 4) + 1;
-    FILE* file = fopen(("data/" + string(_filename) + ".mdb").c_str(), "wb");
+    FILE* file = fopen(("dbFile/" + string(_filename) + ".db").c_str(), "wb");
     int header[] = { _fan_out, _keyLength, _dataType, 0, -1, -1 };
     fwrite(header, 4, 6, file);
     fclose(file);
 }
 
+//在Block中找到对应的索引文件
 BPTree::BPTree(const char* _filename) : filename(_filename)
 {
     bufferManager* manager = new bufferManager();
@@ -42,6 +43,7 @@ BPTree::~BPTree()
     delete[] key;
 }
 
+//将读到的key拷贝，另写重载函数是为了递归方便
 int BPTree::find(const char* _key)
 {
     memcpy(key, _key, keyLength);
@@ -105,7 +107,7 @@ int BPTree::find(int id)
     return cond;
 }
 
-// Recursive function for adding key-value pair
+// 将键值对添加进B+树的递归函数
 int BPTree::add(int id)
 {
     BPTreeNode* node = new BPTreeNode(filename.c_str(), id, keyLength, dataType);
@@ -147,7 +149,7 @@ int BPTree::add(int id)
     return ret;
 }
 
-// Recursive function for deleting key-value pair
+// 删除键值对的递归版本函数
 int BPTree::remove(int id, int sibId, bool leftSib, const char* parentKey)
 {
     BPTreeNode* node = new BPTreeNode(filename.c_str(), id, keyLength, dataType);
@@ -277,7 +279,7 @@ void BPTree::removeBlock(int id)
     manager->writeBlock(block);
 }
 
-// Update header information
+// 更新文件头 header 的信息
 void BPTree::updateHeader()
 {
     bufferManager* manager = new bufferManager();
