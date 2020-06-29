@@ -24,7 +24,7 @@ recordManager::~recordManager()
 
 bool recordManager::recordCreateTable(const string& tableName)
 {
-    string filePath = "data/" + tableName + ".mdb";
+    string filePath = "dbFile/" + tableName + ".db";
     if(!fopen(filePath.c_str(), "rb")) {
         FILE* dataFile = fopen(filePath.c_str(), "ab+");
         char* data = new char[blockSize];
@@ -61,7 +61,7 @@ bool recordManager::recordDeleteTable(const string& tableName, vector<int>* list
 
 bool recordManager::recordDropTable(const string& tableName)
 {
-    string filePath = "data/" + tableName + ".mdb";
+    string filePath = "dbFile/" + tableName + ".db";
     buffer->clearBuffer();
     /* 清除buffer里面的内容。 */
     remove(filePath.c_str());
