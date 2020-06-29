@@ -16,7 +16,7 @@ bufferManager::bufferManager()
     if(head == nullptr && tail == nullptr)
     {
         head = new bufferNode(nullptr);
-        head = new bufferNode(nullptr);
+        tail = new bufferNode(nullptr);
         head->last = head;
         head->next = tail;
         tail->last = head;
@@ -109,7 +109,7 @@ bool bufferManager::deleteNode(bufferNode *node)
 Block * bufferManager::loadBlock(const string& fileName, int id)
 {
     auto* temp = new Block(fileName, id);
-    string filePath = "dbFile/" + temp->fileName + ".db";
+    string filePath = "dbFile/" + fileName + ".db";
     FILE* fp = fopen(filePath.c_str(), "rb");
     if(fp == nullptr){
         cout<<"Run time error! Can't read block!"<<endl;
