@@ -12,7 +12,6 @@ indexManager::indexManager()
 void deleteFile(string filePath)
 {
     remove(filePath.c_str());
-    return;
 }
 
 int indexManager::find(const char* indexName, const char* key)
