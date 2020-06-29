@@ -49,13 +49,13 @@ private:
         switch(dataType){
             case miniSQL_INT:
                 int ta, tb;
-                fileManager::readInt(const_cast<char *>(a), &ta);
-                fileManager::readInt(const_cast<char *>(b), &tb);
+                fileManager::readInt(a, &ta);
+                fileManager::readInt(b, &tb);
                 return ta - tb;
             case miniSQL_FLOAT:
                 float fa, fb;
-                fileManager::readFloat(const_cast<char *>(a), &fa);
-                fileManager::readFloat(const_cast<char *>(b), &fb);
+                fileManager::readFloat(a, &fa);
+                fileManager::readFloat(b, &fb);
                 if (fa - fb < 0) return -1;
                 else if (fa - fb > 0) return 1;
                 else return 0;

@@ -16,7 +16,7 @@ void deleteFile(string filePath)
 }
 
 //在索引文件中根据key查找对应的value，并将其作为结果返回
-int indexManager::find(const char* indexName, const char* key)
+int indexManager::find(basic_string<char> indexName, const char* key)
 {
     BPTree* tree = new BPTree(("index/" + string(indexName)).c_str());
     int ret = tree->find(key);

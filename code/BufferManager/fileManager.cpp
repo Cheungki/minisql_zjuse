@@ -42,7 +42,7 @@ bool fileManager::readTableValue(char *p, vector<tableValue> *list, Table *table
     vector<dataType*>* typeList = table->tableAttribution;
     p++;
     for(int i = 0; i < table->columnCount; i++){
-        tableValue temp{};
+        tableValue temp;
         switch ((*typeList)[i]->type)
         {
             case miniSQL_INT:
@@ -60,43 +60,39 @@ bool fileManager::readTableValue(char *p, vector<tableValue> *list, Table *table
                 p += len;
                 break;
         }
+        list->push_back(temp);
     }
-    return true;
-}
-
-bool fileManager::readFloat(char *p, float *x)
-{
-    memcpy(p, &x, 4);
-    return true;
-}
-
-bool fileManager::readInt(char *p, int *x)
-{
-    memcpy(p, &x, 4);
-    return true;
-}
-
-bool fileManager::readChar(char *p, char *data, int n)
-{
-    memcpy(p, data, n);
-    return true;
-}
-
-
-bool fileManager::writeChar(char *p, char *data, int n)
-{
-    memcpy(data, p, n);
-    return true;
-}
-
-bool fileManager::writeFloat(char *p, float x)
-{
-    memcpy(&x, p, 4);
     return true;
 }
 
 bool fileManager::writeInt(char *p, int x)
 {
-    memcpy(&x, p, 4);
+    memcpy(p, &x, 4);
+    return true;
+}
+bool fileManager::writeFloat(char *p, float x)
+{
+    memcpy(p, &x, 4);
+    return true;
+}
+bool fileManager::writeChar(char *p, char *data, int n)
+{
+    memcpy(p, data, n);
+    return true;
+}
+
+bool fileManager::readInt(const char *p, int *x)
+{
+    memcpy(x, p, 4);
+    return true;
+}
+bool fileManager::readFloat(const char *p, float *x)
+{
+    memcpy(x, p, 4);
+    return true;
+}
+bool fileManager::readChar(const char *p, char *data, int n)
+{
+    memcpy(data, p, n);
     return true;
 }

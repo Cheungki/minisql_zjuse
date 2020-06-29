@@ -20,10 +20,10 @@ int main() {
 
     CreateDirectory("dbFile", NULL);
     CreateDirectory("dbFile/index", NULL);
-    if (fopen("tableNameList.mdb", "rb") == NULL)
-        fopen("tableNameList.mdb", "ab+");
-    if (fopen("indexNameList.mdb", "rb") == NULL)
-        fopen("indexNameList.mdb", "ab+");
+    if (fopen("tableNameList.db", "rb") == NULL)
+        fopen("tableNameList.db", "ab+");
+    if (fopen("indexNameList.db", "rb") == NULL)
+        fopen("indexNameList.db", "ab+");
 
     Interpreter interpreter;
     api = new API();

@@ -267,11 +267,15 @@ index * catalogManager::getIndex(const string& indexName)
 // 根据table和属性名查找对应的index并将其作为结果返回
 index * catalogManager::getIndex(const string& tableName, const string& columnName)
 {
-    map<string, index*>::iterator m;
-    for(m = indexMap.begin(); m != indexMap.end(); m++){
-        if(m->second->getTableName() == tableName && m->second->getColumnName() == columnName){
-            return m->second;
-        }
+    for (auto it : indexMap)
+    {
+        index* index = it.second;
+        if (
+
+                index->getTableName()== tableName &&
+                index->getColumnName()== columnName
+                )
+            return index;
     }
     return nullptr;
 }

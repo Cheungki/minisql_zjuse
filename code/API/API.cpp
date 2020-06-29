@@ -165,7 +165,7 @@ bool API::insertValue(const string& tableName, vector<string> valueList)
             index* temp_index = catalog->getIndex(tableName, temp->typeName);
             char* key = new char[temp->getDataLength()];
             writeKey(temp, key, value->at(i));
-            int pos = Index->find(temp_index->getName().c_str(), key);
+            int pos = Index->find(temp_index->getName(), key);
             if(pos >= 0){
                 repeated = false;
                 break;
