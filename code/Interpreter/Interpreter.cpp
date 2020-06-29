@@ -33,7 +33,7 @@ string Interpreter::getCMD()
 bool Interpreter::execute(std::string cmd)
 {
     //execute the cmd in a string
-    cout<<cmd<<endl;
+    //cout<<cmd<<endl;
     //退出的情况
     if(cmd.find("quit") == 0) {
         if(cmd.length() != 4) {
@@ -65,14 +65,14 @@ bool Interpreter::execute(std::string cmd)
             cout<<"Syntax Error! Please check your brackets in the SQL!"<<endl;
         else if(checkBracket == 1) {
             //对create和insert语句进行初步的语义分割
-            cout<<cmd<<endl;
+            //cout<<cmd<<endl;
             int start = cmd.find_first_of('(');
             int end = cmd.find_last_of(')');
             //Kind 和 Val分别代表了进行的操作和表名，需要操作的数据
             string operateKind = cmd.substr(0, start);
             string operateVal = cmd.substr(start + 1, end - start - 1);
-            cout<<operateKind<<endl;
-            cout<<operateVal<<endl;
+            //cout<<operateKind<<endl;
+            //cout<<operateVal<<endl;
             //继续进一步的处理
             vector<string> operate = stringProcessor::Split(operateKind, " ");
             operate.push_back(operateVal);
