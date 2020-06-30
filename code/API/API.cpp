@@ -165,7 +165,7 @@ bool API::insertValue(const string& tableName, vector<string> valueList)
             index* temp_index = catalog->getIndex(tableName, temp->typeName);
             char* key = new char[temp->getDataLength()];
             writeKey(temp, key, value->at(i));
-            int pos = Index->find(temp_index->getName(), key);
+            int pos = Index->find(temp_index->getName().c_str(), key);
             if(pos >= 0){
                 repeated = false;
                 break;
@@ -243,7 +243,7 @@ int API::findRecord(const string &tableName, vector<logicCompare> *conditions, v
             fileManager::writeChar(key, logic.getImmediate().CHAR, attr->n);
         if(key == nullptr)
             return 0;
-        int id = Index->find(temp_index->getName().c_str(), key), ret;
+        int id = Index->find(temp_index->getName(), key), ret;
         if(id < 0)
             ret = 0;
         else{

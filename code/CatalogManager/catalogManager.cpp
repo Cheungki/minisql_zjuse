@@ -68,7 +68,7 @@ bool catalogManager::catalogCreateTable(const string& tableName, vector<dataType
             return false;
         }
         // 字符串长度溢出
-        if(kind == miniSQL_CHAR || temp->n > maxCharSize){
+        if(kind == miniSQL_CHAR && temp->n > maxCharSize){
             cout<<"Run time error! Char length is too large!"<<endl;
             return false;
         }

@@ -58,7 +58,7 @@ bool indexManager::createIndex(const char* indexName)
     //获取数据长度和数据类型
     dataType* temp = table->searchAttribution(index->getColumnName());
     int keyLength = temp->getDataLength();
-    int dataType = temp->n;
+    int dataType = temp->type;
     BPTree::createFile(("index/" + string(indexName)).c_str(), keyLength, dataType);
     return true;
 }
