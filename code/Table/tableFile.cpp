@@ -17,11 +17,10 @@ tableFile::tableFile(string name) /* 构造函数，初始化catalog和buffer。
 
     /* Read header information from buffer. */
     Block* headerOfBlock = buffer->getBlock(tableName, 0);
-    char* data = headerOfBlock->data;
-    fileManager::readInt(data, &emptyID);
-    fileManager::readInt(data + 4, &blockNum);
-    fileManager::readInt(data + 8, &recordNum);
-    fileManager::readInt(data + 12, &maxID);
+    fileManager::readInt(headerOfBlock->data, &emptyID);
+    fileManager::readInt(headerOfBlock->data + 4, &blockNum);
+    fileManager::readInt(headerOfBlock->data + 8, &recordNum);
+    fileManager::readInt(headerOfBlock->data + 12, &maxID);
 }
 
 tableFile::~tableFile() /* 析构函数 */
@@ -61,7 +60,10 @@ bool tableFile::recordDelete(int id, bool commit)
 {
     int blockID = (id / recordNumOfBlock) + 1;
     int offset = (id % recordNumOfBlock) * sizeOfRecord;
-    if(blockID > maxID) ; /* Here, the user is trying to access a non-existent record. */
+    if(blockID > maxID) {
+        cout <<"Unexpected access to an unexisted record"<<endl;
+    }; /* Here, the user is trying to access a non-existent record. */
+
 
     /* Find the block and the pointer. */
     Block* block = buffer->getBlock(tableName, blockID);
@@ -70,7 +72,9 @@ bool tableFile::recordDelete(int id, bool commit)
 
     /* Verify if the record is null. */
     memcpy(&flag, pointer, 1);
-    if(!flag) ; /* Report that the record is non-existent. */
+    if(!flag) {
+        cout <<"Unexpected access to an unexisted record"<<endl;
+    };/* Report that the record is non-existent. */
 
     /* Reset the variables. */
     *pointer = 0;
@@ -90,35 +94,52 @@ bool tableFile::recordDelete(int id, bool commit)
 vector<tableValue>* tableFile::getRecord(int id, bool isNull)
 {
     int blockID = (id / recordNumOfBlock) + 1;
-    int offset = (id % recordNumOfBlock) * sizeOfRecord;
+    int offset = id % recordNumOfBlock;
 
-    if(blockID > maxID) ; /* Here, the user is trying to access a non-existent record. */
-    else {
-        /* Find the block and the pointer. */
-        Block* block = buffer->getBlock(tableName, blockID);
-        char* pointer = block->data + offset;
-        char flag;
-
-        /* Verify if the record is null. */
-        memcpy(&flag, pointer, 1);
-        if(!flag && isNull) {
-            /* Report that the record is non-existent. */
-            return nullptr;
-        }
-
-        auto* recordsContents = new vector<tableValue>;
-        if(fileManager::readTableValue(pointer, recordsContents, table)) return recordsContents;
+    if(id > maxID){
+        cout <<"Unexpected access to an unexisted record"<<endl; /* Here, the user is trying to access a non-existent record. */
     }
+
+    Block * block = buffer->getBlock(tableName, blockID);
+    offset *= sizeOfRecord;
+
+    char *p = block->data + offset;
+    char mark;
+    memcpy(&mark, p, 1);
+    if (mark == 0)
+    {
+        if (isNull)
+            cout <<"Unexpected access to an unexisted record"<<endl;
+        return nullptr;
+    }
+    auto * recordContent = new vector<tableValue>;
+    fileManager::readTableValue(p, recordContent,table);
+    return recordContent;
+
+//        /* Find the block and the pointer. */
+//        Block* block = buffer->getBlock(tableName, blockID);
+//        char* pointer = block->data + offset;
+//        char flag;
+//
+//        /* Verify if the record is null. */
+//        memcpy(&flag, pointer, 1);
+//        if(!flag && isNull) {
+//            cout <<"Unexpected access to an unexisted record"<<endl;
+//            return nullptr;
+//        }
+//
+//        auto* recordsContents = new vector<tableValue>;
+//        if(fileManager::readTableValue(pointer, recordsContents, table)) return recordsContents;
+
 }
 
 bool tableFile::updateHeader()
 {
     Block* headerOfBlock = buffer->getBlock(tableName, 0);
-    char* data = headerOfBlock->data;
-    fileManager::writeInt(data, emptyID);
-    fileManager::writeInt(data + 4, blockNum);
-    fileManager::writeInt(data + 8, recordNumOfBlock);
-    fileManager::writeInt(data + 12, maxID);
+    fileManager::writeInt(headerOfBlock->data, emptyID);
+    fileManager::writeInt(headerOfBlock->data + 4, blockNum);
+    fileManager::writeInt(headerOfBlock->data + 8, recordNumOfBlock);
+    fileManager::writeInt(headerOfBlock->data + 12, maxID);
     return buffer->writeBlock(headerOfBlock);
 }
 

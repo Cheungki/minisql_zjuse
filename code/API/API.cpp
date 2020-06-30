@@ -32,10 +32,9 @@ bool API::createTable(const string& tableName, vector<dataType*>* attribution)
         return false;
     if(!record->recordCreateTable(tableName))
         return false;
-    for(auto & i : *attribution){
+    for(auto i : *attribution){
         if(i->isPrimaryKey){
-            string indexName = "primary_index_of_" + tableName;
-            createIndex(indexName, tableName, i->typeName);
+            createIndex(string("primary_index_of_") + tableName, tableName, i->typeName);
             return true;
         }
     }
@@ -71,7 +70,7 @@ bool API::dropTable(const string& tableName)
         index* temp = catalog->getIndex(tableName, colName);
         dropIndex(temp->getName());
     }
-    if(!catalog->catalogDropIndex(tableName))return false;
+    if(!catalog->catalogDropTable(tableName))return false;
     if(!record->recordDropTable(tableName))return false;
 
     delete table;
@@ -87,67 +86,85 @@ bool API::dropIndex(const string& indexName)
 
 bool API::insertValue(const string& tableName, vector<string> valueList)
 {
-    Table* table = getTable(tableName);
-    if(table == nullptr)
-        return false;
-    vector<dataType*>* attrList = table->tableAttribution;
-    int i;
-    for(i = 0; i < valueList.size(); i++){
-        if(valueList[i].empty()){
+    Table * table = catalog->getTable(tableName);
+
+    if (table == nullptr)return false;
+    vector<dataType*> * attrList = table->tableAttribution;
+    auto* isNULL = new vector<bool>;
+    for (int i = 0; i < valueList.size(); i++)
+        isNULL->push_back(valueList[i].empty());
+    bool allHaveIndex = true;
+    for (int i = 0; i < table->tableAttribution->size(); i++)
+    {
+        dataType* attr = (*(table->tableAttribution))[i];
+        if (!attr->isPrimaryKey && !attr->isUnique) continue;
+        if ((*isNULL)[i])
+        {
             cout<<"Run time error! Empty Value!"<<endl;
             return false;
         }
-    }
-    bool allHaveIndex = true;
-    for(i = 0; i < table->tableAttribution->size(); i++){
-        dataType* attr = (*(table->tableAttribution))[i];
-        if(!attr->isPrimaryKey && ! attr->isUnique)
-            continue;
-        index* temp_index = catalog->getIndex(tableName, attr->typeName);
-        if(temp_index == nullptr)
+        index* index = catalog->getIndex(tableName, attr->typeName);
+        if (index == nullptr)
             allHaveIndex = false;
     }
+
+    auto * value = new vector<tableValue>;
     tableValue x{};
-    auto* value = new vector<tableValue>;
+
     int size = attrList->size();
-    if(size != valueList.size()){
+    if (size != valueList.size())
+    {
         cout<<"Run time error! Values not match"<<endl;
         return false;
     }
-    for(i = 0; i < size; i++){
+
+    //vector<tableValue>* value
+    for (int i = 0; i < size; i++)
+    {
         x.CHAR = nullptr;
-        if((*attrList)[i]->type == miniSQL_INT){
-            if(!stringProcessor::intCheckAndChange(valueList[i]).first){
+        if ((*attrList)[i]->type == miniSQL_INT)
+        {
+            if (!stringProcessor::intCheckAndChange(valueList[i]).first)
+            {
                 cout<<"Run time error! Value type error!"<<endl;
                 return false;
             }
-            else{
-                stringstream t;
-                t<<valueList[i];
-                t>>x.INT;
+            else
+            {
+                stringstream tran;
+                tran << valueList[i];
+                tran >> x.INT;
                 value->push_back(x);
             }
         }
-        else if((*attrList)[i]->type == miniSQL_FLOAT){
-            if(!stringProcessor::floatCheckAndChange(valueList[i]).first){
+        else if ((*attrList)[i]->type == miniSQL_FLOAT)
+        {
+            if (!stringProcessor::floatCheckAndChange(valueList[i]).first)
+            {
                 cout<<"Run time error! Value type error!"<<endl;
                 return false;
             }
-            else{
-                stringstream t;
-                t<<valueList[i];
-                t>>x.FLOAT;
+            else
+            {
+                stringstream tran;
+                tran << valueList[i];
+                tran >> x.FLOAT;
                 value->push_back(x);
             }
         }
-        else{
-            if(!stringProcessor::charCheckAndChange(valueList[i])){
+        else
+        {
+            if (!stringProcessor::charCheckAndChange(valueList[i]))
+            {
                 cout<<"Run time error! Value type error!"<<endl;
                 return false;
             }
-            else{
+            else
+            {
+                stringProcessor::getRidQuo(valueList[i]);
                 int maxLen = (*attrList)[i]->n;
-                if(valueList[i].size() > maxLen){
+                if (valueList[i].size() > maxLen)
+                {
                     cout<<"Run time error! Value is longer than the max len!"<<endl;
                 }
                 x.CHAR = new char[maxLen];
@@ -156,42 +173,50 @@ bool API::insertValue(const string& tableName, vector<string> valueList)
             }
         }
     }
-    bool repeated = true; //是否有重复
-    if(allHaveIndex){
-        for(i = 0; i < table->tableAttribution->size(); i++){
-            dataType* temp = table->tableAttribution->at(i);
-            if(!temp->isPrimaryKey && ! temp->isUnique)
-                continue;
-            index* temp_index = catalog->getIndex(tableName, temp->typeName);
-            char* key = new char[temp->getDataLength()];
-            writeKey(temp, key, value->at(i));
-            int pos = Index->find(temp_index->getName().c_str(), key);
-            if(pos >= 0){
-                repeated = false;
+
+    bool noDuplicate = true;
+    if (allHaveIndex)
+    {
+        for (int i = 0; i < table->tableAttribution->size(); i++)
+        {
+            dataType* attr = table->tableAttribution->at(i);
+            if (!attr->isPrimaryKey && !attr->isUnique) continue;
+            index* index = catalog->getIndex(tableName, attr->typeName);
+            char* key = new char[attr->getDataLength()];
+            writeKey(attr, key, value->at(i));
+            int pos = Index->find(index->getName(), key);
+            if (pos >= 0)
+            {
+                noDuplicate = false;
                 break;
             }
         }
     }
     else
-        repeated = record->recordCheckDuplicate(tableName, value);
-    if(!repeated){
+        noDuplicate = record->recordCheckDuplicate(tableName, value);
+
+    if (!noDuplicate)
+    {
         cout<<"Run time error! Duplicate attibution!"<<endl;
         return false;
     }
     int id = record->recordInsertTable(tableName, value);
-    for(i = 0; i < table->tableAttribution->size(); i++){
-        dataType* temp = table->tableAttribution->at(i);
-        if(!temp->isPrimaryKey && ! temp->isUnique)
-            continue;
-        index* temp_index = catalog->getIndex(tableName, temp->typeName);
-        if(temp_index != nullptr){
-            char* key = new char[temp->getDataLength()];
-            writeKey(temp, key, value->at(i));
-            Index->insert(temp_index->getName().c_str(), key, id);
+    for (int i = 0; i < table->tableAttribution->size(); i++)
+    {
+        dataType* attr = table->tableAttribution->at(i);
+        if (!attr->isPrimaryKey && !attr->isUnique) continue;
+        index* index = catalog->getIndex(tableName, attr->typeName);
+        if (index != nullptr)
+        {
+            char* key = new char[attr->getDataLength()];
+            writeKey(attr, key, value->at(i));
+            Index->insert(index->getName().c_str(), key, id);
         }
     }
+
     char *temp;
-    for(i = 0; i < size; i++){
+    for (int i = 0; i < size; i++)
+    {
         temp = (*value)[i].CHAR;
         delete temp;
     }
@@ -241,8 +266,6 @@ int API::findRecord(const string &tableName, vector<logicCompare> *conditions, v
             fileManager::writeFloat(key, logic.getImmediate().FLOAT);
         else
             fileManager::writeChar(key, logic.getImmediate().CHAR, attr->n);
-        if(key == nullptr)
-            return 0;
         int id = Index->find(temp_index->getName(), key), ret;
         if(id < 0)
             ret = 0;

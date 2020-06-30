@@ -14,7 +14,7 @@ catalogManager::catalogManager()
 {
     if(tableNameList.empty())
     {
-        const string catalogPath = "./tableNameList.db";
+        const string catalogPath = "catalog/tableNameList.db";
         ifstream fin;
         fin.open(catalogPath, ios::in);
         if(fin.fail()){
@@ -28,7 +28,7 @@ catalogManager::catalogManager()
     }
 
     if(indexMap.empty()){
-        const string catalogPath = "./indexNameList.db";
+        const string catalogPath = "catalog/indexNameList.db";
         ifstream fin;
         fin.open(catalogPath, ios::in);
         if(!fin.fail()){
@@ -97,10 +97,10 @@ bool catalogManager::catalogCreateTable(const string& tableName, vector<dataType
         cout<<"Run time error! Too many primary keys when create table!"<<endl;
         return false;
     }
-    string path = "./table_" + tableName + ".db";
+    string path = "catalog/table_" + tableName + ".db";
     tableNameList.insert(tableName);
     ofstream fout;
-    fout.open("./tableNameList.db", ios::app);
+    fout.open("catalog/tableNameList.db", ios::app);
     fout<<tableName<<endl;
     fout.close();
     fout.open(path, ios::out);
@@ -145,12 +145,12 @@ bool catalogManager::catalogCreateIndex(string& indexName, string& tableName, st
 
     // 检查完了之后在对应的数据结构中更新一个新的index的相关数据
     attribution->hasIndex = true;
-    temp->indexAttribution->push_back(indexName);
+    temp->indexAttribution->push_back(columnName);
     catalogUpdateTable(temp);
     auto* newIndex = new index(indexName, tableName, columnName);
     indexMap[indexName] = newIndex;
     ofstream fout;
-    fout.open("./indexNameList.db", ios::app);
+    fout.open("catalog/indexNameList.db", ios::app);
     if(fout.fail()){
         cout<<"Run time error! Fail to open the catalog file!"<<endl;
         return false;
@@ -175,7 +175,7 @@ bool catalogManager::catalogDropIndex(const string& indexName)
         cout<<"Run time error! No index to drop!"<<endl;
         return false;
     }
-    attribution->hasIndex = true;
+    attribution->hasIndex = false;
     for(int i = 0; i < table->indexAttribution->size(); i ++){
         if((*table->indexAttribution)[i] == attribution->typeName){
             table->indexAttribution->erase(table->indexAttribution->begin() + i);
@@ -183,10 +183,10 @@ bool catalogManager::catalogDropIndex(const string& indexName)
         }
     }
     catalogUpdateTable(table);
-    //delete indexMap[indexName];
+    delete indexMap[indexName];
     indexMap.erase(indexName);
     ofstream fout;
-    fout.open("./indexNameList.db", ios::out);
+    fout.open("catalog/indexNameList.db", ios::out);
     map<string, index*>::iterator m;
     for(m = indexMap.begin(); m != indexMap.end(); m ++){
         fout<<m->second->getName()<<" "<<m->second->getTableName()<<" "<<m->second->getColumnName()<<endl;
@@ -212,33 +212,34 @@ bool catalogManager::catalogDropIndex(const string& tableName, const string& col
 
 bool catalogManager::catalogDropTable(const string& tableName)
 {
-    if(tableNameList.count(tableName) <= 0){
+    if (tableNameList.count(tableName) == 0)
+    {
         cout<<"Run time error! Table doesn't exist!"<<endl;
         return false;
     }
-    else{
-        tableNameList.erase(tableName);
-        string path = "./table_" + tableName + ".db";
-        if(remove(path.c_str()) == EOF){
-            cout<<"Run time error! Fail to delete table file!"<<endl;
-            return false;
-        }
-        ofstream fout;
-        fout.open(path, ios::out);
-        set<string>::iterator m;
-        for(m = tableNameList.begin(); m != tableNameList.end(); m++){
-            fout<<(*m)<<endl;
-        }
-        fout.close();
-        return true;
+    tableNameList.erase(tableName);
+    string filePath = "catalog/table_" + tableName + "db";
+
+    remove(filePath.c_str());
+
+    auto iter = tableNameList.begin();
+    ofstream outfile;
+    outfile.open("catalog/tableNameList.db",ios::out);
+    while (iter != tableNameList.end())
+    {
+        outfile << *iter << endl;
+        iter++;
     }
+    outfile.close();
+
+    return true;
 }
 
 // 更新一张table数据表中的table信息
 bool catalogManager::catalogUpdateTable(Table *table)
 {
     string tableName = table->tableName;
-    string path = "./table_" + tableName + ".db";
+    string path = "catalog/table_" + tableName + ".db";
     ofstream fout;
     fout.open(path, ios::out);
     if(fout.fail()){
@@ -300,7 +301,7 @@ Table * catalogManager::getTable(const string& tableName)
         return nullptr;
     }
     else{
-        string path = "./table_" + tableName + ".db";
+        string path = "catalog/table_" + tableName + ".db";
         ifstream fin;
         fin.open(path, ios::in);
         if(fin.fail()){
@@ -318,7 +319,7 @@ Table * catalogManager::getTable(const string& tableName)
             fin >> n >> attrName >> unique >> primary >> hasIndex;
             auto tmp = new dataType(type, n, attrName, unique, primary, hasIndex);
             attribution->push_back(tmp);
-            if(hasIndex == 1){
+            if(hasIndex){
                 index->push_back(attrName);
             }
         }

@@ -19,8 +19,8 @@ bufferManager::bufferManager()
         tail = new bufferNode(nullptr);
         head->last = head;
         head->next = tail;
-        tail->last = head;
         tail->next = tail;
+        tail->last = head;
     }
 }
 
@@ -64,6 +64,7 @@ bool bufferManager::appendNode(const string& fileName)
     string path = "dbFile/" + fileName + ".db";
     FILE* fp = fopen(path.c_str(), "ab");
     fwrite(data, blockSize, 1, fp);
+    fclose(fp);
     delete[] data;
     return true;
 }
@@ -120,6 +121,7 @@ Block * bufferManager::loadBlock(const string& fileName, int id)
     }
     fread(temp->data, blockSize, 1, fp);
     fclose(fp);
+
     auto* t = new bufferNode(temp);
     accessNode(t);
     nodeMap[fileName + "_" + to_string(id)] = t;

@@ -266,3 +266,13 @@ bool stringProcessor::charCheck(string &val)
     int n = val.size();
     return (val[0] == '\'' && val[n - 1] == '\'') || (val[0] == '\"' && val[n - 1] == '\"');
 }
+
+bool stringProcessor::getRidQuo(string &x) {
+
+    preTrim(x);
+    if (!x.empty())
+    {
+        if (charCheckAndChange(x))x = x.substr(1, x.size() - 2);
+    }
+    return true;
+}

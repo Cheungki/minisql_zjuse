@@ -33,6 +33,7 @@ public:
     static pair<bool, float> floatCheckAndChange(const string& val);
     static bool charCheckAndChange(string& val);
     static bool charCheck(string& val);
+    static bool getRidQuo(string &x);
 };
 
 #endif //CODE_stringProcessor_H

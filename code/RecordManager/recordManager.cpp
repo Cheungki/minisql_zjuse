@@ -78,7 +78,7 @@ vector<tableValue>* recordManager::recordGetByID(const string& tableName, int id
 
 int recordManager::recordInsertTable(const string& tableName, vector<tableValue> *value)
 {
-    auto* filename = new tableFile(std::move(tableName));
+    auto* filename = new tableFile(tableName);
     int result = filename->recordInsert(value);
     delete filename;
     return result;
@@ -111,18 +111,18 @@ bool recordManager::recordCheck(Table *table, vector<tableValue>* record, vector
         if(attribution->type == miniSQL_INT) {
                 int parameterOne = (*record)[position].INT;
                 int parameterTwo = condition.getImmediate().INT;
-                return condition.checkCondition(logicCompare::compareInt(parameterOne, parameterTwo));
+                if(condition.checkCondition(logicCompare::compareInt(parameterOne, parameterTwo))) return false;
             }
         else if(attribution->type == miniSQL_FLOAT) {
             float parameterOne = (*record)[position].FLOAT;
             float parameterTwo = condition.getImmediate().FLOAT;
-            return condition.checkCondition(logicCompare::compareFloat(parameterOne, parameterTwo));
+            if(condition.checkCondition(logicCompare::compareFloat(parameterOne, parameterTwo))) return false;
         }
         else {
             int length = attribution->n;
             char* parameterOne = (*record)[position].CHAR;
             char* parameterTwo = condition.getImmediate().CHAR;
-            return condition.checkCondition(logicCompare::compareChar(parameterOne, parameterTwo, length));
+            if(condition.checkCondition(logicCompare::compareChar(parameterOne, parameterTwo, length))) return false;
         }
     }
     return true;

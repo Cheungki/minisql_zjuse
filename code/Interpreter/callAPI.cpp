@@ -96,7 +96,7 @@ bool callAPI::callCreateTableAPI(const string& table, string& element){
                 cout<<"Syntax error! Can't create table! Illegal create command!"<<endl;
                 return false;
             }
-            tempN = 4;
+            tempN = 0;
         }
         else{
             string type = attr[1].substr(0, head);

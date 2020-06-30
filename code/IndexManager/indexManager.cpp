@@ -49,10 +49,10 @@ bool indexManager::createIndex(const char* indexName)
 {
     catalogManager* manager = new catalogManager();
     index* index = manager->getIndex(string(indexName));
-    if (index == NULL)
+    if (index == nullptr)
         return false;
-    Table* table = manager->getTable(string(index->getTableName()));
-    if (table == NULL)
+    Table* table = manager->getTable(index->getTableName());
+    if (table == nullptr)
         return false;
 
     //获取数据长度和数据类型

@@ -19,11 +19,12 @@ API* api;
 int main() {
 
     CreateDirectory("dbFile", NULL);
+    CreateDirectory("catalog", NULL);
     CreateDirectory("dbFile/index", NULL);
-    if (fopen("tableNameList.db", "rb") == NULL)
-        fopen("tableNameList.db", "ab+");
-    if (fopen("indexNameList.db", "rb") == NULL)
-        fopen("indexNameList.db", "ab+");
+    if (fopen("catalog/tableNameList.db", "rb") == NULL)
+        fopen("catalog/tableNameList.db", "ab+");
+    if (fopen("catalog/indexNameList.db", "rb") == NULL)
+        fopen("catalog/indexNameList.db", "ab+");
 
     Interpreter interpreter;
     api = new API();

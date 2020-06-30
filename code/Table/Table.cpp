@@ -26,7 +26,7 @@ void dataType::showDataType()
 
 int dataType::getDataLength()
 {
-    if(n == miniSQL_INT || n == miniSQL_FLOAT){
+    if(type == miniSQL_INT || type == miniSQL_FLOAT){
         return 4;
     }
     else return n;
@@ -80,7 +80,7 @@ dataType* Table::searchAttribution(const char *name)
 
 dataType* Table::searchAttribution(const string& name)
 {
-    for(int i = 0; i < columnCount; i ++){
+    for(int i = 0; i < tableAttribution->size(); i ++){
         if((*tableAttribution)[i]->typeName == name){
             return (*tableAttribution)[i];
         }
@@ -96,7 +96,7 @@ int Table::searchPosition(const char *name)
 
 int Table::searchPosition(const string &name)
 {
-    for(int i = 0; i < columnCount; i ++){
+    for(int i = 0; i < tableAttribution->size(); i ++){
         if((*tableAttribution)[i]->typeName == name){
             return i;
         }
@@ -110,7 +110,7 @@ void Table::dropIndex(const string &indexName)
     tmp->hasIndex = false;
     int i;
     for(i = 0; i < indexAttribution->size(); i ++){
-        if(indexAttribution[i].at(i) == indexName){
+        if(indexAttribution->at(i) == indexName){
             break;
         }
     }
