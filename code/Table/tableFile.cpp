@@ -31,29 +31,38 @@ tableFile::~tableFile() /* 析构函数 */
 
 int tableFile::recordInsert(vector<tableValue>* values)
 {
-    int blockID = (emptyID / recordNumOfBlock) + 1;
-    int offset = (emptyID % recordNumOfBlock) * sizeOfRecord;
-    int originID = emptyID;
-    maxID = maxID > emptyID ? maxID : emptyID;
-    Block* block;
+    //cout << "INSER : ID = " << emptyId << endl;
+    int blockId = (emptyID / recordNumOfBlock) + 1;
+    int offset = emptyID % recordNumOfBlock;
+    int ret = emptyID;
 
-    /* Verify if the size of the blocks is enough. */
-    if(blockID < blockNum) block = buffer->getBlock(tableName, blockID);
-    else {
+    maxID = max(maxID, emptyID);
+    Block *block;
+    if (blockId < blockNum)block = buffer->getBlock(tableName, blockId);
+    else
+    {
         buffer->appendNode(tableName);
-        block = buffer->getBlock(tableName, blockNum++);
+        blockNum++;
+        block=buffer->getBlock(tableName, blockNum-1);
     }
     recordNum++;
+    offset = offset * sizeOfRecord;
+    char *p = block->data + offset;
 
-    char* pointer = block->data + offset;
-    if(recordNum == maxID + 1) emptyID++;
-    else fileManager::readInt(pointer + 1, &emptyID);
-
-    /* Store the data into the block. */
-    fileManager::writeTableValue(pointer, values, table);
+    if (recordNum-1==maxID)emptyID++;
+    else
+    {
+        //cout << "MARK : " << int(*p) << endl;
+        fileManager::readInt(p+1, &emptyID);
+        //cout << "READ POINTER : " << emptyId << endl;
+    }
+    fileManager::writeTableValue(p, values, table);
     buffer->writeBlock(block);
+
     updateHeader();
-    return originID;
+
+
+    return ret;
 }
 
 bool tableFile::recordDelete(int id, bool commit)
@@ -138,9 +147,10 @@ bool tableFile::updateHeader()
     Block* headerOfBlock = buffer->getBlock(tableName, 0);
     fileManager::writeInt(headerOfBlock->data, emptyID);
     fileManager::writeInt(headerOfBlock->data + 4, blockNum);
-    fileManager::writeInt(headerOfBlock->data + 8, recordNumOfBlock);
+    fileManager::writeInt(headerOfBlock->data + 8, recordNum);
     fileManager::writeInt(headerOfBlock->data + 12, maxID);
-    return buffer->writeBlock(headerOfBlock);
+    buffer->writeBlock(headerOfBlock);
+    return true;
 }
 
 int tableFile::getByID(int id)

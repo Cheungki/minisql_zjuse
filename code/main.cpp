@@ -21,9 +21,9 @@ int main() {
     CreateDirectory("dbFile", NULL);
     CreateDirectory("catalog", NULL);
     CreateDirectory("dbFile/index", NULL);
-    if (fopen("catalog/tableNameList.db", "rb") == NULL)
+    if (fopen("catalog/tableNameList.db", "rb") == nullptr)
         fopen("catalog/tableNameList.db", "ab+");
-    if (fopen("catalog/indexNameList.db", "rb") == NULL)
+    if (fopen("catalog/indexNameList.db", "rb") == nullptr)
         fopen("catalog/indexNameList.db", "ab+");
 
     Interpreter interpreter;

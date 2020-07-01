@@ -111,18 +111,18 @@ bool recordManager::recordCheck(Table *table, vector<tableValue>* record, vector
         if(attribution->type == miniSQL_INT) {
                 int parameterOne = (*record)[position].INT;
                 int parameterTwo = condition.getImmediate().INT;
-                if(condition.checkCondition(logicCompare::compareInt(parameterOne, parameterTwo))) return false;
+                if(!condition.checkCondition(logicCompare::compareInt(parameterOne, parameterTwo))) return false;
             }
         else if(attribution->type == miniSQL_FLOAT) {
             float parameterOne = (*record)[position].FLOAT;
             float parameterTwo = condition.getImmediate().FLOAT;
-            if(condition.checkCondition(logicCompare::compareFloat(parameterOne, parameterTwo))) return false;
+            if(!condition.checkCondition(logicCompare::compareFloat(parameterOne, parameterTwo))) return false;
         }
         else {
             int length = attribution->n;
             char* parameterOne = (*record)[position].CHAR;
             char* parameterTwo = condition.getImmediate().CHAR;
-            if(condition.checkCondition(logicCompare::compareChar(parameterOne, parameterTwo, length))) return false;
+            if(!condition.checkCondition(logicCompare::compareChar(parameterOne, parameterTwo, length))) return false;
         }
     }
     return true;

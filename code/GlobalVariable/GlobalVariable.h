@@ -5,6 +5,7 @@
 #ifndef CODE_GLOBALVARIABLE_H
 #define CODE_GLOBALVARIABLE_H
 //#include"../Table/Table.h"
+#include<cstring>
 #include<string>
 
 using namespace std;
