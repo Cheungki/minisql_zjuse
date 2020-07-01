@@ -56,9 +56,9 @@ string stringProcessor::cmdOptimum(string& cmd)
 
 void stringProcessor::showOperation(vector<string> op)
 {
-    for(int i=0; i < op.size(); i++) {
-        cout<<"Position "<<i<<" :"<<op[i]<<endl;
-    }
+//    for(int i=0; i < op.size(); i++) {
+//        cout<<"Position "<<i<<" :"<<op[i]<<endl;
+//    }
 }
 
 //用来删除命令中的括号
@@ -230,9 +230,15 @@ pair<bool, float> stringProcessor::floatCheckAndChange(const string &val)
         else if(i < '0' || i > '9')
             return result;
     }
-    if(pointCount != 1){
+    if(pointCount > 1){
         return result;
     }
+    if(pointCount == 0){
+        result.first = true;
+        result.second = strtod(val.c_str(),NULL);
+        return result;
+    }
+
     int pos = val.find('.');
     int value = 0;
     for(char i : val){

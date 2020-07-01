@@ -96,7 +96,10 @@ int BPTree::find(int id)
         if (pos > 0)
         {
             const char* k = node->getKey(pos);
-            if (memcmp(key, k, keyLength) == 0)
+            int length;
+            if (dataType==miniSQL_CHAR) length = strlen(k);
+            else length =keyLength;
+            if (memcmp(key, k, length) == 0)
                 cond = node->getPtr(pos);
         }
     }

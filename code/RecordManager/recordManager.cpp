@@ -135,7 +135,7 @@ bool recordManager::recordCheckDuplicate(const string& tableName, vector<tableVa
     int maxID, i, j;
     maxID = fileName->getMaxID();
     bool noDuplicate = true;
-    for(i = 0; i < maxID; i++) {
+    for(i = 0; i <= maxID; i++) {
         vector<tableValue>* currentRecord = fileName->getRecord(i, false);
         if(currentRecord == nullptr) continue;
         int size = (*(table)->tableAttribution).size();

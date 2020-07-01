@@ -79,6 +79,7 @@ bool callAPI::callCreateTableAPI(const string& table, string& element){
             else
                 tempUnique = true;
         }
+        else tempUnique = false;
 
         // 第三类是普通的属性名+类型
         stringProcessor::preTrim(attr[0]);

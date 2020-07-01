@@ -19,6 +19,7 @@ public:
     static void showInsert(bool flag, const string& table);
     static void showDelete(int flag, const string& table);
     static void showSelect(vector<vector<tableValue>*>* result, string tableName);
+    static string beautify(int length, string op = " ");
 };
 
 

@@ -69,7 +69,7 @@ bool tableFile::recordDelete(int id, bool commit)
 {
     int blockID = (id / recordNumOfBlock) + 1;
     int offset = (id % recordNumOfBlock) * sizeOfRecord;
-    if(blockID > maxID) {
+    if(id > maxID) {
         cout <<"Unexpected access to an unexisted record"<<endl;
     }; /* Here, the user is trying to access a non-existent record. */
 
@@ -77,11 +77,9 @@ bool tableFile::recordDelete(int id, bool commit)
     /* Find the block and the pointer. */
     Block* block = buffer->getBlock(tableName, blockID);
     char* pointer = block->data + offset;
-    char flag;
+    char flag=*pointer;
 
-    /* Verify if the record is null. */
-    memcpy(&flag, pointer, 1);
-    if(!flag) {
+    if(flag==0) {
         cout <<"Unexpected access to an unexisted record"<<endl;
     };/* Report that the record is non-existent. */
 

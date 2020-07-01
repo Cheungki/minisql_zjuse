@@ -43,7 +43,11 @@ int logicCompare::compareFloat(float a, float b)
 
 int logicCompare::compareChar(const char *a, const char *b, int length)
 {
-    for(int i = 0; i < length; i ++){
+    int len;
+    if (strlen(a)< strlen(b)) len=strlen(b);
+    else len= strlen(a);
+    if(len>length) len=length;
+    for(int i = 0; i < len; i ++){
         if(a[i] == '\n' && b[i] == '\n')
             return EQUAL;
         else if(a[i] == '\n' && b[i] != '\n')
