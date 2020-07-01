@@ -90,29 +90,29 @@ int stringProcessor::bracketProcessor(string& cmd)
 int stringProcessor::getCompareType(const string& x)
 {
     int count = 0, result = -1;
-    if(x.find('>') != -1){
-        count++;
-        result = GREATER;
-    }
-    if(x.find('<') != -1){
-        count++;
-        result = LESS;
-    }
-    if(x.find('=') != -1){
-        count++;
-        result = EQUAL;
-    }
     if(x.find(">=") != -1){
         count++;
         result = GREATEREQUAL;
     }
-    if(x.find("<=") != -1){
+    else if(x.find("<=") != -1){
         count++;
         result = LESSEQUAL;
     }
-    if(x.find("!=") != -1){
+    else if(x.find("<>") != -1){
         count++;
         result = NOTEQUAL;
+    }
+    else if(x.find('>') != -1){
+        count++;
+        result = GREATER;
+    }
+    else if(x.find('<') != -1){
+        count++;
+        result = LESS;
+    }
+    else if(x.find('=') != -1){
+        count++;
+        result = EQUAL;
     }
     if(count != 1)
         return -1;
@@ -142,7 +142,7 @@ logicCompare* stringProcessor::getLogic(string x, int compareType, vector<dataTy
             pos = x.find("<=");
             break;
         case NOTEQUAL:
-            pos = x.find("!=");
+            pos = x.find("<>");
             break;
         default:
             cout<<"Run time error! Illegal logic type!"<<endl;

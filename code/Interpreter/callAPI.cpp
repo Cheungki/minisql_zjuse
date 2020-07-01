@@ -211,6 +211,26 @@ vector<vector<tableValue>*>* callAPI::callSelectAPI(string& tableName, string& c
     // 如果条件非空则需要进行子句的分割
     if(!condition.empty())
     {
+        if(condition.find(" or ")!=condition.npos) {
+            vector<string> temp = stringProcessor::Split(condition, " or ");
+            logicCompare* t;
+            int i;
+            for(i = 0; i < temp.size(); i++){
+                int type = stringProcessor::getCompareType(temp[i]);
+                if(type == -1){
+                    cout<<"Syntax error! Illegal data type!"<<endl;
+                    return nullptr;
+                }
+                t = stringProcessor::getLogic(temp[i], type, attribution);
+                if(t == nullptr)
+                    return nullptr;
+                logicCondition->push_back(*t);
+                delete t;
+            }
+            vector<vector<tableValue>*>* result = api->select(tableName, logicCondition, 1);
+            delete logicCondition;
+            return result;
+        }
         vector<string> temp = stringProcessor::Split(condition, "and");
         logicCompare* t;
         int i;

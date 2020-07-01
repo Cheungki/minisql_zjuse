@@ -22,8 +22,10 @@ public:
     bool recordDeleteTable(const string& tableName, vector<int>* list);
     int recordInsertTable(const string& tableName, vector<tableValue>* value);
     bool recordCheck(Table* table, vector<tableValue>* record, vector<logicCompare>* conditions);
+    bool recordCheck(Table* table, vector<tableValue>* record, vector<logicCompare>* conditions, int flag);
     bool recordCheckDuplicate(const string& tableName, vector<tableValue>* record);
     vector<int> * recordSelectTable(const string& tableName, vector<logicCompare>* conditions);
+    vector<int> * recordSelectTable(const string& tableName, vector<logicCompare>* conditions, int flag);
     vector<tableValue>* recordGetByID(const string& tableName, int id);
 private:
     catalogManager* catalog;

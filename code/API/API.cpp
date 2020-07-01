@@ -67,7 +67,7 @@ bool API::dropTable(const string& tableName)
     Table *table = getTable(tableName);
     for(const auto& colName: *(table->indexAttribution))
     {
-        index* temp = catalog->getIndex(tableName, colName);
+        class index* temp = catalog->getIndex(tableName, colName);
         dropIndex(temp->getName());
     }
     if(!catalog->catalogDropTable(tableName))return false;
@@ -103,7 +103,7 @@ bool API::insertValue(const string& tableName, vector<string> valueList)
             cout<<"Run time error! Empty Value!"<<endl;
             return false;
         }
-        index* index = catalog->getIndex(tableName, attr->typeName);
+        class index* index = catalog->getIndex(tableName, attr->typeName);
         if (index == nullptr)
             allHaveIndex = false;
     }
@@ -181,7 +181,7 @@ bool API::insertValue(const string& tableName, vector<string> valueList)
         {
             dataType* attr = table->tableAttribution->at(i);
             if (!attr->isPrimaryKey && !attr->isUnique) continue;
-            index* index = catalog->getIndex(tableName, attr->typeName);
+            class index* index = catalog->getIndex(tableName, attr->typeName);
             char* key = new char[attr->getDataLength()];
             writeKey(attr, key, value->at(i));
             int pos = Index->find(index->getName(), key);
@@ -205,7 +205,7 @@ bool API::insertValue(const string& tableName, vector<string> valueList)
     {
         dataType* attr = table->tableAttribution->at(i);
         if (!attr->isPrimaryKey && !attr->isUnique) continue;
-        index* index = catalog->getIndex(tableName, attr->typeName);
+        class index* index = catalog->getIndex(tableName, attr->typeName);
         if (index != nullptr)
         {
             char* key = new char[attr->getDataLength()];
@@ -249,13 +249,32 @@ vector<vector<tableValue>*>* API::select(const string& tableName, vector<logicCo
     return result;
 }
 
+vector<vector<tableValue>*>* API::select(const string& tableName, vector<logicCompare>* condtions, int flag)
+{
+    Table* table = catalog->getTable(tableName);
+    if(table == nullptr){
+        cout<<"Run time error! There is no table!"<<endl;
+        return nullptr;
+    }
+    for(auto logic: *condtions){
+        if(table->searchAttribution(logic.getValueName()) == nullptr){
+            cout<<"Run time error! Attribution not found!"<<endl;
+            return nullptr;
+        }
+    }
+    auto* result = new vector<vector<tableValue>*>;
+    vector<int>* ids = new vector<int>;
+    int selectNumber = findRecord(tableName, condtions, result, ids, flag);
+    return result;
+}
+
 int API::findRecord(const string &tableName, vector<logicCompare> *conditions, vector<vector<tableValue> *> *results, vector<int> *ids)
 {
     Table* table = catalog->getTable(tableName);
     for(auto logic: *conditions){
         if(logic.operation != EQUAL)
             continue;
-        index* temp_index = catalog->getIndex(tableName, logic.getValueName());
+        class index* temp_index = catalog->getIndex(tableName, logic.getValueName());
         if(temp_index == nullptr)
             continue;
         dataType* attr = table->searchAttribution(logic.getValueName());
@@ -289,6 +308,17 @@ int API::findRecord(const string &tableName, vector<logicCompare> *conditions, v
     return ids->size();
 }
 
+int API::findRecord(const string &tableName, vector<logicCompare> *conditions, vector<vector<tableValue> *> *results, vector<int> *ids, int flag)
+{
+    auto* t = new vector<int>;
+    t = record->recordSelectTable(tableName, conditions, flag);
+    for(auto id: *t){
+        ids->push_back(id);
+        results->push_back(record->recordGetByID(tableName, id));
+    }
+    return ids->size();
+}
+
 void API::writeKey(dataType *attribution, char *key, tableValue v)
 {
     if(attribution->type == miniSQL_INT)
@@ -313,7 +343,7 @@ int API::remove(string tableName, vector<logicCompare> *conditions)
         int pos = table->searchPosition(indexCol);
         dataType* temp = (*(table->tableAttribution))[pos];
         char *key = new char[temp->getDataLength()];
-        index* temp_index = catalog->getIndex(table->tableName, indexCol);
+        class index* temp_index = catalog->getIndex(table->tableName, indexCol);
         for(auto t: *result){
             writeKey(temp, key, t->at(pos));
             Index->remove(temp_index->getName().c_str(), key);

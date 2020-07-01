@@ -103,16 +103,35 @@ vector<int>* recordManager::recordSelectTable(const string& tableName, vector<lo
     return result;
 }
 
+vector<int>* recordManager::recordSelectTable(const string& tableName, vector<logicCompare> *conditions, int flag)
+{
+    if(!conditions) conditions = new vector<logicCompare>;
+    auto* result = new vector<int>;
+    Table* table = catalog->getTable(tableName);
+    auto* fileName = new tableFile(tableName);
+    int maxID = fileName->getMaxID(), i;
+    for(i = 0; i <= maxID; i++) {
+        vector<tableValue>* records = fileName->getRecord(i, false);
+        if(records) {
+            if(recordCheck(table, records, conditions, flag)) result->push_back(i);
+        }
+        else continue;
+    }
+    delete table;
+    delete fileName;
+    return result;
+}
+
 bool recordManager::recordCheck(Table *table, vector<tableValue>* record, vector<logicCompare>* conditions)
 {
     for(auto condition: *conditions) {
         int position = table->searchPosition(condition.getValueName());
         dataType* attribution = table->tableAttribution->at(position);
         if(attribution->type == miniSQL_INT) {
-                int parameterOne = (*record)[position].INT;
-                int parameterTwo = condition.getImmediate().INT;
-                if(!condition.checkCondition(logicCompare::compareInt(parameterOne, parameterTwo))) return false;
-            }
+            int parameterOne = (*record)[position].INT;
+            int parameterTwo = condition.getImmediate().INT;
+            if(!condition.checkCondition(logicCompare::compareInt(parameterOne, parameterTwo))) return false;
+        }
         else if(attribution->type == miniSQL_FLOAT) {
             float parameterOne = (*record)[position].FLOAT;
             float parameterTwo = condition.getImmediate().FLOAT;
@@ -126,6 +145,31 @@ bool recordManager::recordCheck(Table *table, vector<tableValue>* record, vector
         }
     }
     return true;
+}
+
+bool recordManager::recordCheck(Table *table, vector<tableValue>* record, vector<logicCompare>* conditions, int flag)
+{
+    for(auto condition: *conditions) {
+        int position = table->searchPosition(condition.getValueName());
+        dataType* attribution = table->tableAttribution->at(position);
+        if(attribution->type == miniSQL_INT) {
+            int parameterOne = (*record)[position].INT;
+            int parameterTwo = condition.getImmediate().INT;
+            if(condition.checkCondition(logicCompare::compareInt(parameterOne, parameterTwo))) return true;
+        }
+        else if(attribution->type == miniSQL_FLOAT) {
+            float parameterOne = (*record)[position].FLOAT;
+            float parameterTwo = condition.getImmediate().FLOAT;
+            if(condition.checkCondition(logicCompare::compareFloat(parameterOne, parameterTwo))) return true;
+        }
+        else {
+            int length = attribution->n;
+            char* parameterOne = (*record)[position].CHAR;
+            char* parameterTwo = condition.getImmediate().CHAR;
+            if(condition.checkCondition(logicCompare::compareChar(parameterOne, parameterTwo, length))) return true;
+        }
+    }
+    return false;
 }
 
 bool recordManager::recordCheckDuplicate(const string& tableName, vector<tableValue>* record)
