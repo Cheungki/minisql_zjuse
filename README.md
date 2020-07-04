@@ -91,7 +91,7 @@
   - tableFile 数据表文件，还没写，要和record manager进行联动，然后record manager要和buffer进行联动
   - stringProcessor 字符串处理的一些东西，写完了，主要是在interpreter里调用，没有大问题
 
-- 具体的内容可以看代码文件，我也尽量写了注释，另外就是多看看上面的**参考网址** 
+- 具体的内容可以看代码文件，我也尽量写了注释
 - 目前剩下的主要问题
   - 有几个模块没有进行debug，比如catalog，可能需要和别的模块一起进行debug
   - record + buffer + tableFile的联动
